@@ -1,0 +1,52 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18 avr. 2021, 04:26:25
+    Author     : Jamâl-Dine DISSOU
+*/
+
+html {
+  /* Example global custom CSS property definition */
+  
+    /* 1. FORM FIELDS */
+    /* 1.1 enabled */
+    --ximo-field-color:                     black;
+    --ximo-field-background-color:          white;
+    --ximo-field-font-weight:               bold;
+    --ximo-field-opacity:                   1.0;
+  
+    --ximo-field-border-radius:             10px;
+    --ximo-field-border-width:              1px 2px 2px 1px;
+    --ximo-field-border-style:              solid;
+    --ximo-field-border-color:              salmon;
+    --ximo-field-margin-right:              15px;
+  
+    /* 1.2 disabled */
+    --ximo-field-disabled-color:            gray;
+    --ximo-field-disabled-background-color: white;
+    --ximo-field-disabled-font-weight:      bold;
+    --ximo-field-disabled-opacity:          0.8;
+  
+    --ximo-field-disabled-border-radius:    10px;
+    --ximo-field-disabled-border-width:     1px 2px 2px 1px;
+    --ximo-field-disabled-border-style:     solid;
+    --ximo-field-disabled-border-color:     thistle;
+    --ximo-field-disabled-margin-right:     15px;
+ 
+ 
+    /* 2. COMBOBOX */
+    /* 2.1 App Selector*/
+    --ximo-combo-color:                     maroon;;
+    --ximo-combo-font-weight:               bold;
+    --ximo-combo-background-image:          linear-gradient(to bottom right, lightpink, white);
+    --ximo-combo-border-radius:             10px;
+ 
+    --ximo-combo-border:                    2px;
+    --ximo-combo-border-bottom-style:       solid;
+    --ximo-combo-border-bottom-width:       medium;
+    --ximo-combo-border-bottom-color:       saddlebrown;
+
+}

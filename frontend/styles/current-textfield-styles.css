@@ -1,0 +1,129 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 mai 2021, 15:40:07
+    Author     : Jamâl-Dine DISSOU
+*/
+
+/* IT IS USED IN CONJUNCTION WITH base-textfield-styles.css !!!!
+*/ 
+    .my-textfield-standard{
+       --my-color:             var(--ximo-field-color);
+       --my-font-weight:       var(--ximo-field-font-weight);
+      /* --my-background-color:  var(--ximo-field-background-color); */
+       --my-border-radius:     var(--ximo-field-border-radius);
+       --my-border-width:      var(--ximo-field-border-width);
+       --my-border-style:      var(--ximo-field-border-style);
+       --my-border-color:      var(--ximo-field-border-color);
+       --my-margin-right:      var(--ximo-field-margin-right);
+       --my-opacity:           var(--ximo-field-opacity);
+
+       --lumo-disabled-text-color: var(--ximo-field-disabled-color);
+    } 
+
+   
+    
+    .my-textfield-standard:disabled,
+    .my-textfield-standard[disabled]{
+       --my-font-weight:           var(--ximo-field-disabled-font-weight);
+       --my-border-radius:         var(--ximo-field-disabled-border-radius);
+       --my-border-width:          var(--ximo-field-disabled-border-width);
+       --my-border-style:          var(--ximo-field-disabled-border-style);
+       --my-border-color:          var(--ximo-field-disabled-border-color);
+       --my-margin-right:          var(--ximo-field-disabled-margin-right);
+    }
+    
+    /***    Left Label ***/
+    
+    
+:host(.my-textfield-left-label) {
+        --vaadin-text-field-default-width: 18em;
+        /*  --vaadin-text-field-default-width: 100%;
+         --lumo-text-field-size: var(--lumo-size-s);  */
+}
+
+:host(.my-textfield-left-label[has-label])::before {
+margin-top: 0;
+}
+
+:host(.my-textfield-left-label) .vaadin-text-field-container  {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+:host(.my-textfield-left-label) .vaadin-text-area-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+:host(.my-textfield-left-label) [part="label"] {
+    align-self: right;
+    flex: none;
+    white-space: pre-line;
+    width:320px;
+    text-align: right;
+}
+
+:host(.my-textfield-left-label:not([required])) [part="label"] {
+    padding-right: 1em;
+}
+
+:host(.my-textfield-left-label) [part="input-field"] {
+        align-self: baseline;
+        flex: 1 0;
+}
+
+:host(.my-textfield-left-label:not([invalid])) [part="error-message"] {
+        display: none;
+}
+
+:host(.my-textfield-left-label) [part="error-message"] {
+        align-self: baseline;
+        min-width: 10em;
+        flex-basis: 100%;
+}    
+
+/*  input-field height */
+:host(.my-textfield-left-label) [part="input-field"] {
+    /* background: transparent; */
+    height: 25px;    
+}
+
+:host(#belongs-to-big-decimal) [part="input-field"] {
+    height: 25px;
+}
+
+:host(#belongs-to-big-decimal) [part="value"] {
+    /* border-bottom: 2px solid orange; */
+    text-align: center;
+}
+
+:host(.belongs-to-superintegerfield) [part="input-field"] {
+    height: 25px;    
+}
+
+:host(.belongs-to-superintegerfield) [part="value"] {
+    /* border-bottom: 2px solid cyan; */
+    text-align: center;
+}
+
+:host(.belongs-to-superdoublefield) [part="input-field"] {
+    height: 25px;    
+}
+
+:host(.belongs-to-superdoublefield) [part="value"] {
+    /* border-bottom: 2px solid green; */
+    text-align: center;
+}
+
+:host(#belongs-to-long) [part="input-field"] {
+    height: 25px;    
+}
+
+:host(#belongs-to-long) [part="value"] {
+    /* border-bottom: 2px solid purple; */
+    text-align: center;
+}

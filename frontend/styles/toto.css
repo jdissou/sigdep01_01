@@ -1,0 +1,275 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 mai 2021, 14:58:48
+    Author     : Jamâl-Dine DISSOU
+*/
+
+.logo {
+    
+}
+
+.login-information {
+    min-width: 300px;
+    flex: 0;
+    background: var(--lumo-primary-color-50pct);
+}
+
+/* Stack login-screen vertically on narrow screen */
+@media (max-width: 800px) {
+
+    .login-screen {
+        flex-direction: column;
+    }
+
+    .login-information {
+        display: block;
+    }
+}
+
+.menu-navbar{
+    padding: 0 var(--lumo-space-m);    
+    /* padding: 11px 16px; */
+}
+
+.menu-navbar h4.logo {
+    font-size: 1em;
+    margin: var(--lumo-space-m);
+}
+
+.menu-drawer{
+    
+}
+
+.main-layout {
+    flex-direction: row;
+
+    /* Used by the menu and form overlays */
+    --overlay-box-shadow: 0 0 3px 2px var(--lumo-contrast-10pct);
+}
+
+.menu-bar {
+    flex-direction: column;
+    flex-shrink: 0;
+    background: var(--lumo-base-color);
+    box-shadow: var(--overlay-box-shadow);
+}
+
+.menu-header {
+    padding: 11px 16px;
+    
+}
+
+.menu-bar vaadin-tabs {
+    align-items: flex-start;
+    transition: transform 300ms;
+}
+
+.menu-bar vaadin-tab {
+    padding: 0;
+}
+
+.menu-link {
+    margin: 0 auto;
+    padding: 10px 37px;
+}
+
+.menu-link > span {
+    display: block;
+}
+
+.menu-button {
+    display: none;
+}
+
+
+.vaadin-text-field-container  {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+        
+.vaadin-text-area-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+/*
+    Vaadin text field CSS styling
+    All text fields have style name v-textfield added to them 
+    so if you want any specific CSS to apply on all text fields 
+    then add it inside v-textfield class.
+*/
+
+/*
+.v-textfield {
+    
+    :host([theme~="left-label"]) .vaadin-text-field-container  {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            :host([theme~="left-label"]) .vaadin-text-area-container {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            :host([theme~="left-label"]) [part="label"] {
+                align-self: center;
+                flex: none;
+                white-space:pre-line;
+                width:220px;
+                text-align:right;
+            }    
+}
+    
+*/  
+        
+/*
+    :host([theme~="left-label"]) {
+            --vaadin-text-field-default-width: 18em;
+    }
+
+    :host([theme~="left-label"][has-label])::before {
+    margin-top: 0;
+    }
+
+    :host([theme~="left-label"]) .vaadin-text-field-container {
+            flex-direction: row;
+            flex-wrap: wrap;
+    }
+
+    :host([theme~="left-label"]) [part="label"] {
+            align-self: baseline;
+            flex: none;
+    }
+
+    :host([theme~="left-label"]:not([required])) [part="label"] {
+        padding-right: 1em;
+    }
+
+    :host([theme~="left-label"]) [part="input-field"] {
+            align-self: baseline;
+            flex: 1 0;
+    }
+
+    :host([theme~="left-label"]:not([invalid])) [part="error-message"] {
+            display: none;
+    }
+
+    :host([theme~="left-label"]) [part="error-message"] {
+            align-self: baseline;
+            min-width: 10em;
+            flex-basis: 100%;
+    }
+*/
+
+.product-form {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    overflow: auto;
+    background: var(--lumo-base-color);
+    box-shadow: var(--overlay-box-shadow);
+}
+
+/* On narrow screens, move the side bar to the top,
+ * except for the link-tabs, which are hidden but
+ * can be opened via a button.
+ */
+@media (max-width: 800px) {
+
+    .main-layout {
+        flex-direction: column;
+        --top-bar-height: 50px;
+        --top-bar-margin: 5vw;
+    }
+
+    .menu-bar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: var(--top-bar-height);
+        margin: 0 var(--top-bar-margin);
+        background: none;
+        box-shadow: none;
+    }
+
+    .menu-bar vaadin-tabs {
+        transform: translateX(calc(-100% - var(--top-bar-margin)));
+        position: absolute;
+        top: var(--top-bar-height);
+        height: calc(100% - var(--top-bar-height));
+        z-index: 100;
+        box-shadow: var(--overlay-box-shadow);
+        background: var(--lumo-base-color);
+    }
+
+    .menu-bar .show-tabs {
+        transform: translateX(calc(0% - var(--top-bar-margin)));
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .product-form {
+        height: calc(100% - var(--top-bar-height));
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .product-form {
+        width: 100%;
+
+        /* Prevent text-fields from overflowing on narrow screens */
+        --vaadin-text-field-default-width: 6em;
+    }
+}
+
+/* Color codes for the availability statuses of the products */
+.Available {
+    color: #2dd085;
+}
+
+.Coming {
+    color: #ffc66e;
+}
+
+.Discontinued {
+    color: #f54993;
+}
+
+/*
+.v-filterselect { }
+  .v-filterselect-input { }
+  .v-filterselect-button { }
+
+// Under v-overlay-container
+.v-filterselect-suggestpopup { }
+  .popupContent { }
+    .v-filterselect-prevpage,
+      .v-filterselect-prevpage-off { }
+    .v-filterselect-suggestmenu { }
+      .gwt-MenuItem { }
+    .v-filterselect-nextpage,
+      .v-filterselect-nextpage-off { }
+    .v-filterselect-status { }
+
+
+In its default state, only the input field of the ComboBox component is visible. 
+The entire component is enclosed in v-filterselect style (a legacy remnant), 
+the input field has v-filterselect-input style and the button in the right end that opens and closes the drop-down result list has v-filterselect-button style.
+
+The drop-down result list has an overall v-filterselect-suggestpopup style. 
+It contains the list of suggestions with v-filterselect-suggestmenu style. 
+When there are more items that fit in the menu, navigation buttons with v-filterselect-prevpage 
+and v-filterselect-nextpage styles are shown. 
+When they are not shown, the elements have -off suffix. 
+The status bar in the bottom that shows the paging status has v-filterselect-status style.
+*/

@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18 avr. 2021, 04:26:25
+    Author     : Jamâl-Dine DISSOU
+*/
+    .login-wrapper {
+       background-color: #F1F1F2;
+       font-family: Droid Serif Italique;
+    }
+
+    .titre-connexion {
+       text-align: center;
+       color: #2F496E;
+    }
+
+    .nom-application {
+       text-fill: #2F496E;
+       color: #2F496E;
+       font-family: Droid Serif Italique;
+       /* font-family: Montserrat; */
+       /* font-family: Times New Roman; */
+    }
+
+    .description-application {
+       text-fill: #2F496E;
+       color: #2F496E;
+       font-family: Roboto;
+       /* font-family: Times New Roman; */
+    }
+
+    
+    /* NON UTILISES
+.login-information {
+    min-width: 300px;
+    flex: 0;
+    background: var(--lumo-primary-color-50pct);
+}
+
+// Stack login-screen vertically on narrow screen
+@media (max-width: 800px) {
+
+    .login-screen {
+        flex-direction: column;
+    }
+
+    .login-information {
+        display: block;
+    }
+}
+
+    
+    */

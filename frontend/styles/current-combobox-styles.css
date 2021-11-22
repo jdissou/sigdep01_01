@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 mai 2021, 15:50:45
+    Author     : Jamâl-Dine DISSOU
+*/
+
+/* general style for all combos */
+[part="text-field"]{ 
+    height: 25px;
+    --my-color:               var(--ximo-combo-color); 
+    --my-font-size:           110%;
+    --my-font-weight:         var(--ximo-combo-font-weight); 
+    /* --my-background-image:    var(--ximo-combo-background-image);
+    --my-border-radius:       var(--ximo-combo-border-radius);*/
+ 
+    --my-border:              var(--ximo-combo-border);
+    --my-border-bottom-style: var(--ximo-combo-border-bottom-style);
+    --my-border-bottom-width: var(--ximo-combo-border-bottom-width);
+    --my-border-bottom-color: var(--ximo-combo-border-bottom-color);
+} 
+
+/* explicid for a combo that has been assigned the class "my-combobox-app" */
+/* Selects a shadow root host, only if it is
+   matched by the selector argument */
+:host(.my-combobox-app) [part="text-field"]{ 
+    --my-font-size:        110%;
+    /* background: transparent; */
+    height: 25px;
+}
+
+/* explicid for a combo that has been assigned the class "my-combobox-opt" */
+/* Selects a shadow root host, only if it is
+   matched by the selector argument */
+:host(.my-combobox-opt) [part="text-field"]{ 
+    --my-font-size:        100%;
+    --my-margin-right: 10px;
+    /* background: transparent; */
+    height: 25px;
+    
+}
+
+
+/*  widepopup : make popup part of combobox/dropdown wider than textbox part */
+:host([theme~="widepopup"]) {
+	 width: 500px;
+}
+
+/*  input-field height */
+:host([theme~="my-combobox-left-label"]) [part="input-field"] {
+    background: transparent;
+    height: 25px;
+}

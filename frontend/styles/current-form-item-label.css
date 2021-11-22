@@ -1,0 +1,20 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 mai 2021, 23:44:49
+    Author     : Jamâl-Dine DISSOU
+*/
+
+/* set the label width of a FormLayout */
+:host {
+        --vaadin-form-item-label-width: 18em; /*  valeur par défaut : 8em - Width of the label column when the labels are aside */
+        --vaadin-form-item-label-spacing: 1em; /* valeur par défaut : 1em - Spacing between the label column and the input column when the labels are aside */
+        --vaadin-form-item-row-spacing: 1em; /* valeur par défaut : 1em - Height of the spacing between the form item elements */
+        
+        --vaadin-form-layout-column-gap: 2em; /* valeur par défaut : 2em - Length of the gap between columns */
+        --vaadin-form-item-label-gap: 1em; /* valeur par défaut : 1em - Length of the gap between the label and input columns when the labels are aside */
+    }
+

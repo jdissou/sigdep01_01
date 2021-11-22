@@ -1,0 +1,55 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 mai 2021, 15:40:07
+    Author     : Jamâl-Dine DISSOU
+*/
+
+
+
+
+/* general style for all checkbox */
+[part="checkbox"]{ 
+      height: 25px;
+    --my-color:               var(--ximo-combo-color); 
+    --my-font-size:           110%;
+    --my-font-weight:         var(--ximo-combo-font-weight); 
+    /* --my-background-image:    var(--ximo-combo-background-image);*/
+    --my-border-radius:       var(--ximo-combo-border-radius);
+ 
+    --my-border:              var(--ximo-combo-border);
+    --my-border-bottom-style: var(--ximo-combo-border-bottom-style);
+    --my-border-bottom-width: var(--ximo-combo-border-bottom-width);
+    --my-border-bottom-color: var(--ximo-combo-border-bottom-color);
+} 
+
+
+/*
+text-field	Input element	vaadin-date-picker
+clear-button	Clear button	vaadin-date-picker
+toggle-button	Toggle button	vaadin-date-picker
+overlay-content	The overlay element	vaadin-date-picker
+overlay-header	Fullscreen mode header	vaadin-date-picker-overlay-content
+label	Fullscreen mode value/label	vaadin-date-picker-overlay-content
+clear-button	Fullscreen mode clear button	vaadin-date-picker-overlay-content
+toggle-button	Fullscreen mode toggle button	vaadin-date-picker-overlay-content
+years-toggle-button	Fullscreen mode years scroller toggle	vaadin-date-picker-overlay-content
+months	Months scroller	vaadin-date-picker-overlay-content
+years	Years scroller	vaadin-date-picker-overlay-content
+toolbar	Footer bar with buttons	vaadin-date-picker-overlay-content
+today-button	Today button	vaadin-date-picker-overlay-content
+cancel-button	Cancel button	vaadin-date-picker-overlay-content
+month	Month calendar	vaadin-date-picker-overlay-content
+year-number	Year number	vaadin-date-picker-overlay-content
+year-separator	Year separator	vaadin-date-picker-overlay-content
+month-header	Month title	vaadin-month-calendar
+weekdays	Weekday container	vaadin-month-calendar
+weekday	Weekday element	vaadin-month-calendar
+week-numbers	Week numbers container	vaadin-month-calendar
+week-number	Week number element	vaadin-month-calendar
+date	Date element	vaadin-month-calendar
+
+*/

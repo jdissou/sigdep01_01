@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 mai 2021, 16:12:33
+    Author     : Jamâl-Dine DISSOU
+*/
+
+/* General */
+[part="input-field"] {
+  
+    color:                  var(--ximo-field-color);
+    font-weight:            var(--ximo-field-font-weight);
+    background-color:       var(--ximo-field-background-color);
+    border-radius:          var(--ximo-field-border-radius);
+    border-width:           var(--ximo-field-border-width);
+    border-style:           var(--ximo-field-border-style);
+    border-color:           var(--ximo-field-border-color);
+    margin-right:           var(--ximo-field-margin-right);
+    
+    opacity:                var(--ximo-field-opacity);
+    max-width:              35ch;
+    min-width:              15ch;
+    
+    
+    --lumo-disabled-text-color: var(--ximo-field-disabled-color);
+  
+ }
+ 
+/* disabled */ 
+:host([disabled]) [part="input-field"] { 
+    border-color:      var(--ximo-field-disabled-border-color);
+} 
+
+/* For the label part of a text area */
+[part="label"] {
+    --lumo-disabled-text-color: var(--ximo-field-disabled-color);
+} 

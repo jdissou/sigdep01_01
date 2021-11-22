@@ -1,0 +1,57 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 mai 2021, 15:36:18
+    Author     : Jamâl-Dine DISSOU
+*/
+
+[part="input-field"]{
+     background-color: var(--my-background-color, 'auto');
+     color:            var(--my-color,            'auto');
+     font-size:        var(--my-font-size,        'auto');
+     font-weight:      var(--my-font-weight,      'auto');
+     background-image: var(--my-background-image, 'auto');
+     border:           var(--my-border,           'auto');
+     opacity:          var(--my-opacity,          'auto');
+ 
+ 
+     border-radius:    var(--my-border-radius,    'auto');
+     border-width:     var(--my-border-width,     'auto');
+     border-style:     var(--my-border-style,     'auto');
+     border-color:     var(--my-border-color,     'auto');
+   
+     border-bottom-style: var(--my-border-bottom-style,    'auto');
+     border-bottom-width: var(--my-border-bottom-width,    'auto');
+     border-bottom-color: var(--my-border-bottom-color,    'auto'); 
+    
+     margin-right: var(--my-margin-right,    'auto');
+   
+}
+
+[part="input-field"][disabled] {
+     background-color:   var(--my-background-color, 'auto');
+ 
+     --lumo-disabled-text-color: var(--my-color,  'auto');
+ 
+     font-size:          var(--my-font-size,        'auto');
+     font-weight:        var(--my-font-weight,      'auto');
+     background-image:   var(--my-background-image, 'auto');
+     border:             var(--my-border,           'auto');
+     opacity:            var(--my-opacity,          'auto'); 
+ 
+ 
+     border-radius:       var(--my-border-radius,    'auto');
+     border-width:        var(--my-border-width,     'auto');
+     border-style:        var(--my-border-style,     'auto');
+     border-color:        var(--my-border-color,     'auto');
+ 
+     border-bottom-style: var(--my-border-bottom-style,    'auto');
+     border-bottom-width: var(--my-border-bottom-width,    'auto');
+     border-bottom-color: var(--my-border-bottom-color,    'auto');     
+    
+     margin-right:        var(--my-margin-right,    'auto');
+     
+}
