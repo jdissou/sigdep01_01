@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BureauRegional" pageWidth="595" pageHeight="420" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="40" bottomMargin="10" uuid="afa94fd7-2995-47ff-869b-f1452ae3771d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<subDataset name="ReportDataset" uuid="fe5b2d0d-1b18-4e06-b944-4facd196e119">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="codeBureauRegional" class="java.lang.String"/>
+		<field name="libelleBureauRegional" class="java.lang.String"/>
+		<field name="libelleCourtBureauRegional" class="java.lang.String"/>
+		<field name="codeDescriptifBureauRegional" class="java.lang.String"/>
+		<sortField name="codeBureauRegional"/>
+	</subDataset>
+	<parameter name="BEAN_COLLECTION" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="PARAM_TITRE_RAPPORT" class="java.lang.String"/>
+	<parameter name="PARAM_DENOMINATION" class="java.lang.String"/>
+	<parameter name="PARAM_VERSION" class="java.lang.String"/>
+	<parameter name="PARAM_INITIALES" class="java.lang.String"/>
+	<parameter name="PARAM_BEAN_STRING01" class="java.lang.String"/>
+	<parameter name="PARAM_BEAN_STRING02" class="java.lang.String"/>
+	<parameter name="PARAM_BEAN_STRING03" class="java.lang.String"/>
+	<parameter name="PARAM_BEAN_STRING04" class="java.lang.String"/>
+	<parameter name="PARAM_BEAN_STRING05" class="java.lang.String"/>
+	<parameter name="PARAM_BEAN_STRING06" class="java.lang.String"/>
+	<parameter name="PARAM_BEAN_STRING07" class="java.lang.String"/>
+	<parameter name="PARAM_BEAN_LONG01" class="java.lang.Long"/>
+	<parameter name="PARAM_BEAN_DOUBLE01" class="java.lang.Double"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<variable name="PAGE_N_SUR_M" class="java.lang.String">
+		<variableExpression><![CDATA["Page " + $V{PAGE_NUMBER} + " sur " + $V{PAGE_COUNT}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="320" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="555" height="25" uuid="002d244a-ff40-49f7-bb63-888c3a4c001f">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Karma Medium" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PARAM_TITRE_RAPPORT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="110" height="20" uuid="014d8a7b-d1ef-486e-a5d4-08504b36404c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° Evénément :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="95" y="40" width="185" height="20" uuid="012d244a-ff40-49f7-bb63-888c3a4c001f">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PARAM_BEAN_STRING01}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="40" width="110" height="20" uuid="024d8a7b-d1ef-486e-a5d4-08504b36404c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date Evénement :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="375" y="40" width="185" height="20" uuid="012d244a-ff40-49f7-bb63-888c3a4c001f">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PARAM_BEAN_STRING02}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="70" width="110" height="20" uuid="024d8a7b-d1ef-486e-a5d4-08504b36404c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° Porteur :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="95" y="70" width="185" height="20" uuid="022d244a-ff40-49f7-bb63-888c3a4c001f">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PARAM_BEAN_STRING03}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="70" width="110" height="20" uuid="024d8a7b-d1ef-486e-a5d4-08504b36404c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dénomination Porteur :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="375" y="70" width="185" height="20" uuid="022d244a-ff40-49f7-bb63-888c3a4c001f">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PARAM_BEAN_STRING04}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="100" width="110" height="20" uuid="034d8a7b-d1ef-486e-a5d4-08504b36404c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Type Evénément :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="95" y="100" width="185" height="20" uuid="032d244a-ff40-49f7-bb63-888c3a4c001f">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PARAM_BEAN_STRING05}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="100" width="110" height="20" uuid="034d8a7b-d1ef-486e-a5d4-08504b36404c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Programme :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="375" y="100" width="185" height="20" uuid="032d244a-ff40-49f7-bb63-888c3a4c001f">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PARAM_BEAN_STRING06}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="130" width="110" height="20" uuid="044d8a7b-d1ef-486e-a5d4-08504b36404c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Objet Evénément :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="95" y="130" width="185" height="20" uuid="042d244a-ff40-49f7-bb63-888c3a4c001f">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PARAM_BEAN_STRING07}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="130" width="110" height="20" uuid="044d8a7b-d1ef-486e-a5d4-08504b36404c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Durée (heure) :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="375" y="130" width="185" height="20" uuid="042d244a-ff40-49f7-bb63-888c3a4c001f">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Karma Medium" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PARAM_BEAN_DOUBLE01}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="50" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<line>
+				<reportElement x="0" y="5" width="555" height="1" uuid="efa23329-3176-410e-a794-a66f1add6535">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="10" width="150" height="15" uuid="f4a9b0b2-854c-4c93-91ae-3f592747530c">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Karma Medium" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PARAM_VERSION}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy HH:mm">
+				<reportElement x="200" y="10" width="100" height="15" uuid="6205ea6f-1df1-4307-b188-4c0b86d2782e">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Karma Medium" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="320" y="10" width="50" height="15" uuid="fb49e6b0-9c87-4919-964c-435cd8b60e91">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Karma Medium" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PARAM_INITIALES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="10" width="100" height="15" uuid="67d59204-6bdf-4f05-acad-67008f193f96">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Karma Medium" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_N_SUR_M}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
