@@ -8,7 +8,9 @@ import com.progenia.incubatis01_03.securities.views.ChangementCodeSecretView;
 import com.progenia.incubatis01_03.securities.views.ParametrageSecuriteView;
 import com.progenia.incubatis01_03.utilities.ApplicationConstanteHolder;
 import com.progenia.incubatis01_03.utilities.MessageDialogHelper;
+import com.progenia.incubatis01_03.views.consultations.ConsultationEvenementIncubationLotView;
 import com.progenia.incubatis01_03.views.consultations.ConsultationEvenementPorteurView;
+import com.progenia.incubatis01_03.views.consultations.ConsultationEvenementPreIncubationView;
 import com.progenia.incubatis01_03.views.traitements.CloturePeriodeView;
 import com.progenia.incubatis01_03.views.editions.LivreEvenementIncubationView;
 import com.progenia.incubatis01_03.views.parametre.ParametreSystemeView;
@@ -367,8 +369,8 @@ public class MainView extends com.vaadin.flow.component.applayout.AppLayout {
                 createAccordionPanel("Consultation des Transactions",
                 new com.vaadin.flow.component.Component[]{    
 
-                    createDivAccordionItem("Evénements de Pré-Incubation", EmptyView.class),
-                    createDivAccordionItem("Evénements d'Incubation par Lot", EmptyView.class),
+                    createDivAccordionItem("Evénements de Pré-Incubation", ConsultationEvenementPreIncubationView.class),
+                    createDivAccordionItem("Evénements d'Incubation par Lot", ConsultationEvenementIncubationLotView.class),
                     createDivAccordionItem("Evénements d'Incubation par Porteur", ConsultationEvenementPorteurView.class),
                     createSeparatorItem(),
                     createDivAccordionItem("Contrats de Service Récurrent par Lot", EmptyView.class),
