@@ -8,9 +8,7 @@ import com.progenia.incubatis01_03.securities.views.ChangementCodeSecretView;
 import com.progenia.incubatis01_03.securities.views.ParametrageSecuriteView;
 import com.progenia.incubatis01_03.utilities.ApplicationConstanteHolder;
 import com.progenia.incubatis01_03.utilities.MessageDialogHelper;
-import com.progenia.incubatis01_03.views.consultations.ConsultationEvenementIncubationLotView;
-import com.progenia.incubatis01_03.views.consultations.ConsultationEvenementPorteurView;
-import com.progenia.incubatis01_03.views.consultations.ConsultationEvenementPreIncubationView;
+import com.progenia.incubatis01_03.views.consultations.*;
 import com.progenia.incubatis01_03.views.traitements.CloturePeriodeView;
 import com.progenia.incubatis01_03.views.editions.LivreEvenementIncubationView;
 import com.progenia.incubatis01_03.views.parametre.ParametreSystemeView;
@@ -373,17 +371,15 @@ public class MainView extends com.vaadin.flow.component.applayout.AppLayout {
                     createDivAccordionItem("Evénements d'Incubation par Lot", ConsultationEvenementIncubationLotView.class),
                     createDivAccordionItem("Evénements d'Incubation par Porteur", ConsultationEvenementPorteurView.class),
                     createSeparatorItem(),
-                    createDivAccordionItem("Contrats de Service Récurrent par Lot", EmptyView.class),
-                    createDivAccordionItem("Contrats de Service Récurrent par Porteur", EmptyView.class),
+                    createDivAccordionItem("Contrats de Service Récurrent par Lot", ConsultationContratLotView.class),
+                    createDivAccordionItem("Contrats de Service Récurrent par Porteur", ConsultationContratAccompagnementView.class),
                     createSeparatorItem(),
-                    createDivAccordionItem("Prestations de Service Ponctuel", EmptyView.class),
-                    createDivAccordionItem("Facturations de Service Ponctuel", EmptyView.class),
-                    createDivAccordionItem("Consommations de Service Récurrent", EmptyView.class),
-                    createDivAccordionItem("Facturations de Service Récurrent", EmptyView.class),
-                    createDivAccordionItem("Règlements de Facture", EmptyView.class),
+                    createDivAccordionItem("Prestations de Service Ponctuel", ConsultationPrestationDemandeView.class),
+                    createDivAccordionItem("Facturations de Service Ponctuel", ConsultationFacturationActeView.class),
+                    createDivAccordionItem("Règlements de Facture", ConsultationReglementPorteurView.class),
                     createSeparatorItem(),
-                    createDivAccordionItem("Mouvements Comptables", EcritureUniverselleView.class),
-                    createDivAccordionItem("Rapports d'Indicateur de Suivi", EmptyView.class)
+                    createDivAccordionItem("Mouvements Comptables", ConsultationMouvementComptaView.class),
+                    createDivAccordionItem("Rapports d'Indicateur de Suivi", ConsultationMesureIndicateurView.class)
                 })
             );
             

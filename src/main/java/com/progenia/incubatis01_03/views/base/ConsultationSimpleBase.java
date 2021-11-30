@@ -54,9 +54,9 @@ public abstract class ConsultationSimpleBase<T extends Serializable> extends Con
             }
             else
             {
-                this.btnAnnuler.setEnabled((SecurityService.getInstance().isModificationAutorisee(this.strNomFormulaire)));
+                this.btnAnnuler.setEnabled(this.isButtonAnnulerVisible && (SecurityService.getInstance().isModificationAutorisee(this.strNomFormulaire)));
 
-                this.btnImprimer.setEnabled(true);
+                this.btnImprimer.setEnabled(this.isButtonImprimerVisible && true);
             }
         } 
         catch (Exception e) 

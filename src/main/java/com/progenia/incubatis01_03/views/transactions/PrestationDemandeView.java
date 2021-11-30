@@ -240,7 +240,7 @@ public class PrestationDemandeView extends SaisieTransactionMaitreDetailsBase<Pr
             //this.customSetButtonOptionnel02Icon(new Icon(VaadinIcon.FILE_REFRESH));
 
             this.customSetButtonImprimerVisible(false); //Pas d'impression
-            this.customSetButtonDetailsText("Liste des Variables de Consommation");
+            this.customSetButtonDetailsText("Saisir les Variables");
             
             //Set default values
             //utilisateurCourant

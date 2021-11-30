@@ -401,7 +401,7 @@ public class FacturationAbonnementView extends TransactionBase<FacturationAbonne
             this.customSetButtonOptionnel01Icon(new Icon(VaadinIcon.FILE_REFRESH));
 
             this.customSetButtonImprimerVisible(false); //Pas d'impression
-            this.customSetButtonDetailsText("Liste des Facturations");
+            this.customSetButtonDetailsText("Saisir les Facturations");
             
             //Set default values
             //utilisateurCourant

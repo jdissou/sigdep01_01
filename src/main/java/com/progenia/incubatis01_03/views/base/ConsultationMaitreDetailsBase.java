@@ -65,9 +65,9 @@ public abstract class ConsultationMaitreDetailsBase<T extends Serializable, U ex
             }
             else
             {
-                this.btnAnnuler.setEnabled((SecurityService.getInstance().isModificationAutorisee(this.strNomFormulaire)));
+                this.btnAnnuler.setEnabled((this.isButtonAnnulerVisible && SecurityService.getInstance().isModificationAutorisee(this.strNomFormulaire)));
 
-                this.btnImprimer.setEnabled(true);
+                this.btnImprimer.setEnabled(this.isButtonImprimerVisible && true);
             } //if (masterFilteredSize == 0) //if (this.masterBeanList.size() == 0)
         } 
         catch (Exception e) 

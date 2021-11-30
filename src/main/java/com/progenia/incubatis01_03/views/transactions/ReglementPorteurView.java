@@ -315,7 +315,7 @@ public class ReglementPorteurView extends SaisieTransactionMaitreDetailsBase<Reg
             this.customSetButtonOptionnel01Icon(new Icon(VaadinIcon.FILE_REFRESH));
 
             this.customSetButtonImprimerVisible(false); //Pas d'impression
-            this.customSetButtonDetailsText("Mettre à jour Liste");
+            this.customSetButtonDetailsText("Saisir les Factures");
             
             //Set default values
             //utilisateurCourant

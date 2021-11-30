@@ -61,7 +61,7 @@ public abstract class FichierMajListeDetailsBase<T extends Serializable, U exten
             else
             {
                 this.btnModifier.setEnabled((this.isButtonModifierVisible && this.isAllowEditItem && SecurityService.getInstance().isModificationAutorisee(this.strNomFormulaire)));
-                this.btnImprimer.setEnabled(true);
+                this.btnImprimer.setEnabled(this.isButtonImprimerVisible);
             } //if (masterFilteredSize == 0) //if (this.masterBeanList.size() == 0)
         } 
         catch (Exception e) 

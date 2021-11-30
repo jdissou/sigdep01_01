@@ -155,5 +155,9 @@ public class FacturationActe implements Serializable {
     public String getDateFinPrestationToString() {
         return (this.dateFinPrestation.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)));
     }
+
+    public String getNoPorteur() {
+        return (this.getPorteur() == null ? null : this.getPorteur().getNoPorteur());
+    }
 }
 

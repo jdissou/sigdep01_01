@@ -151,8 +151,8 @@ public class RapprochementBancaireView extends FichierMajListeBase<MouvementComp
     private ComboBox<Utilisateur> cboCodeUtilisateurFilter = new ComboBox<>();
     private ComboBox<CentreIncubateur> cboCodeCentreIncubateurFilter = new ComboBox<>();
     private ComboBox<Compte> cboNoCompteFilter = new ComboBox<>();
-    private SuperDatePicker datDebutDateMouvement = new SuperDatePicker();
-    private SuperDatePicker datFinDateMouvement = new SuperDatePicker();
+    private SuperDatePicker datDebutPeriodeFilter = new SuperDatePicker();
+    private SuperDatePicker datFinPeriodeFilter = new SuperDatePicker();
     
     /* Column in MouvementComptaDetails grid */
     /* Fields to filter items in MouvementComptaDetais entity */
@@ -303,7 +303,7 @@ public class RapprochementBancaireView extends FichierMajListeBase<MouvementComp
 
             //7 - Setup ReadOnly Field Mode - Configure ReadOnly Field Set ComboBox DataProvider - Manage ToolBars
             this.setComboBoxDataProvider();
-            this.setFieldsInitValues();
+            this.setFilterFieldsInitValues();
             this.configureReadOnlyField();
             
             //8 - Adds the top toolbar and the grid to the layout
@@ -391,17 +391,17 @@ public class RapprochementBancaireView extends FichierMajListeBase<MouvementComp
             else {
                 noCompte = this.cboNoCompteFilter.getValue().getNoCompte();
             }
-            if (this.datDebutDateMouvement.getValue() == null) {
+            if (this.datDebutPeriodeFilter.getValue() == null) {
                 debutPeriode = this.debutPeriodeExercice;
             }
             else {
-                debutPeriode = this.datDebutDateMouvement.getValue();
+                debutPeriode = this.datDebutPeriodeFilter.getValue();
             }
-            if (this.datFinDateMouvement.getValue() == null) {
+            if (this.datFinPeriodeFilter.getValue() == null) {
                 finPeriode = this.finPeriodeExercice;
             }
             else {
-                finPeriode = this.datFinDateMouvement.getValue();
+                finPeriode = this.datFinPeriodeFilter.getValue();
             }
 
             return (ArrayList)this.mouvementComptaDetailsBusiness.getRapprochementBancaireSource(this.centreIncubateurCible.getCodeCentreIncubateur(), this.exerciceCourant.getNoExercice(), noCompte, debutPeriode, finPeriode);
@@ -454,10 +454,10 @@ public class RapprochementBancaireView extends FichierMajListeBase<MouvementComp
                 }
             });
 
-            this.datDebutDateMouvement.setWidth(150, Unit.PIXELS);
-            this.datDebutDateMouvement.addClassName(DATEPICKER_LEFT_LABEL);
-            this.datDebutDateMouvement.setLocale(Locale.FRENCH);
-            this.datDebutDateMouvement.addValueChangeListener(event -> {
+            this.datDebutPeriodeFilter.setWidth(150, Unit.PIXELS);
+            this.datDebutPeriodeFilter.addClassName(DATEPICKER_LEFT_LABEL);
+            this.datDebutPeriodeFilter.setLocale(Locale.FRENCH);
+            this.datDebutPeriodeFilter.addValueChangeListener(event -> {
                 if (event.getValue() != null) {
                     //AfterUpdate
                     //1 - Actualiser l'affichage des grids - Retrieving masterBeanList from the database
@@ -466,10 +466,10 @@ public class RapprochementBancaireView extends FichierMajListeBase<MouvementComp
                 }
             });
             
-            this.datFinDateMouvement.setWidth(150, Unit.PIXELS);
-            this.datFinDateMouvement.addClassName(DATEPICKER_LEFT_LABEL);
-            this.datFinDateMouvement.setLocale(Locale.FRENCH);
-            this.datFinDateMouvement.addValueChangeListener(event -> {
+            this.datFinPeriodeFilter.setWidth(150, Unit.PIXELS);
+            this.datFinPeriodeFilter.addClassName(DATEPICKER_LEFT_LABEL);
+            this.datFinPeriodeFilter.setLocale(Locale.FRENCH);
+            this.datFinPeriodeFilter.addValueChangeListener(event -> {
                 if (event.getValue() != null) {
                     //AfterUpdate
                     //1 - Actualiser l'affichage des grids - Retrieving masterBeanList from the database
@@ -486,8 +486,8 @@ public class RapprochementBancaireView extends FichierMajListeBase<MouvementComp
             this.formLayout.addFormItem(this.cboCodeUtilisateurFilter, "Utilisateur :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH150);
             this.formLayout.addFormItem(this.cboCodeCentreIncubateurFilter, "Centre Incubateur :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH150);
             this.formLayout.addFormItem(this.cboNoCompteFilter, "N° Compte :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH150);
-            this.formLayout.addFormItem(this.datDebutDateMouvement, "Du :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH150);
-            this.formLayout.addFormItem(this.datFinDateMouvement, "Au :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH150);
+            this.formLayout.addFormItem(this.datDebutPeriodeFilter, "Du :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH150);
+            this.formLayout.addFormItem(this.datFinPeriodeFilter, "Au :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH150);
             
             //5 - Making the Layout Responsive : Custom responsive layouting
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column.
@@ -528,7 +528,7 @@ public class RapprochementBancaireView extends FichierMajListeBase<MouvementComp
         }
     }    
     
-    private void setFieldsInitValues() {
+    private void setFilterFieldsInitValues() {
         try 
         {
             if (this.exerciceCourant != null)
@@ -539,16 +539,16 @@ public class RapprochementBancaireView extends FichierMajListeBase<MouvementComp
                 this.cboCodeCentreIncubateurFilter.setValue(this.centreIncubateurCible);
 
             if (this.debutPeriodeExercice != null) 
-                this.datDebutDateMouvement.setValue(this.debutPeriodeExercice);
+                this.datDebutPeriodeFilter.setValue(this.debutPeriodeExercice);
             if (this.finPeriodeExercice != null) 
-                this.datFinDateMouvement.setValue(this.finPeriodeExercice);
+                this.datFinPeriodeFilter.setValue(this.finPeriodeExercice);
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("RapprochementBancaireView.setFieldsInitValues", e.toString());
+            MessageDialogHelper.showAlertDialog("RapprochementBancaireView.setFilterFieldsInitValues", e.toString());
             e.printStackTrace();
         }
-    } //private void setFieldsInitValues() {
+    } //private void setFilterFieldsInitValues() {
 
     private void configureReadOnlyField() {
         try 
@@ -557,8 +557,8 @@ public class RapprochementBancaireView extends FichierMajListeBase<MouvementComp
             this.cboNoExerciceFilter.setReadOnly(true); 
             this.cboCodeCentreIncubateurFilter.setReadOnly(true); 
             this.cboNoCompteFilter.setReadOnly(false); 
-            this.datDebutDateMouvement.setReadOnly(false);
-            this.datFinDateMouvement.setReadOnly(false);
+            this.datDebutPeriodeFilter.setReadOnly(false);
+            this.datFinPeriodeFilter.setReadOnly(false);
         } 
         catch (Exception e) 
         {

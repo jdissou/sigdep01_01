@@ -229,7 +229,7 @@ public class ContratLotView extends SaisieTransactionMaitreDetailsBase<ContratLo
             this.isAllowDeleteItem = true;
             
             this.customSetButtonImprimerVisible(false); //Pas d'impression
-            this.customSetButtonDetailsText("Liste des Porteurs");
+            this.customSetButtonDetailsText("Saisir les Porteurs");
             
             //Set default values
             //utilisateurCourant

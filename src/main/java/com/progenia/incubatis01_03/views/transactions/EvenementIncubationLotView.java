@@ -265,7 +265,7 @@ public class EvenementIncubationLotView extends SaisieTransactionMaitreDetailsBa
             this.customSetButtonOptionnel02Icon(new Icon(VaadinIcon.FILE_REFRESH));
 
             this.customSetButtonImprimerVisible(false); //Pas d'impression
-            this.customSetButtonDetailsText("Mettre à jour Liste");
+            this.customSetButtonDetailsText("Saisir les Porteurs");
             
             //Set default values
             //utilisateurCourant

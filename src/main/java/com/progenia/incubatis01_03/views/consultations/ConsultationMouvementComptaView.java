@@ -3,25 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.progenia.incubatis01_03.views.traitements;
+package com.progenia.incubatis01_03.views.consultations;
 
 import com.google.gwt.thirdparty.guava.common.base.Strings;
-import com.progenia.incubatis01_03.data.business.CentreIncubateurBusiness;
-import com.progenia.incubatis01_03.data.business.CentreIncubateurExerciceBusiness;
-import com.progenia.incubatis01_03.data.business.CompteBusiness;
-import com.progenia.incubatis01_03.data.business.ExerciceBusiness;
-import com.progenia.incubatis01_03.data.business.JournalBusiness;
-import com.progenia.incubatis01_03.data.business.MouvementComptaBusiness;
-import com.progenia.incubatis01_03.data.business.MouvementComptaDetailsBusiness;
-import com.progenia.incubatis01_03.data.business.OperationComptableBusiness;
-import com.progenia.incubatis01_03.data.entity.CentreIncubateur;
-import com.progenia.incubatis01_03.data.entity.CentreIncubateurExercice;
-import com.progenia.incubatis01_03.data.entity.Compte;
-import com.progenia.incubatis01_03.data.entity.Exercice;
-import com.progenia.incubatis01_03.data.entity.Journal;
-import com.progenia.incubatis01_03.data.entity.MouvementCompta;
-import com.progenia.incubatis01_03.data.entity.MouvementComptaDetails;
-import com.progenia.incubatis01_03.data.entity.OperationComptable;
+import com.progenia.incubatis01_03.data.business.*;
+import com.progenia.incubatis01_03.data.entity.*;
 import com.progenia.incubatis01_03.dialogs.ModifierMouvementComptaDialog;
 import com.progenia.incubatis01_03.dialogs.ModifierMouvementComptaDialog.MouvementComptaRefreshEvent;
 import com.progenia.incubatis01_03.dialogs.ModifierMouvementComptaDialog.MouvementComptaUpdateEvent;
@@ -32,7 +18,7 @@ import com.progenia.incubatis01_03.systeme.data.business.SystemeValidationBusine
 import com.progenia.incubatis01_03.systeme.data.entity.SystemeValidation;
 import com.progenia.incubatis01_03.utilities.ApplicationConstanteHolder;
 import com.progenia.incubatis01_03.utilities.MessageDialogHelper;
-import com.progenia.incubatis01_03.views.base.FichierMajListeDetailsBase;
+import com.progenia.incubatis01_03.views.base.ConsultationMaitreDetailsBase;
 import com.progenia.incubatis01_03.views.main.MainView;
 import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.ClickEvent;
@@ -46,33 +32,25 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.HeaderRow;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
-import com.vaadin.flow.data.provider.DataCommunicator;
-import com.vaadin.flow.data.provider.DataProvider;
-import com.vaadin.flow.data.provider.ListDataProvider;
-import com.vaadin.flow.data.provider.Query;
-import com.vaadin.flow.data.provider.SortDirection;
+import com.vaadin.flow.data.provider.*;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.data.renderer.NumberRenderer;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.VaadinSession;
-import java.text.NumberFormat;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Locale;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
-import java.util.function.Supplier;
-import java.util.stream.Stream;
-import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.vaadin.miki.superfields.dates.SuperDatePicker;
 import org.vaadin.miki.superfields.text.SuperTextField;
 import org.vaadin.spring.events.EventBus;
 import org.vaadin.spring.events.annotation.EventBusListenerMethod;
+
+import javax.annotation.PostConstruct;
+import java.text.NumberFormat;
+import java.time.LocalDate;
+import java.util.*;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 /**
  *
@@ -89,9 +67,9 @@ import org.vaadin.spring.events.annotation.EventBusListenerMethod;
 
 //@RequiresSecurityCheck custom-annotation tells security check is required.
 @RequiresSecurityCheck
-@Route(value = "validation-brouillard", layout = MainView.class)
-@PageTitle(ValidationBrouillardView.PAGE_TITLE)
-public class ValidationBrouillardView extends FichierMajListeDetailsBase<MouvementCompta, MouvementComptaDetails> {
+@Route(value = "consultation-mouvement-comptable", layout = MainView.class)
+@PageTitle(ConsultationMouvementComptaView.PAGE_TITLE)
+public class ConsultationMouvementComptaView extends ConsultationMaitreDetailsBase<MouvementCompta, MouvementComptaDetails> {
     /*
     Pour connecter la vue au backend afin de pouvoir récupérer les données à afficher dans la grille. 
     On utilise l'injection de dépendances de Spring pour obtenir le service de backend, 
@@ -164,7 +142,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
     private SystemeValidationBusiness validationComptaBusiness;
     
     //Paramètres de Personnalisation ProGenia
-    final static String PAGE_TITLE = "Validation des Mouvements Comptables du Brouillard";
+    final static String PAGE_TITLE = "Consultation des Mouvements Comptables";
     
     /* Defines a new FormLayout. */
     private FormLayout formLayout = new FormLayout();
@@ -214,7 +192,6 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
 
     private Long currentNoMouvement = 0L;
     
-    private SystemeValidation validationComptaJournal;
     private ArrayList<MouvementComptaDetails> currentMouvementComptaDetailsList = new ArrayList<MouvementComptaDetails>();    
 
     /***
@@ -243,32 +220,30 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.onAttach", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.onAttach", e.toString());
             e.printStackTrace();
         }
     }
 
     
     /***
-     * We can then create the initialization method, where we instantiate the ValidationBrouillardView. 
+     * We can then create the initialization method, where we instantiate the ConsultationMouvementComptaView. 
      */
     private void initialize() {
         try 
         {
             //1- Mise à jour des propriétés du formulaire
             this.reportName = "MouvementCompta";
-            this.reportTitle = "Validation des Mouvements Comptables du Brouillard";
+            this.reportTitle = "Consultation des Mouvements Comptables";
+
+            this.isButtonImprimerVisible = true;
 
             this.strNomFormulaire = this.getClass().getSimpleName();
-            this.isAllowInsertItem = false;
-            this.isAllowEditItem = true;
-            this.isAllowDeleteItem = true;
-            
+
             this.currentNoMouvement = 0L;
-            
+
+            this.customSetButtonAnnulerVisible(false);
             this.customSetButtonImprimerVisible(false);
-            this.customSetButtonOptionnel01Text("Valider Mouvement Comptable");
-            this.customSetButtonOptionnel01Icon(new Icon(VaadinIcon.CHECK));
 
             //Set default values
             //utilisateurCourant
@@ -314,14 +289,6 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
                 this.finPeriodeExercice = LocalDate.now();
             }
 
-            Optional<SystemeValidation> validationComptaOptional = this.validationComptaBusiness.findById("J");
-            if (validationComptaOptional.isPresent()) {
-                this.validationComptaJournal = validationComptaOptional.get();
-            }
-            else {
-                this.validationComptaJournal = null;
-            }
-
             //2 - Setup the top toolbar
             this.customSetupTopToolBar();
             
@@ -344,7 +311,6 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
             this.setComboBoxDataProvider();
             this.setFilterFieldsInitValues();
             this.configureReadOnlyField();
-            
             //8 - Adds the top toolbar and the masterGrid to the layout
             this.add(this.topToolBar, this.formLayout, this.masterGrid, this.detailsGrid);        
             
@@ -356,7 +322,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.initialize", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.initialize", e.toString());
             e.printStackTrace();
         }
     }
@@ -416,7 +382,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.setupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.setupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void setupDataprovider()
@@ -446,7 +412,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.workingFetchMasterItems", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.workingFetchMasterItems", e.toString());
             e.printStackTrace();
             return (null);
         }
@@ -477,24 +443,11 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.workingFetchDetailsItems", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.workingFetchDetailsItems", e.toString());
             e.printStackTrace();
             return (null);
         }
     } //protected ArrayList<MouvementCompta> workingFetchDetailsItems()
-
-    @Override
-    protected void workingDeleteItem(MouvementComptaDetails mouvementComptaDetailsItem) {
-        try 
-        {
-            this.mouvementComptaDetailsBusiness.delete(mouvementComptaDetailsItem);
-        } 
-        catch (Exception e) 
-        {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.workingDeleteItem", e.toString());
-            e.printStackTrace();
-        }
-    } //protected void workingDeleteItem(MouvementCompta mouvementComptaItem) {
 
     private void configureComponents() {
         //Associate the data with the formLayout columns and load the data. 
@@ -568,7 +521,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.configureComponents", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.configureComponents", e.toString());
             e.printStackTrace();
         }
     }    
@@ -588,7 +541,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.setComboBoxDataProvider", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.setComboBoxDataProvider", e.toString());
             e.printStackTrace();
         }
     }    
@@ -609,7 +562,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.setFilterFieldsInitValues", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.setFilterFieldsInitValues", e.toString());
             e.printStackTrace();
         }
     } //private void setFilterFieldsInitValues() {
@@ -625,7 +578,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.configureReadOnlyField", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.configureReadOnlyField", e.toString());
             e.printStackTrace();
         }
     } //private void configureReadOnlyField() {
@@ -644,7 +597,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
             
             //this.masterGrid.setSelectionMode(Grid.SelectionMode.SINGLE);
             this.masterGrid.setSelectionMode(Grid.SelectionMode.MULTI);
-
+            
             // Disable selection: will receive only click events instead
             //this.masterGrid.setSelectionMode(Grid.SelectionMode.NONE);
 
@@ -689,6 +642,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
                         }
                     )
             ).setKey("Journal").setHeader("Code Journal").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("125px"); // fixed column
+
             libelleMouvementColumn = this.masterGrid.addColumn(MouvementCompta::getLibelleMouvement).setKey("LibelleMouvement").setHeader("Objet").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("300px"); // fixed column
             noPieceColumn = this.masterGrid.addColumn(MouvementCompta::getNoPiece).setKey("NoPiece").setHeader("N° Pièce").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("125px"); // fixed column
             operationComptableColumn = this.masterGrid.addColumn(new ComponentRenderer<>(
@@ -783,7 +737,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.configureMasterGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.configureMasterGridWithFilters", e.toString());
             e.printStackTrace();
         }
     }    
@@ -827,7 +781,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.configureDetailsGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.configureDetailsGridWithFilters", e.toString());
             e.printStackTrace();
         }
     }    
@@ -854,7 +808,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.computeDetailsGridSummaryRow", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.computeDetailsGridSummaryRow", e.toString());
             e.printStackTrace();
         }
     } //private void computeDetailsGridSummaryRow() {
@@ -903,7 +857,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.applyFilterToTheMasterGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.applyFilterToTheMasterGrid", e.toString());
             e.printStackTrace();
         }
     }
@@ -921,51 +875,22 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.applyFilterToTheDetailsGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.applyFilterToTheDetailsGrid", e.toString());
             e.printStackTrace();
         }
     }
     
-    @Override
-    protected void workingHandleModifierClick(ClickEvent event) {
-        try 
-        {
-            /*
-            You can get the current selection from the Grid using the getSelectedItems() method. 
-            The returned Set contains one item in single-selection mode, 
-            or several items in multi-selection mode.            
-            */
-            Set<MouvementCompta> selected = this.masterGrid.getSelectedItems();
-            
-            if (selected.isEmpty() == true)
-            {
-                MessageDialogHelper.showWarningDialog("Modification d'enregistrement", "Aucune ligne n'est sélectionnée. Veuillez d'abord sélectionner une ligne dans le tableau.");
-            }
-            else
-            {
-                //Ouvre l'instance du Dialog ModifierMouvementComptaDialog.
-                ModifierMouvementComptaDialog.getInstance().showDialog("Modification de Mouvement Comptable", new ArrayList<MouvementCompta>(selected), this.uiEventBus, this.mouvementComptaDetailsBusiness, this.exerciceBusiness, this.utilisateurBusiness, this.centreIncubateurBusiness, this.journalBusiness, this.operationComptableBusiness, this.compteBusiness, this.debutPeriodeExercice, this.finPeriodeExercice);
-            }
-        } 
-        catch (Exception e) 
-        {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.workingHandleModifierClick", e.toString());
-            e.printStackTrace();
-        }
-    } //protected void workingHandleModifierClick() {
-
-
     @EventBusListenerMethod
     private void handleUpdateEventFromEditorView(MouvementComptaUpdateEvent event) {
         //Handle Udpdate Event received from EditorView
         try 
         {
-            //1 - Sauvegarder la modification dans le backe    
+            //1 - Sauvegarder la modification dans le backend
             MouvementCompta updateInstance = this.mouvementComptaBusiness.save(event.getMouvementCompta());
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.handleUpdateEventFromEditorView", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.handleUpdateEventFromEditorView", e.toString());
             e.printStackTrace();
         }
     }
@@ -1000,7 +925,7 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.handleRefreshEventFromEditorView", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.handleRefreshEventFromEditorView", e.toString());
             e.printStackTrace();
         }
     }
@@ -1021,163 +946,8 @@ public class ValidationBrouillardView extends FichierMajListeDetailsBase<Mouveme
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.selectFirstRowOfTheMasterGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationMouvementComptaView.selectFirstRowOfTheMasterGrid", e.toString());
             e.printStackTrace();
-        }
-    }
-
-    @Override
-    protected void workingHandleButtonOptionnel01Click(ClickEvent event) {
-        //Valider le mouvement comptable courant au Journal
-        try 
-        {
-            //Code Ad Hoc à exécuter pour valider les mouvements comptables
-            //Valider les mouvements comptables sélectionnés
-
-            Set<MouvementCompta> selected = this.masterGrid.getSelectedItems();
-
-            if (selected.isEmpty() == true)
-            {
-                MessageDialogHelper.showWarningDialog("Validation de Mouvement Comptable au Journal", "Aucun Mouvement Comptable n'est sélectionné. Veuillez d'abord sélectionner un mouvement comptable dans le tableau.");
-            }
-            else
-            {
-                //Java Lambda Implementation of ComponentEventListener<ClickEvent<Button>>
-                ComponentEventListener<ClickEvent<Button>> noClickListener = ev -> {
-                    //Abandonner la suppression
-                    //Rien à faire
-                };
-
-                //Java Lambda Implementation of ComponentEventListener<ClickEvent<Button>>
-                ComponentEventListener<ClickEvent<Button>> yesClickListener = ev -> {
-                    //Confirmer la validation
-                    //1 - Iterate Set Using For-Each Loop
-                    for(MouvementCompta item : selected) {
-                        this.validerMouvementCompta(item);
-                    }            
-
-                    MessageDialogHelper.showInformationDialog("Validation de Mouvement Comptable au Journal", "La Validation des Mouvements Comptables a été exécutée avec succès.");
-                    
-                    //2 - Actualiser l'affichage du masterGrid - Retrieving masterBeanList from the database
-                    this.customRefreshMasterGrid();
-                    this.customRefreshDetailsGrid();
-                    this.selectFirstRowOfTheMasterGrid();
-                    
-                    //3 - Activation de la barre d'outils
-                    this.customActivateMainToolBar();
-                };
-
-                MessageDialogHelper.showYesNoDialog("Validation de Mouvement Comptable au Journal", "Désirez-vous valider les Mouvements Comptables Sélectionnés au Journal?. Cliquez sur Oui pour valider ces mouvements comptables au Journal.", yesClickListener, noClickListener);
-            }
-        } 
-        catch (Exception e) 
-        {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.workingHandleButtonOptionnel01Click", e.toString());
-            e.printStackTrace();
-        }
-    } //protected void workingHandleButtonOptionnel01Click() {
-
-    private void validerMouvementCompta(MouvementCompta mouvementCompta) {
-        try 
-        {
-            if (this.isValidMouvementCompta(mouvementCompta)) {
-                mouvementCompta.setValidation(this.validationComptaJournal);
-                //Enregistrement Immédiat du MouvementCompta - Save it to the backend
-                mouvementCompta = this.mouvementComptaBusiness.save(mouvementCompta);
-            }
-        } 
-        catch (Exception e) 
-        {
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.validerMouvementCompta", e.toString());
-            e.printStackTrace();
-        }
-    }
-
-    private Boolean isValidMouvementCompta(MouvementCompta mouvementCompta) {
-        Boolean isValidOk = true;
-        
-        try 
-        {
-            if (mouvementCompta.getDateMouvement() == null) {
-                isValidOk = false;
-            }
-            else if ((mouvementCompta.getDateMouvement().isBefore(this.debutPeriodeExercice)) || (mouvementCompta.getDateMouvement().isAfter(this.finPeriodeExercice))) {
-                isValidOk = false;
-            }
-            else if (mouvementCompta.getExercice() == null) {
-                isValidOk = false;
-            }
-            else if (mouvementCompta.getUtilisateur() == null) {
-                isValidOk = false;
-            }
-            else if (mouvementCompta.getCentreIncubateur() == null) {
-                isValidOk = false;
-            }
-            else if (mouvementCompta.getJournal() == null) {
-                isValidOk = false;
-            }
-            else if (mouvementCompta.getOperationComptable() == null) {
-                isValidOk = false;
-            }
-            else if (mouvementCompta.getValidation() == null) {
-                isValidOk = false;
-            }
-            else if ((mouvementCompta.getNoPiece() == null) || (Strings.isNullOrEmpty(mouvementCompta.getNoPiece()) == true)) {                    
-                isValidOk = false;
-            }
-            else if (this.isValidMouvementComptaDetails(mouvementCompta) == false)
-            {
-                isValidOk = false;
-            }
-            
-            return isValidOk;
-        } 
-        catch (Exception e) 
-        {
-            
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.isValidMouvementCompta", e.toString());
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-    private Boolean isValidMouvementComptaDetails(MouvementCompta mouvementCompta) {
-        Boolean isValidOk = true;
-        Long totalDebitMouvement = 0L;
-        Long totalCreditMouvement = 0L;
-        
-        try 
-        {
-            this.currentMouvementComptaDetailsList = (ArrayList)this.mouvementComptaDetailsBusiness.getDetailsRelatedDataByMouvementCompta(mouvementCompta);
-
-            Supplier<Stream<MouvementComptaDetails>> streamSupplier = () -> this.currentMouvementComptaDetailsList.stream();
-
-            totalDebitMouvement = streamSupplier.get().mapToLong(MouvementComptaDetails::getDebit).sum();
-            totalCreditMouvement = streamSupplier.get().mapToLong(MouvementComptaDetails::getCredit).sum();
-            
-            /*
-            this.totalDebit = this.currentMouvementComptaDetailsList.stream().mapToLong(MouvementComptaDetails::getDebit).sum();
-            this.totalCredit = this.currentMouvementComptaDetailsList.stream().mapToLong(MouvementComptaDetails::getCredit).sum();
-            */
-
-            if ((totalDebitMouvement == 0) && (totalCreditMouvement == 0))
-            {
-                //Pas d'Ecriture
-                isValidOk = false;
-            }
-            else if (!Objects.equals(totalDebitMouvement, totalCreditMouvement))
-            {
-                isValidOk = false;
-            }
-            
-            return isValidOk;
-        } 
-        catch (Exception e) 
-        {
-            
-            MessageDialogHelper.showAlertDialog("ValidationBrouillardView.isValidMouvementComptaDetails", e.toString());
-            e.printStackTrace();
-            return false;
         }
     }
 

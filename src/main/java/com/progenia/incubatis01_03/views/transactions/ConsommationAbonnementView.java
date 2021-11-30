@@ -291,7 +291,7 @@ public class ConsommationAbonnementView extends TransactionBase<FacturationAbonn
             this.customSetButtonOptionnel01Icon(new Icon(VaadinIcon.FILE_REFRESH));
 
             this.customSetButtonImprimerVisible(false); //Pas d'impression
-            this.customSetButtonDetailsText("Liste des Consommations");
+            this.customSetButtonDetailsText("Saisir les Consommations");
             
             //Set default values
             //utilisateurCourant

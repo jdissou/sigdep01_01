@@ -338,7 +338,7 @@ public class FacturationActeView extends SaisieTransactionMaitreDetailsBase<Fact
             this.customSetButtonOptionnel01Icon(new Icon(VaadinIcon.FILE_REFRESH));
 
             this.customSetButtonImprimerVisible(false); //Pas d'impression
-            this.customSetButtonDetailsText("Mettre à jour Liste");
+            this.customSetButtonDetailsText("Saisir les Prestations");
             
             //Set default values
             //utilisateurCourant

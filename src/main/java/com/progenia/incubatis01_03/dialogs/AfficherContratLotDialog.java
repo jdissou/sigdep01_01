@@ -238,8 +238,8 @@ public class AfficherContratLotDialog extends BaseAfficherTransactionDialog<Cont
                 ).setKey("Utilisateur").setHeader("Utilisateur").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("175px"); // fixed column
 
                 Grid.Column<ContratLot> noChronoColumn = this.grid.addColumn(ContratLot::getNoChrono).setKey("NoChrono").setHeader("N° Contrat").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("150px"); // fixed column
-                Grid.Column<ContratLot> dateContratColumn = this.grid.addColumn(ContratLot::getDateContratToString).setKey("DateContrat").setHeader("Date Evénement").setTextAlign(ColumnTextAlign.CENTER).setFlexGrow(0).setWidth("150px"); // fixed column
-                //Grid.Column<ContratLot> dateContratColumn = this.grid.addColumn(new LocalDateRenderer<>(ContratLot::getDateContrat, DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT))).setKey("DateContrat").setHeader("Date Evénement").setTextAlign(ColumnTextAlign.CENTER).setFlexGrow(0).setWidth("175px"); // fixed column
+                Grid.Column<ContratLot> dateContratColumn = this.grid.addColumn(ContratLot::getDateContratToString).setKey("DateContrat").setHeader("Date Contrat").setTextAlign(ColumnTextAlign.CENTER).setFlexGrow(0).setWidth("150px"); // fixed column
+                //Grid.Column<ContratLot> dateContratColumn = this.grid.addColumn(new LocalDateRenderer<>(ContratLot::getDateContrat, DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT))).setKey("DateContrat").setHeader("Date Contrat").setTextAlign(ColumnTextAlign.CENTER).setFlexGrow(0).setWidth("175px"); // fixed column
 
                 Grid.Column<ContratLot> centreIncubateurColumn = this.grid.addColumn(new ComponentRenderer<>(
                             contratLot -> {

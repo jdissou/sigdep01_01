@@ -169,8 +169,8 @@ public class ContrepassationView extends ConsultationMaitreDetailsBase<Mouvement
     private ComboBox<CentreIncubateur> cboCodeCentreIncubateurFilter = new ComboBox<>();
     private ComboBox<Journal> cboCodeJournalFilter = new ComboBox<>();
     private ComboBox<OperationComptable> cboCodeOperationComptableFilter = new ComboBox<>();
-    private SuperDatePicker datDebutDateMouvement = new SuperDatePicker();
-    private SuperDatePicker datFinDateMouvement = new SuperDatePicker();
+    private SuperDatePicker datDebutPeriodeFilter = new SuperDatePicker();
+    private SuperDatePicker datFinPeriodeFilter = new SuperDatePicker();
     
     /* Column in MouvementCompta masterGrid */
     private Grid.Column<MouvementCompta> noOperationColumn;
@@ -349,7 +349,7 @@ public class ContrepassationView extends ConsultationMaitreDetailsBase<Mouvement
 
             //7 - Setup ReadOnly Field Mode - Configure ReadOnly Field Set ComboBox DataProvider - Manage ToolBars
             this.setComboBoxDataProvider();
-            this.setFieldsInitValues();
+            this.setFilterFieldsInitValues();
             this.configureReadOnlyField();
             
             //8 - Adds the top toolbar and the masterGrid to the layout
@@ -449,17 +449,17 @@ public class ContrepassationView extends ConsultationMaitreDetailsBase<Mouvement
             else {
                 codeOperation = this.cboCodeOperationComptableFilter.getValue().getCodeOperation();
             }
-            if (this.datDebutDateMouvement.getValue() == null) {
+            if (this.datDebutPeriodeFilter.getValue() == null) {
                 debutPeriode = this.debutPeriodeExercice;
             }
             else {
-                debutPeriode = this.datDebutDateMouvement.getValue();
+                debutPeriode = this.datDebutPeriodeFilter.getValue();
             }
-            if (this.datFinDateMouvement.getValue() == null) {
+            if (this.datFinPeriodeFilter.getValue() == null) {
                 finPeriode = this.finPeriodeExercice;
             }
             else {
-                finPeriode = this.datFinDateMouvement.getValue();
+                finPeriode = this.datFinPeriodeFilter.getValue();
             }
 
             return (ArrayList)this.mouvementComptaBusiness.getContrepassationSourceListe(this.centreIncubateurCible.getCodeCentreIncubateur(), this.exerciceCourant.getNoExercice(), codeJournal, codeOperation, debutPeriode, finPeriode);
@@ -493,17 +493,17 @@ public class ContrepassationView extends ConsultationMaitreDetailsBase<Mouvement
             else {
                 codeOperation = this.cboCodeOperationComptableFilter.getValue().getCodeOperation();
             }
-            if (this.datDebutDateMouvement.getValue() == null) {
+            if (this.datDebutPeriodeFilter.getValue() == null) {
                 debutPeriode = this.debutPeriodeExercice;
             }
             else {
-                debutPeriode = this.datDebutDateMouvement.getValue();
+                debutPeriode = this.datDebutPeriodeFilter.getValue();
             }
-            if (this.datFinDateMouvement.getValue() == null) {
+            if (this.datFinPeriodeFilter.getValue() == null) {
                 finPeriode = this.finPeriodeExercice;
             }
             else {
-                finPeriode = this.datFinDateMouvement.getValue();
+                finPeriode = this.datFinPeriodeFilter.getValue();
             }
 
             return (ArrayList)this.mouvementComptaDetailsBusiness.getContrepassationSourceDetails(this.centreIncubateurCible.getCodeCentreIncubateur(), this.exerciceCourant.getNoExercice(), codeJournal, codeOperation, debutPeriode, finPeriode);
@@ -570,10 +570,10 @@ public class ContrepassationView extends ConsultationMaitreDetailsBase<Mouvement
                 }
             });
 
-            this.datDebutDateMouvement.setWidth(150, Unit.PIXELS);
-            this.datDebutDateMouvement.addClassName(DATEPICKER_LEFT_LABEL);
-            this.datDebutDateMouvement.setLocale(Locale.FRENCH);
-            this.datDebutDateMouvement.addValueChangeListener(event -> {
+            this.datDebutPeriodeFilter.setWidth(150, Unit.PIXELS);
+            this.datDebutPeriodeFilter.addClassName(DATEPICKER_LEFT_LABEL);
+            this.datDebutPeriodeFilter.setLocale(Locale.FRENCH);
+            this.datDebutPeriodeFilter.addValueChangeListener(event -> {
                 if (event.getValue() != null) {
                     //AfterUpdate
                     //1 - Actualiser l'affichage des grids - Retrieving masterBeanList from the database
@@ -583,10 +583,10 @@ public class ContrepassationView extends ConsultationMaitreDetailsBase<Mouvement
                 }
             });
             
-            this.datFinDateMouvement.setWidth(150, Unit.PIXELS);
-            this.datFinDateMouvement.addClassName(DATEPICKER_LEFT_LABEL);
-            this.datFinDateMouvement.setLocale(Locale.FRENCH);
-            this.datFinDateMouvement.addValueChangeListener(event -> {
+            this.datFinPeriodeFilter.setWidth(150, Unit.PIXELS);
+            this.datFinPeriodeFilter.addClassName(DATEPICKER_LEFT_LABEL);
+            this.datFinPeriodeFilter.setLocale(Locale.FRENCH);
+            this.datFinPeriodeFilter.addValueChangeListener(event -> {
                 if (event.getValue() != null) {
                     //AfterUpdate
                     //1 - Actualiser l'affichage des grids - Retrieving masterBeanList from the database
@@ -604,8 +604,8 @@ public class ContrepassationView extends ConsultationMaitreDetailsBase<Mouvement
             this.formLayout.addFormItem(this.cboCodeCentreIncubateurFilter, "Centre Incubateur :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH150);
             this.formLayout.addFormItem(this.cboCodeJournalFilter, "Code Journal :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH150);
             this.formLayout.addFormItem(this.cboCodeOperationComptableFilter, "Opération Comptable :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH150);
-            this.formLayout.addFormItem(this.datDebutDateMouvement, "Du :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH150);
-            this.formLayout.addFormItem(this.datFinDateMouvement, "Au :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH150);
+            this.formLayout.addFormItem(this.datDebutPeriodeFilter, "Du :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH150);
+            this.formLayout.addFormItem(this.datFinPeriodeFilter, "Au :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH150);
             
             //5 - Making the Layout Responsive : Custom responsive layouting
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top. In both cases there is only 1 column.
@@ -649,7 +649,7 @@ public class ContrepassationView extends ConsultationMaitreDetailsBase<Mouvement
         }
     }    
     
-    private void setFieldsInitValues() {
+    private void setFilterFieldsInitValues() {
         try 
         {
             if (this.exerciceCourant != null)
@@ -659,16 +659,16 @@ public class ContrepassationView extends ConsultationMaitreDetailsBase<Mouvement
             if (this.centreIncubateurCible != null)
                 this.cboCodeCentreIncubateurFilter.setValue(this.centreIncubateurCible);
             if (this.debutPeriodeExercice != null) 
-                this.datDebutDateMouvement.setValue(this.debutPeriodeExercice);
+                this.datDebutPeriodeFilter.setValue(this.debutPeriodeExercice);
             if (this.finPeriodeExercice != null) 
-                this.datFinDateMouvement.setValue(this.finPeriodeExercice);
+                this.datFinPeriodeFilter.setValue(this.finPeriodeExercice);
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ContrepassationView.setFieldsInitValues", e.toString());
+            MessageDialogHelper.showAlertDialog("ContrepassationView.setFilterFieldsInitValues", e.toString());
             e.printStackTrace();
         }
-    } //private void setFieldsInitValues() {
+    } //private void setFilterFieldsInitValues() {
 
     private void configureReadOnlyField() {
         try 
@@ -678,8 +678,8 @@ public class ContrepassationView extends ConsultationMaitreDetailsBase<Mouvement
             this.cboCodeCentreIncubateurFilter.setReadOnly(true); 
             this.cboCodeJournalFilter.setReadOnly(false); 
             this.cboCodeOperationComptableFilter.setReadOnly(false); 
-            this.datDebutDateMouvement.setReadOnly(false);
-            this.datFinDateMouvement.setReadOnly(false);
+            this.datDebutPeriodeFilter.setReadOnly(false);
+            this.datFinPeriodeFilter.setReadOnly(false);
         } 
         catch (Exception e) 
         {
@@ -704,6 +704,8 @@ public class ContrepassationView extends ConsultationMaitreDetailsBase<Mouvement
             
             // Disable selection: will receive only click events instead
             //this.masterGrid.setSelectionMode(Grid.SelectionMode.NONE);
+
+            //Le filtre de detailsGrid est géré par les deux événements : this.masterGrid.addItemClickListener & this.masterGrid.addSelectionListener
             this.masterGrid.addItemClickListener(
                     event -> {
                         if (event.getItem() == null) {
@@ -714,7 +716,18 @@ public class ContrepassationView extends ConsultationMaitreDetailsBase<Mouvement
                         }
                         
                         this.applyFilterToTheDetailsGrid(this.currentNoMouvement);
-                    });            
+                    });
+
+            this.masterGrid.addSelectionListener(event -> {
+                Optional<MouvementCompta> mouvementComptaOptional = event.getFirstSelectedItem();
+                if (mouvementComptaOptional.isPresent()) {
+                    this.currentNoMouvement = mouvementComptaOptional.get().getNoMouvement();
+                }
+                else {
+                    this.currentNoMouvement = 0L;
+                }
+                this.applyFilterToTheDetailsGrid(this.currentNoMouvement);
+            });
 
             //2 - Add columns to the empty table and set Data Properties to Columns - Width = 565 + 175 + 175 + 175 + 175 + 100 = 975
             noOperationColumn = this.masterGrid.addColumn(MouvementCompta::getNoOperation).setKey("NoOperation").setHeader("N° Mouvement").setTextAlign(ColumnTextAlign.CENTER).setFlexGrow(0).setWidth("125px"); // fixed column

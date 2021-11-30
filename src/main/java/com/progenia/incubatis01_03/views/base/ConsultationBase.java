@@ -194,19 +194,19 @@ public abstract class ConsultationBase<T extends Serializable> extends VerticalL
             e.printStackTrace();
         }
     }
-    
+
     public void customSetButtonImprimerVisible(Boolean isVisible) {
-        try 
+        try
         {
             this.isButtonImprimerVisible = isVisible;
-        } 
-        catch (Exception e) 
+        }
+        catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("ConsultationBase.customSetButtonAjouterVisible", e.toString());
+            MessageDialogHelper.showAlertDialog("ConsultationBase.customSetButtonImprimerVisible", e.toString());
             e.printStackTrace();
         }
     }
-    
+
     public void customSetButtonOptionnel01Visible(Boolean isVisible) {
         try 
         {
