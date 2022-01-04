@@ -5,7 +5,6 @@
  */
 package com.progenia.immaria01_01.data.business;
 
-import com.progenia.immaria01_01.data.entity.Cohorte;
 import com.progenia.immaria01_01.data.repository.CohorteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

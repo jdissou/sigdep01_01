@@ -10,7 +10,6 @@ import com.progenia.immaria01_01.data.business.ConstanteBusiness;
 import com.progenia.immaria01_01.data.business.RubriqueComptabilisationBusiness;
 import com.progenia.immaria01_01.data.business.TrancheValeurBusiness;
 import com.progenia.immaria01_01.data.business.TrancheValeurDetailsBusiness;
-import com.progenia.immaria01_01.data.business.TypePorteurBusiness;
 import com.progenia.immaria01_01.data.business.UniteOeuvreBusiness;
 import com.progenia.immaria01_01.data.business.VariableServiceBusiness;
 import com.progenia.immaria01_01.data.entity.Compte;
@@ -18,12 +17,7 @@ import com.progenia.immaria01_01.data.entity.Constante;
 import com.progenia.immaria01_01.data.entity.Rubrique;
 import com.progenia.immaria01_01.data.entity.RubriqueComptabilisation;
 import com.progenia.immaria01_01.data.entity.TrancheValeur;
-import com.progenia.immaria01_01.data.entity.TypePorteur;
 import com.progenia.immaria01_01.data.entity.VariableService;
-import static com.progenia.immaria01_01.dialogs.BaseEditerReferentielDialog.COMBOBOX_LEFT_LABEL;
-import static com.progenia.immaria01_01.dialogs.BaseEditerReferentielDialog.FORM_ITEM_LABEL_WIDTH200;
-import static com.progenia.immaria01_01.dialogs.BaseEditerReferentielDialog.PANEL_FLEX_BASIS;
-import static com.progenia.immaria01_01.dialogs.BaseEditerReferentielDialog.TEXTFIELD_LEFT_LABEL;
 import com.progenia.immaria01_01.dialogs.EditerRubriqueComptabilisationDialog.RubriqueComptabilisationAddEvent;
 import com.progenia.immaria01_01.dialogs.EditerRubriqueComptabilisationDialog.RubriqueComptabilisationRefreshEvent;
 import com.progenia.immaria01_01.dialogs.EditerRubriqueComptabilisationDialog.RubriqueComptabilisationUpdateEvent;
@@ -57,8 +51,6 @@ import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.formlayout.FormLayout;
-import com.vaadin.flow.component.grid.ColumnTextAlign;
-import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
@@ -69,10 +61,8 @@ import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.provider.DataProvider;
 import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.data.provider.SortDirection;
-import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.server.VaadinSession;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Locale;
@@ -2386,7 +2376,7 @@ public class EditerRubriqueDialog extends BaseEditerReferentielMaitreTabGridDial
                 };
 
                 // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau Type Porteur.
-                MessageDialogHelper.showYesNoDialog("La Tranche de Valeur '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter une nouvelle TrancheValeur?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
+                MessageDialogHelper.showYesNoDialog("La Tranche de Valeur '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter une nouvelle Tranche de Valeur?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
             }
             else {
                 MessageDialogHelper.showWarningDialog("Erreur de Saisie", "La Saisie de la Tranche de Valeur est requise. Veuillez en saisir une.");

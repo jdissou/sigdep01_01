@@ -104,8 +104,6 @@ public class EditerServiceFourniDialog extends BaseEditerReferentielMaitreFormTw
     private SuperTextField txtLibelleCourtService = new SuperTextField();
     ComboBox<SystemeTypeService> cboCodeTypeService = new ComboBox<>();
     //ComboBox<SystemeTypeService> cboCodeTypeService = new ComboBox<>("Type de Service");
-    private Checkbox chkIncubation = new Checkbox();
-    private Checkbox chkPostIncubation = new Checkbox();
     private Checkbox chkInactif = new Checkbox();
 
     public EditerServiceFourniDialog() {
@@ -334,10 +332,6 @@ public class EditerServiceFourniDialog extends BaseEditerReferentielMaitreFormTw
                 this.cboCodeTypeService_NotInList(event.getDetail(), 50);
             });
 
-
-            this.chkIncubation.setAutofocus(true); 
-            this.chkPostIncubation.setAutofocus(true); 
-            
             this.chkInactif.setAutofocus(false); //Sepecific for isInactif
             
             //3 - Bind Fields instances to use (Manual Data Binding)
@@ -370,12 +364,6 @@ public class EditerServiceFourniDialog extends BaseEditerReferentielMaitreFormTw
                 .asRequired("La Saisie du Type de Service est requise. Veuillez sélectionner un Type de Service")
                 .bind(ServiceFourni::getTypeService, ServiceFourni::setTypeService);             
 
-            this.binder.forField(this.chkIncubation)
-                .bind(ServiceFourni::isIncubation, ServiceFourni::setIncubation); 
-            
-            this.binder.forField(this.chkPostIncubation)
-                .bind(ServiceFourni::isPostIncubation, ServiceFourni::setPostIncubation); 
-            
             this.binder.forField(this.chkInactif)
                 .bind(ServiceFourni::isInactif, ServiceFourni::setInactif); 
             
@@ -391,8 +379,6 @@ public class EditerServiceFourniDialog extends BaseEditerReferentielMaitreFormTw
             this.formLayout.addFormItem(this.txtLibelleService, "Libellé Service :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);  //FORM_ITEM_LABEL_WIDTH250);
             this.formLayout.addFormItem(this.txtLibelleCourtService, "Libellé Abrégé Service :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);  //FORM_ITEM_LABEL_WIDTH250);
             this.formLayout.addFormItem(this.cboCodeTypeService, "Type de Service :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);  //FORM_ITEM_LABEL_WIDTH250);
-            this.formLayout.addFormItem(this.chkIncubation, "Incubation :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);  //FORM_ITEM_LABEL_WIDTH250);
-            this.formLayout.addFormItem(this.chkPostIncubation, "PostIncubation :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);  //FORM_ITEM_LABEL_WIDTH250);
             this.formLayout.addFormItem(this.chkInactif, "Inactif :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);  //FORM_ITEM_LABEL_WIDTH250);
 
             //5 - Making the Layout Responsive : Custom responsive layouting
@@ -418,8 +404,6 @@ public class EditerServiceFourniDialog extends BaseEditerReferentielMaitreFormTw
             this.txtLibelleService.setReadOnly(this.isContextualFieldReadOnly); 
             this.txtLibelleCourtService.setReadOnly(this.isContextualFieldReadOnly); 
             this.cboCodeTypeService.setReadOnly(this.isContextualFieldReadOnly); 
-            this.chkIncubation.setReadOnly(this.isContextualFieldReadOnly);
-            this.chkPostIncubation.setReadOnly(this.isContextualFieldReadOnly);
             this.chkInactif.setReadOnly(true); //Sepecific for isInactif
         } 
         catch (Exception e) 

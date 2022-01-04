@@ -494,8 +494,8 @@ public class ClassificationImmobiliereView extends OngletReferentielBase {
             this.tab21TypeBienImmobilierGrid.setSelectionMode(Grid.SelectionMode.MULTI);
 
             //2 - Add columns to the empty table and set Data Properties to Columns - Width = 200 + 425 + 250 + 100 = 975
-            Grid.Column<TypeBienImmobilier> codeTypeBienImmobilierColumn = this.tab21TypeBienImmobilierGrid.addColumn(TypeBienImmobilier::getCodeTypeBienImmobilier).setKey("CodeTypeBienImmobilier").setHeader("Code Type de Bien").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("100px"); // fixed column
-            Grid.Column<TypeBienImmobilier> libelleTypeBienImmobilierColumn = this.tab21TypeBienImmobilierGrid.addColumn(TypeBienImmobilier::getLibelleTypeBienImmobilier).setKey("LibelleTypeBienImmobilier").setHeader("Libellé Type de Bien").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("275px"); // fixed column
+            Grid.Column<TypeBienImmobilier> codeTypeBienImmobilierColumn = this.tab21TypeBienImmobilierGrid.addColumn(TypeBienImmobilier::getCodeTypeBienImmobilier).setKey("CodeTypeBienImmobilier").setHeader("Code Type Bien").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("100px"); // fixed column
+            Grid.Column<TypeBienImmobilier> libelleTypeBienImmobilierColumn = this.tab21TypeBienImmobilierGrid.addColumn(TypeBienImmobilier::getLibelleTypeBienImmobilier).setKey("LibelleTypeBienImmobilier").setHeader("Libellé Type Bien").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("275px"); // fixed column
             Grid.Column<TypeBienImmobilier> libelleCourtTypeBienImmobilierColumn = this.tab21TypeBienImmobilierGrid.addColumn(TypeBienImmobilier::getLibelleCourtTypeBienImmobilier).setKey("LibelleCourtTypeBienImmobilier").setHeader("Libellé Abrégé").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("175px"); // fixed column
 
             Grid.Column<TypeBienImmobilier> isInactifColumn = this.tab21TypeBienImmobilierGrid.addColumn(new ComponentRenderer<>(

@@ -5,7 +5,6 @@
  */
 package com.progenia.immaria01_01.dialogs;
 
-import com.progenia.immaria01_01.data.entity.Programme;
 import com.progenia.immaria01_01.utilities.MessageDialogHelper;
 import com.progenia.immaria01_01.utilities.ModeFormulaireEditerEnum;
 import com.vaadin.flow.component.ComponentEvent;

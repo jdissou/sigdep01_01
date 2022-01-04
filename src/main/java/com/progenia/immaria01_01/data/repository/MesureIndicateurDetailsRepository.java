@@ -6,11 +6,9 @@
 package com.progenia.immaria01_01.data.repository;
 
 import com.progenia.immaria01_01.data.entity.CentreIncubateur;
-import com.progenia.immaria01_01.data.entity.DomaineActivite;
 import com.progenia.immaria01_01.data.entity.MesureIndicateurDetails;
 import com.progenia.immaria01_01.data.entity.MesureIndicateurDetailsId;
-import com.progenia.immaria01_01.data.entity.TableauCollecte;
-import com.progenia.immaria01_01.data.entity.IndicateurSuivi;
+
 import java.time.LocalDate;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

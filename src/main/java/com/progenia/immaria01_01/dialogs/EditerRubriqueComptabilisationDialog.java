@@ -6,12 +6,10 @@
 package com.progenia.immaria01_01.dialogs;
 
 import com.progenia.immaria01_01.data.business.CompteBusiness;
-import com.progenia.immaria01_01.data.business.TypePorteurBusiness;
 import com.progenia.immaria01_01.data.entity.Compte;
 import com.progenia.immaria01_01.data.entity.Rubrique;
 import com.progenia.immaria01_01.data.entity.RubriqueComptabilisation;
 import com.progenia.immaria01_01.data.entity.RubriqueComptabilisationId;
-import com.progenia.immaria01_01.data.entity.TypePorteur;
 import com.progenia.immaria01_01.securities.services.SecurityService;
 import com.progenia.immaria01_01.utilities.MessageDialogHelper;
 import com.progenia.immaria01_01.utilities.ModeFormulaireEditerEnum;

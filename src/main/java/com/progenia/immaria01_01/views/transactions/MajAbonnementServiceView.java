@@ -8,7 +8,6 @@ package com.progenia.immaria01_01.views.transactions;
 import com.progenia.immaria01_01.data.business.CentreIncubateurBusiness;
 import com.progenia.immaria01_01.data.business.ServiceFourniBusiness;
 import com.progenia.immaria01_01.data.business.AbonnementServiceBusiness;
-import com.progenia.immaria01_01.data.business.PorteurBusiness;
 import com.progenia.immaria01_01.data.entity.CentreIncubateur;
 import com.progenia.immaria01_01.data.entity.ServiceFourni;
 import com.progenia.immaria01_01.data.entity.Exercice;

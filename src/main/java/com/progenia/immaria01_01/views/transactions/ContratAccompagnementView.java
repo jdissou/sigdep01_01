@@ -12,7 +12,6 @@ import com.progenia.immaria01_01.data.business.ExerciceBusiness;
 import com.progenia.immaria01_01.data.business.AbonnementServiceBusiness;
 import com.progenia.immaria01_01.data.business.ContratAccompagnementBusiness;
 import com.progenia.immaria01_01.data.business.ContratAccompagnementDetailsBusiness;
-import com.progenia.immaria01_01.data.business.PorteurBusiness;
 import com.progenia.immaria01_01.data.business.ServiceFourniBusiness;
 import com.progenia.immaria01_01.data.entity.CentreIncubateur;
 import com.progenia.immaria01_01.data.entity.Exercice;

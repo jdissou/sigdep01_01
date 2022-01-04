@@ -5,16 +5,7 @@
  */
 package com.progenia.immaria01_01.dialogs;
 
-import com.progenia.immaria01_01.data.business.IndicateurSuiviBusiness;
-import com.progenia.immaria01_01.data.business.NatureIndicateurBusiness;
-import com.progenia.immaria01_01.data.business.TableauCollecteDetailsBusiness;
 import com.progenia.immaria01_01.data.business.UniteOeuvreBusiness;
-import com.progenia.immaria01_01.data.entity.IndicateurSuivi;
-import com.progenia.immaria01_01.data.entity.TableauCollecte;
-import com.progenia.immaria01_01.data.entity.TableauCollecteDetails;
-import static com.progenia.immaria01_01.dialogs.BaseEditerReferentielDialog.FORM_ITEM_LABEL_WIDTH250;
-import static com.progenia.immaria01_01.dialogs.BaseEditerReferentielDialog.PANEL_FLEX_BASIS;
-import static com.progenia.immaria01_01.dialogs.BaseEditerReferentielDialog.TEXTFIELD_LEFT_LABEL;
 import com.progenia.immaria01_01.dialogs.EditerTableauCollecteDetailsDialog.TableauCollecteDetailsAddEvent;
 import com.progenia.immaria01_01.dialogs.EditerTableauCollecteDetailsDialog.TableauCollecteDetailsRefreshEvent;
 import com.progenia.immaria01_01.dialogs.EditerTableauCollecteDetailsDialog.TableauCollecteDetailsUpdateEvent;

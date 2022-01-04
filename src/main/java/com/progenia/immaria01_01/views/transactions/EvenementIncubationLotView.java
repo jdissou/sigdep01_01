@@ -13,17 +13,13 @@ import com.progenia.immaria01_01.data.business.TypeEvenementBusiness;
 import com.progenia.immaria01_01.data.business.ExerciceBusiness;
 import com.progenia.immaria01_01.data.business.MouvementIncubationBusiness;
 import com.progenia.immaria01_01.data.business.CohorteBusiness;
-import com.progenia.immaria01_01.data.business.PorteurBusiness;
 import com.progenia.immaria01_01.data.business.EvenementIncubationLotDetailsBusiness;
-import com.progenia.immaria01_01.data.business.ProgrammeBusiness;
 import com.progenia.immaria01_01.data.entity.CentreIncubateur;
 import com.progenia.immaria01_01.data.entity.Exercice;
 import com.progenia.immaria01_01.data.entity.EvenementIncubationLot;
-import com.progenia.immaria01_01.data.entity.Cohorte;
 import com.progenia.immaria01_01.data.entity.Porteur;
 import com.progenia.immaria01_01.data.entity.EvenementIncubationLotDetails;
 import com.progenia.immaria01_01.data.entity.MouvementIncubation;
-import com.progenia.immaria01_01.data.entity.Programme;
 import com.progenia.immaria01_01.data.entity.TypeEvenement;
 import com.progenia.immaria01_01.dialogs.AfficherEvenementIncubationLotDialog;
 import com.progenia.immaria01_01.dialogs.AfficherEvenementIncubationLotDialog.EvenementIncubationLotLoadEvent;
@@ -74,7 +70,6 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.vaadin.miki.superfields.dates.SuperDatePicker;
 import org.vaadin.miki.superfields.numbers.SuperDoubleField;
-import org.vaadin.miki.superfields.numbers.SuperIntegerField;
 import org.vaadin.miki.superfields.numbers.SuperLongField;
 import org.vaadin.miki.superfields.text.SuperTextField;
 import org.vaadin.spring.events.EventBus;
@@ -747,7 +742,7 @@ public class EvenementIncubationLotView extends SaisieTransactionMaitreDetailsBa
     
     private void cboCodeCohorte_NotInList(String strProposedVal, int intMaxFieldLength)
     {
-        //Ajoute un nouveau Cohorte en entrant un libellé dans la zone de liste modifiable CodeCohorte.
+        //Ajoute une nouvelle Cohorte  en entrant un libellé dans la zone de liste modifiable CodeCohorte.
         String strNewVal = strProposedVal;
 
         try 
@@ -777,8 +772,8 @@ public class EvenementIncubationLotView extends SaisieTransactionMaitreDetailsBa
                     EditerCohorteDialog.getInstance().showDialog("Ajout de Cohorte", ModeFormulaireEditerEnum.AJOUTERCIF, new ArrayList<Cohorte>(), this.cohorteList, finalNewVal, this.uiEventBus);
                 };
 
-                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau Cohorte.
-                MessageDialogHelper.showYesNoDialog("Le Cohorte '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau Cohorte?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
+                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter une nouvelle Cohorte .
+                MessageDialogHelper.showYesNoDialog("Le Cohorte '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter une nouvelle Cohorte ?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
             }
             else {
                 MessageDialogHelper.showWarningDialog("Erreur de Saisie", "La Saisie du Cohorte est requise. Veuillez en saisir un.");

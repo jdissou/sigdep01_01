@@ -284,7 +284,7 @@ public class EditerPrestationDemandeDetailsDialog extends BaseEditerTransactionD
 
     private void cboCodeVariable_NotInList(String strProposedVal, int intMaxFieldLength)
     {
-        //Ajoute un nouveau VariableService en entrant un libellé dans la zone de liste modifiable CodeVariable.
+        //Ajoute une nouvelle Variable en entrant un libellé dans la zone de liste modifiable CodeVariable.
         String strNewVal = strProposedVal;
 
         try 
@@ -316,8 +316,8 @@ public class EditerPrestationDemandeDetailsDialog extends BaseEditerTransactionD
                     EditerVariableServiceDialog.getInstance().showDialog("Ajout de VariableService", ModeFormulaireEditerEnum.AJOUTERCIF, new ArrayList<VariableService>(), this.variableServiceList, finalNewVal, this.uiEventBus);
                 };
 
-                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau VariableService.
-                MessageDialogHelper.showYesNoDialog("Le VariableService '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau VariableService?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
+                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter une nouvelle Variable.
+                MessageDialogHelper.showYesNoDialog("Le VariableService '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter une nouvelle Variable?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
             }
             else {
                 MessageDialogHelper.showWarningDialog("Erreur de Saisie", "La Saisie du VariableService est requise. Veuillez en saisir un.");

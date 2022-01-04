@@ -39,9 +39,7 @@ Put your annotation on an entity.
                     @ColumnResult(name = "LibelleService", type = String.class),  
                     @ColumnResult(name = "LibelleCourtService", type = String.class),  
                     @ColumnResult(name = "CodeTypeService", type = String.class),  
-                    @ColumnResult(name = "Incubation", type = Boolean.class),  
-                    @ColumnResult(name = "PostIncubation", type = Boolean.class),  
-                    @ColumnResult(name = "LibelleTypeService", type = String.class),  
+                    @ColumnResult(name = "LibelleTypeService", type = String.class),
                     @ColumnResult(name = "LibelleCourtTypeService", type = String.class) 
 }))
 
@@ -67,15 +65,8 @@ public class ServiceFourniPojo {
     private String libelleService;
     private String libelleCourtService;
     private String codeTypeService;
-    private boolean incubation;
-    private boolean postIncubation;
     private String libelleTypeService;
     private String libelleCourtTypeService;
-    
-/*
-        CodeService, LibelleService, LibelleCourtService, CodeTypeService, Incubation, PostIncubation,  LibelleTypeService, LibelleCourtTypeService
-    
-    */
 }
 
 

@@ -5,7 +5,6 @@
  */
 package com.progenia.immaria01_01.data.repository;
 
-import com.progenia.immaria01_01.data.entity.Cohorte;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

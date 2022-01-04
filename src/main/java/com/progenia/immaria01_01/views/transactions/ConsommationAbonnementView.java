@@ -14,9 +14,7 @@ import com.progenia.immaria01_01.data.business.FacturationAbonnementBusiness;
 import com.progenia.immaria01_01.data.business.FacturationAbonnementConsommationBusiness;
 import com.progenia.immaria01_01.data.business.FacturationAbonnementDetailsBusiness;
 import com.progenia.immaria01_01.data.business.FacturationAbonnementPorteurBusiness;
-import com.progenia.immaria01_01.data.business.PeriodeFacturationBusiness;
 import com.progenia.immaria01_01.data.business.SequenceFacturationBusiness;
-import com.progenia.immaria01_01.data.business.PorteurBusiness;
 import com.progenia.immaria01_01.data.business.ServiceFourniBusiness;
 import com.progenia.immaria01_01.data.business.VariableServiceBusiness;
 import com.progenia.immaria01_01.data.entity.CentreIncubateur;
@@ -1100,7 +1098,7 @@ public class ConsommationAbonnementView extends TransactionBase<FacturationAbonn
 
     private void cboCodeClassementPorteurService_NotInList(String strProposedVal, int intMaxFieldLength)
     {
-        //Ajoute un nouveau ServiceFourni en entrant un libellé dans la zone de liste modifiable CodeClassementPorteurService.
+        //Ajoute un nouveau Service en entrant un libellé dans la zone de liste modifiable CodeClassementPorteurService.
         String strNewVal = strProposedVal;
 
         try 
@@ -1132,8 +1130,8 @@ public class ConsommationAbonnementView extends TransactionBase<FacturationAbonn
                     EditerServiceFourniDialog.getInstance().showDialog("Ajout de ServiceFourni", ModeFormulaireEditerEnum.AJOUTERCIF, new ArrayList<ServiceFourni>(), this.serviceFourniList, finalNewVal, this.uiEventBus);
                 };
 
-                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau ServiceFourni.
-                MessageDialogHelper.showYesNoDialog("Le ServiceFourni '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau ServiceFourni?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
+                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau Service.
+                MessageDialogHelper.showYesNoDialog("Le ServiceFourni '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau Service?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
             }
             else {
                 MessageDialogHelper.showWarningDialog("Erreur de Saisie", "La Saisie du ServiceFourni est requise. Veuillez en saisir un.");

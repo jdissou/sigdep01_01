@@ -6,14 +6,12 @@
 package com.progenia.immaria01_01.dialogs;
 
 import com.progenia.immaria01_01.data.business.FacturationAbonnementDetailsBusiness;
-import com.progenia.immaria01_01.data.business.PorteurBusiness;
 import com.progenia.immaria01_01.data.business.ServiceFourniBusiness;
 import com.progenia.immaria01_01.data.entity.CentreIncubateur;
 import com.progenia.immaria01_01.data.entity.FacturationAbonnementDetails;
 import com.progenia.immaria01_01.data.entity.FacturationAbonnement;
 import com.progenia.immaria01_01.data.entity.Porteur;
 import com.progenia.immaria01_01.data.entity.ServiceFourni;
-import static com.progenia.immaria01_01.dialogs.BaseEditerTransactionDetailDialog.FORM_ITEM_LABEL_WIDTH200;
 import com.progenia.immaria01_01.utilities.MessageDialogHelper;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.Unit;
@@ -30,9 +28,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Locale;
-import org.vaadin.miki.superfields.numbers.SuperDoubleField;
+
 import org.vaadin.miki.superfields.numbers.SuperLongField;
-import org.vaadin.miki.superfields.text.SuperTextField;
 import org.vaadin.spring.events.EventBus;
 import org.vaadin.spring.events.annotation.EventBusListenerMethod;
 
@@ -374,7 +371,7 @@ public class EditerFacturationAbonnementDetailsDialog extends BaseEditerTransact
     
     private void cboCodeService_NotInList(String strProposedVal, int intMaxFieldLength)
     {
-        //Ajoute un nouveau ServiceFourni en entrant un libellé dans la zone de liste modifiable CodeService.
+        //Ajoute un nouveau Service en entrant un libellé dans la zone de liste modifiable CodeService.
         String strNewVal = strProposedVal;
 
         try 
@@ -406,8 +403,8 @@ public class EditerFacturationAbonnementDetailsDialog extends BaseEditerTransact
                     EditerServiceFourniDialog.getInstance().showDialog("Ajout de ServiceFourni", ModeFormulaireEditerEnum.AJOUTERCIF, new ArrayList<ServiceFourni>(), this.serviceFourniList, finalNewVal, this.uiEventBus);
                 };
 
-                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau ServiceFourni.
-                MessageDialogHelper.showYesNoDialog("Le ServiceFourni '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau ServiceFourni?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
+                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau Service.
+                MessageDialogHelper.showYesNoDialog("Le ServiceFourni '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau Service?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
             }
             else {
                 MessageDialogHelper.showWarningDialog("Erreur de Saisie", "La Saisie du ServiceFourni est requise. Veuillez en saisir un.");

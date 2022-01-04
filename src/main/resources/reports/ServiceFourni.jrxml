@@ -41,15 +41,7 @@
 		<field name="codeService" class="java.lang.String"/>
 		<field name="libelleService" class="java.lang.String"/>
 		<field name="libelleTypeService" class="java.lang.String"/>
-		<field name="incubation" class="java.lang.Boolean"/>
-		<field name="postIncubation" class="java.lang.Boolean"/>
                 <sortField name = "codeService" order = "Ascending"/>
-		<variable name="incubationToString" class="java.lang.String">
-			<variableExpression><![CDATA[($F{incubation}) ? "Oui" : "Non"]]></variableExpression>
-		</variable>
-		<variable name="postIncubationToString" class="java.lang.String">
-			<variableExpression><![CDATA[($F{postIncubation}) ? "Oui" : "Non"]]></variableExpression>
-		</variable>
 	</subDataset>
 	<parameter name="BEAN_COLLECTION" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
 	<parameter name="PARAM_DENOMINATION" class="java.lang.String"/>
@@ -185,51 +177,6 @@
 								<textFieldExpression><![CDATA[$F{libelleTypeService}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
-					</jr:column>
-                                        
-                                        <jr:column width="85" uuid="5cbed793-0a95-47b5-b773-e47d1a0c3dd4">
-						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne4"/>
-						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement x="0" y="0" width="85" height="30" uuid="3f1b3a4d-9bcd-483d-afcc-f344aedb50a7"/>
-								<box padding="5"/>
-								<textElement textAlignment="Center">
-									<font fontName="Karma Medium" isBold="true"/>
-								</textElement>
-								<text><![CDATA[Incubation]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:detailCell style="Table_TD" height="30">
-							<textField isBlankWhenNull="true">
-								<reportElement x="0" y="0" width="85" height="30" uuid="31ad5f46-f3db-4417-8bee-03b833d89c1d"/>
-								<box padding="5"/>
-								<textElement textAlignment="Center"/>
-								<textFieldExpression><![CDATA[$V{incubationToString}]]></textFieldExpression>
-							</textField>
-						</jr:detailCell>
-					</jr:column>
-                                        <jr:column width="100" uuid="5cbed793-0a95-47b5-b773-e47d1a0c3dd4">
-						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne4"/>
-						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
-							<staticText>
-								<reportElement x="0" y="0" width="100" height="30" uuid="3f1b3a4d-9bcd-483d-afcc-f344aedb50a7"/>
-								<box padding="5"/>
-								<textElement textAlignment="Center">
-									<font fontName="Karma Medium" isBold="true"/>
-								</textElement>
-								<text><![CDATA[Post Incubation]]></text>
-							</staticText>
-						</jr:columnHeader>
-						<jr:detailCell style="Table_TD" height="30">
-							<textField isBlankWhenNull="true">
-								<reportElement x="0" y="0" width="100" height="30" uuid="31ad5f46-f3db-4417-8bee-03b833d89c1d"/>
-								<box padding="5"/>
-								<textElement textAlignment="Center"/>
-								<textFieldExpression><![CDATA[$V{postIncubationToString}]]></textFieldExpression>
-							</textField>
-						</jr:detailCell>
-					</jr:column>
-                                        
 				</jr:table>
 			</componentElement>
 		</band>

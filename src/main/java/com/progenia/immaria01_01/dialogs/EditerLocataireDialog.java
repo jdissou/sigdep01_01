@@ -102,6 +102,7 @@ public class EditerLocataireDialog extends BaseEditerReferentielMaitreTabDialog<
     private SuperTextField txtVille = new SuperTextField();
     private SuperTextField txtNoTelephone = new SuperTextField();
     private SuperTextField txtNoMobile = new SuperTextField();
+    private SuperTextField txtEmail = new SuperTextField();
 
 
     private Checkbox chkInactif = new Checkbox();
@@ -285,7 +286,10 @@ public class EditerLocataireDialog extends BaseEditerReferentielMaitreTabDialog<
             
             this.txtNoMobile.setWidth(150, Unit.PIXELS);
             this.txtNoMobile.addClassName(TEXTFIELD_LEFT_LABEL);
-            
+
+            this.txtEmail.setWidth(350, Unit.PIXELS); //setWidth(400, Unit.PIXELS);
+            this.txtEmail.addClassName(TEXTFIELD_LEFT_LABEL);
+
             this.chkInactif.setAutofocus(false); //Sepecific for isInactif
             
             //Contrôles de tabQualification
@@ -520,8 +524,15 @@ public class EditerLocataireDialog extends BaseEditerReferentielMaitreTabDialog<
                 .withValidator(text -> text.length() <= 15, "N° Mobile ne peut contenir au plus 15 caractères.")
                 .withValidationStatusHandler(status -> {lblNoMobileValidationStatus.setText(status.getMessage().orElse(""));       
                          lblNoMobileValidationStatus.setVisible(status.isError());})
-                .bind(Locataire::getNoMobile, Locataire::setNoMobile); 
-            
+                .bind(Locataire::getNoMobile, Locataire::setNoMobile);
+
+            Label lblEmailValidationStatus = new Label();
+            this.binder.forField(this.txtEmail)
+                    .withValidator(text -> text.length() <= 100, "E-mail ne peut contenir au plus 100 caractères.")
+                    .withValidationStatusHandler(status -> {lblEmailValidationStatus.setText(status.getMessage().orElse(""));
+                        lblEmailValidationStatus.setVisible(status.isError());})
+                    .bind(Locataire::getEmail, Locataire::setEmail);
+
             this.binder.forField(this.chkInactif)
                 .bind(Locataire::isInactif, Locataire::setInactif); 
 
@@ -568,7 +579,9 @@ public class EditerLocataireDialog extends BaseEditerReferentielMaitreTabDialog<
             this.tabInfoGeneraleFormLayout.addFormItem(this.txtNoTelephone, "N° Téléphone :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);
             this.tabInfoGeneraleFormLayout.addFormItem(this.txtNoMobile, "N° Mobile :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);
 
+            this.tabInfoGeneraleFormLayout.addFormItem(this.txtEmail, "E-mail :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);
             this.tabInfoGeneraleFormLayout.addFormItem(this.txtLieuNaissance, "Lieu de Naissance :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);
+
             this.tabInfoGeneraleFormLayout.addFormItem(this.chkInactif, "Inactif :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);
             
             this.tabQualificationFormLayout.addFormItem(this.cboCodeCategorieLocataire, "Catégorie Locataire :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);
@@ -576,9 +589,9 @@ public class EditerLocataireDialog extends BaseEditerReferentielMaitreTabDialog<
 
             this.tabQualificationFormLayout.addFormItem(this.cboCodeNationalite, "Nationalité :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);
             this.tabQualificationFormLayout.addFormItem(this.cboCodeTitreCivilite, "Titre Civilité :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);
-            
+
             this.tabQualificationFormLayout.addFormItem(this.cboNoCompteClient, "N° Compte Client :").getStyle().set("--vaadin-form-item-label-width", FORM_ITEM_LABEL_WIDTH200);
-            
+
             //5 - Making the Layout Responsive : Custom responsive layouting
             //breakpoint at 600px, with the label to the side. At resolutions lower than 600px, the label will be at the top and there is only 1 column. The form will show 2 columns if width is >= 600px
             tabInfoGeneraleFormLayout.setResponsiveSteps(new FormLayout.ResponsiveStep("0", 1, FormLayout.ResponsiveStep.LabelsPosition.TOP), 
@@ -654,6 +667,8 @@ public class EditerLocataireDialog extends BaseEditerReferentielMaitreTabDialog<
             this.txtVille.setReadOnly(this.isContextualFieldReadOnly); 
             this.txtNoTelephone.setReadOnly(this.isContextualFieldReadOnly); 
             this.txtNoMobile.setReadOnly(this.isContextualFieldReadOnly);
+            this.txtEmail.setReadOnly(this.isContextualFieldReadOnly);
+            this.txtEmail.setReadOnly(this.isContextualFieldReadOnly);
             this.chkInactif.setReadOnly(true); //Sepecific for isInactif
 
             this.cboCodeCategorieLocataire.setReadOnly(this.isContextualFieldReadOnly); 
@@ -912,7 +927,7 @@ public class EditerLocataireDialog extends BaseEditerReferentielMaitreTabDialog<
                 };
 
                 // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau Compte.
-                MessageDialogHelper.showYesNoDialog("La N° Compte Client '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter une nouvelle N° Compte Client?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
+                MessageDialogHelper.showYesNoDialog("La N° Compte Client '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau Compte Client?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
             }
             else {
                 MessageDialogHelper.showWarningDialog("Erreur de Saisie", "La Saisie de la N° Compte Client est requise. Veuillez en saisir une.");

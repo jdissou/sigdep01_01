@@ -15,7 +15,6 @@ import com.progenia.immaria01_01.data.business.ServiceFourniParametrageBusiness;
 import com.progenia.immaria01_01.data.business.ServiceFourniTarificationBusiness;
 import com.progenia.immaria01_01.data.business.TrancheValeurBusiness;
 import com.progenia.immaria01_01.data.business.TrancheValeurDetailsBusiness;
-import com.progenia.immaria01_01.data.business.TypePorteurBusiness;
 import com.progenia.immaria01_01.data.business.UniteOeuvreBusiness;
 import com.progenia.immaria01_01.data.entity.VariableService;
 import com.progenia.immaria01_01.data.entity.Constante;
@@ -171,8 +170,6 @@ public class ConfigurationServiceView extends OngletReferentielBase {
     private SuperTextField tab12LibelleServiceFilterTxt = new SuperTextField();
     private SuperTextField tab12LibelleCourtServiceFilterTxt = new SuperTextField();
     private SuperTextField tab12TypeServiceFilterTxt = new SuperTextField();
-    private ComboBox<String> tab12IsIncubationFilterCombo = new ComboBox<>();
-    private ComboBox<String> tab12IsPostIncubationFilterCombo = new ComboBox<>();
     private ComboBox<String> tab12IsInactifFilterCombo = new ComboBox<>();
 
     //ATTRIBUTS - tab23 - VariableService
@@ -755,26 +752,6 @@ public class ConfigurationServiceView extends OngletReferentielBase {
                     )
             ).setKey("TypeService").setHeader("Type de Service").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("200px"); // fixed column
 
-             Grid.Column<ServiceFourni> incubationColumn = this.tab12ServiceFourniGrid.addColumn(new ComponentRenderer<>(
-                        serviceFourni -> {
-                            Checkbox checkbox = new Checkbox();
-                            checkbox.setValue(serviceFourni.isIncubation());                            
-                            checkbox.setReadOnly(true);
-                            return checkbox;
-                        }
-                    )
-            ).setKey("incubation").setHeader("Incubation").setTextAlign(ColumnTextAlign.CENTER).setFlexGrow(0).setWidth("100px");
-
-             Grid.Column<ServiceFourni> postIncubationColumn = this.tab12ServiceFourniGrid.addColumn(new ComponentRenderer<>(
-                        serviceFourni -> {
-                            Checkbox checkbox = new Checkbox();
-                            checkbox.setValue(serviceFourni.isPostIncubation());                            
-                            checkbox.setReadOnly(true);
-                            return checkbox;
-                        }
-                    )
-            ).setKey("postIncubation").setHeader("Post Incubation").setTextAlign(ColumnTextAlign.CENTER).setFlexGrow(0).setWidth("100px");
-
              Grid.Column<ServiceFourni> isInactifColumn = this.tab12ServiceFourniGrid.addColumn(new ComponentRenderer<>(
                         serviceFourni -> {
                             Checkbox checkbox = new Checkbox();
@@ -829,26 +806,6 @@ public class ConfigurationServiceView extends OngletReferentielBase {
             this.tab12TypeServiceFilterTxt.getElement().setAttribute("focus-target", "");
             this.tab12TypeServiceFilterTxt.setClearButtonVisible(true); //DJ
             
-            // incubation filter
-            this.tab12IsIncubationFilterCombo.addValueChangeListener(e -> this.tab12ApplyFilterToTheGrid());
-            this.tab12IsIncubationFilterCombo.setItems("Non Incubation", "Incubation");
-
-            filterRow.getCell(incubationColumn).setComponent(this.tab12IsIncubationFilterCombo);
-            this.tab12IsIncubationFilterCombo.setSizeFull();
-            this.tab12IsIncubationFilterCombo.setPlaceholder("Filtrer"); 
-            this.tab12IsIncubationFilterCombo.getElement().setAttribute("focus-target", "");
-            this.tab12IsIncubationFilterCombo.setClearButtonVisible(true); //DJ
-            
-            // postIncubation filter
-            this.tab12IsPostIncubationFilterCombo.addValueChangeListener(e -> this.tab12ApplyFilterToTheGrid());
-            this.tab12IsPostIncubationFilterCombo.setItems("Non Post Incubation", "Post Incubation");
-
-            filterRow.getCell(postIncubationColumn).setComponent(this.tab12IsPostIncubationFilterCombo);
-            this.tab12IsPostIncubationFilterCombo.setSizeFull();
-            this.tab12IsPostIncubationFilterCombo.setPlaceholder("Filtrer"); 
-            this.tab12IsPostIncubationFilterCombo.getElement().setAttribute("focus-target", "");
-            this.tab12IsPostIncubationFilterCombo.setClearButtonVisible(true); //DJ
-            
             // isInactif filter
             this.tab12IsInactifFilterCombo.addValueChangeListener(e -> this.tab12ApplyFilterToTheGrid());
             this.tab12IsInactifFilterCombo.setItems("Actif", "Inactif");
@@ -881,7 +838,7 @@ public class ConfigurationServiceView extends OngletReferentielBase {
             
             //2 - Add columns to the empty table and set Data Properties to Columns - Width = 565 + 175 + 175 + 175 + 175 + 100 = 975
             Grid.Column<VariableService> codeVariableColumn = this.tab23VariableServiceGrid.addColumn(VariableService::getCodeVariable).setKey("CodeVariable").setHeader("Code Variable").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("150px"); // fixed column
-            Grid.Column<VariableService> libelleVariableColumn = this.tab23VariableServiceGrid.addColumn(VariableService::getLibelleVariable).setKey("LibelleVariable").setHeader("Libellé VariableService").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("350px"); // fixed column
+            Grid.Column<VariableService> libelleVariableColumn = this.tab23VariableServiceGrid.addColumn(VariableService::getLibelleVariable).setKey("LibelleVariable").setHeader("Libellé Variable").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("350px"); // fixed column
             Grid.Column<VariableService> libelleCourtVariableColumn = this.tab23VariableServiceGrid.addColumn(VariableService::getLibelleCourtVariable).setKey("LibelleCourtVariable").setHeader("Libellé Abrégé").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("200px"); // fixed column
 
             Grid.Column<VariableService> typeVariableColumn = this.tab23VariableServiceGrid.addColumn(new ComponentRenderer<>(
@@ -1109,7 +1066,7 @@ public class ConfigurationServiceView extends OngletReferentielBase {
             this.tab45RubriqueGrid.setSelectionMode(Grid.SelectionMode.MULTI);
             
             //2 - Add columns to the empty table and set Data Properties to Columns - Width = 200 + 425 + 250 + 100 = 975
-            Grid.Column<Rubrique> noRubriqueColumn = this.tab45RubriqueGrid.addColumn(Rubrique::getNoRubrique).setKey("CodeTranche").setHeader("N° Rubrique").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("150px"); // fixed column
+            Grid.Column<Rubrique> noRubriqueColumn = this.tab45RubriqueGrid.addColumn(Rubrique::getNoRubrique).setKey("NoRubrique").setHeader("N° Rubrique").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("150px"); // fixed column
             Grid.Column<Rubrique> libelleRubriqueColumn = this.tab45RubriqueGrid.addColumn(Rubrique::getLibelleRubrique).setKey("LibelleRubrique").setHeader("Libellé Rubrique").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("300px"); // fixed column
             Grid.Column<Rubrique> libelleCourtRubriqueColumn = this.tab45RubriqueGrid.addColumn(Rubrique::getLibelleCourtRubrique).setKey("LibelleCourtRubrique").setHeader("Libellé Abrégé Rubrique").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("325px"); // fixed column
             
@@ -1131,7 +1088,7 @@ public class ConfigurationServiceView extends OngletReferentielBase {
                             return checkbox;
                         }
                     )
-            ).setKey("isEditionFacture").setHeader("EditionFacture").setTextAlign(ColumnTextAlign.CENTER).setFlexGrow(0).setWidth("100px");
+            ).setKey("isEditionFacture").setHeader("Edition Facture").setTextAlign(ColumnTextAlign.CENTER).setFlexGrow(0).setWidth("100px");
             
             Grid.Column<Rubrique> modeValorisationRubriqueColumn = this.tab45RubriqueGrid.addColumn(new ComponentRenderer<>(
                         rubrique -> {
@@ -1380,8 +1337,6 @@ public class ConfigurationServiceView extends OngletReferentielBase {
                 boolean isLibelleServiceFilterMatch = true;
                 boolean isLibelleCourtServiceFilterMatch = true;
                 boolean isTypeServiceFilterMatch = true;
-                boolean isIncubationFilterMatch = true;
-                boolean isPostIncubationFilterMatch = true;
                 boolean isInactifFilterMatch = true;
 
                 if(!this.tab12CodeServiceFilterTxt.isEmpty()){
@@ -1396,17 +1351,11 @@ public class ConfigurationServiceView extends OngletReferentielBase {
                 if(!this.tab12TypeServiceFilterTxt.isEmpty()){
                     isTypeServiceFilterMatch = item.getTypeService().getLibelleTypeService().toLowerCase(Locale.FRENCH).contains(this.tab12TypeServiceFilterTxt.getValue().toLowerCase(Locale.FRENCH));
                 }
-                if(this.tab12IsIncubationFilterCombo.getValue() != null){
-                    isIncubationFilterMatch = item.isIncubation() == (this.tab12IsIncubationFilterCombo.getValue().equals("Incubation"));
-                }
-                if(this.tab12IsPostIncubationFilterCombo.getValue() != null){
-                    isPostIncubationFilterMatch = item.isPostIncubation() == (this.tab12IsPostIncubationFilterCombo.getValue().equals("PostIncubation"));
-                }
                 if(this.tab12IsInactifFilterCombo.getValue() != null){
                     isInactifFilterMatch = item.isInactif() == (this.tab12IsInactifFilterCombo.getValue().equals("Inactif"));
                 }
 
-                return isCodeServiceFilterMatch && isLibelleServiceFilterMatch && isLibelleCourtServiceFilterMatch && isTypeServiceFilterMatch && isIncubationFilterMatch && isPostIncubationFilterMatch && isInactifFilterMatch;
+                return isCodeServiceFilterMatch && isLibelleServiceFilterMatch && isLibelleCourtServiceFilterMatch && isTypeServiceFilterMatch && isInactifFilterMatch;
             });
 
             //2 - Activation de la barre d'outils

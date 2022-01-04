@@ -17,7 +17,6 @@ import com.progenia.immaria01_01.data.business.MouvementComptaDetailsBusiness;
 import com.progenia.immaria01_01.data.business.MouvementFactureBusiness;
 import com.progenia.immaria01_01.data.business.MouvementFactureDetailsBusiness;
 import com.progenia.immaria01_01.data.business.OperationComptableBusiness;
-import com.progenia.immaria01_01.data.business.PorteurBusiness;
 import com.progenia.immaria01_01.data.business.PrestationDemandeDetailsBusiness;
 import com.progenia.immaria01_01.data.business.RubriqueBusiness;
 import com.progenia.immaria01_01.data.business.RubriqueComptabilisationBusiness;

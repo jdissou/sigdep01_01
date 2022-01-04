@@ -5,11 +5,6 @@
  */
 package com.progenia.immaria01_01.dialogs;
 
-import com.progenia.immaria01_01.data.business.CompetenceBusiness;
-import com.progenia.immaria01_01.data.entity.Collaborateur;
-import com.progenia.immaria01_01.data.entity.CollaborateurCompetence;
-import com.progenia.immaria01_01.data.entity.CollaborateurCompetenceId;
-import com.progenia.immaria01_01.data.entity.Competence;
 import com.progenia.immaria01_01.securities.services.SecurityService;
 import com.progenia.immaria01_01.utilities.MessageDialogHelper;
 import com.progenia.immaria01_01.utilities.ModeFormulaireEditerEnum;

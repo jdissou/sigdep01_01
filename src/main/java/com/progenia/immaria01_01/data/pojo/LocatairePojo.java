@@ -40,6 +40,7 @@ Put your annotation on an entity.
                         @ColumnResult(name = "ville", type = String.class),
                         @ColumnResult(name = "noTelephone", type = String.class),
                         @ColumnResult(name = "noMobile", type = String.class),
+                        @ColumnResult(name = "email", type = String.class),
                         @ColumnResult(name = "codeCategorieLocataire", type = String.class),
                         @ColumnResult(name = "codeTitreCivilite", type = String.class),
                         @ColumnResult(name = "codeNationalite", type = String.class),
@@ -79,6 +80,7 @@ public class LocatairePojo {
     private String ville;
     private String noTelephone;
     private String noMobile;
+    private String email;
     private String codeCategorieLocataire;
     private String codeTitreCivilite;
     private String codeNationalite;
@@ -100,6 +102,7 @@ public class LocatairePojo {
     Ville,
     NoTelephone,
     NoMobile,
+    Email,
     CodeCategorieLocataire,
     CodeTitreCivilite,
     CodeNationalite,

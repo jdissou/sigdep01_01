@@ -12,7 +12,6 @@ import com.progenia.immaria01_01.data.business.ContratLotBusiness;
 import com.progenia.immaria01_01.data.business.ServiceFourniBusiness;
 import com.progenia.immaria01_01.data.business.ExerciceBusiness;
 import com.progenia.immaria01_01.data.business.AbonnementServiceBusiness;
-import com.progenia.immaria01_01.data.business.PorteurBusiness;
 import com.progenia.immaria01_01.data.business.ContratLotDetailsBusiness;
 import com.progenia.immaria01_01.data.entity.CentreIncubateur;
 import com.progenia.immaria01_01.data.entity.Exercice;
@@ -573,7 +572,7 @@ public class ContratLotView extends SaisieTransactionMaitreDetailsBase<ContratLo
 
     private void cboCodeService_NotInList(String strProposedVal, int intMaxFieldLength)
     {
-        //Ajoute un nouveau ServiceFourni en entrant un libellé dans la zone de liste modifiable CodeService.
+        //Ajoute un nouveau Service en entrant un libellé dans la zone de liste modifiable CodeService.
         String strNewVal = strProposedVal;
 
         try 
@@ -605,8 +604,8 @@ public class ContratLotView extends SaisieTransactionMaitreDetailsBase<ContratLo
                     EditerServiceFourniDialog.getInstance().showDialog("Ajout de ServiceFourni", ModeFormulaireEditerEnum.AJOUTERCIF, new ArrayList<ServiceFourni>(), this.serviceFourniList, finalNewVal, this.uiEventBus);
                 };
 
-                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau ServiceFourni.
-                MessageDialogHelper.showYesNoDialog("Le ServiceFourni '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau ServiceFourni?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
+                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau Service.
+                MessageDialogHelper.showYesNoDialog("Le ServiceFourni '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau Service?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
             }
             else {
                 MessageDialogHelper.showWarningDialog("Erreur de Saisie", "La Saisie du ServiceFourni est requise. Veuillez en saisir un.");

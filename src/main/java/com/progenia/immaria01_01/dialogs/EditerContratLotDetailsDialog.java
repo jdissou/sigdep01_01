@@ -7,7 +7,6 @@ package com.progenia.immaria01_01.dialogs;
 
 import com.progenia.immaria01_01.data.business.AbonnementServiceBusiness;
 import com.progenia.immaria01_01.data.business.ContratLotDetailsBusiness;
-import com.progenia.immaria01_01.data.business.PorteurBusiness;
 import com.progenia.immaria01_01.data.entity.AbonnementService;
 import com.progenia.immaria01_01.data.entity.CentreIncubateur;
 import com.progenia.immaria01_01.data.entity.ContratLotDetails;
@@ -33,7 +32,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Locale;
 import org.vaadin.miki.superfields.dates.SuperDatePicker;
-import org.vaadin.miki.superfields.text.SuperTextField;
 import org.vaadin.spring.events.EventBus;
 import org.vaadin.spring.events.annotation.EventBusListenerMethod;
 

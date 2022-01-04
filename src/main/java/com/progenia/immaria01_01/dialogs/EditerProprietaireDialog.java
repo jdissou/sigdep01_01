@@ -690,7 +690,7 @@ public class EditerProprietaireDialog extends BaseEditerReferentielMaitreTabDial
                 };
 
                 // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau Compte.
-                MessageDialogHelper.showYesNoDialog("Le N° Compte Trésorerie '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau N° Compte Trésorerie?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
+                MessageDialogHelper.showYesNoDialog("Le N° Compte Trésorerie '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau Compte Trésorerie?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
             }
             else {
                 MessageDialogHelper.showWarningDialog("Erreur de Saisie", "La Saisie du N° Compte Trésorerie est requise. Veuillez en saisir un.");
@@ -735,8 +735,8 @@ public class EditerProprietaireDialog extends BaseEditerReferentielMaitreTabDial
                     EditerCompteDialog.getInstance().showDialog("Ajout de N° Compte", ModeFormulaireEditerEnum.AJOUTERCIF, new ArrayList<Compte>(), this.compteList, finalNewVal, this.uiEventBus);
                 };
 
-                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau N° Compte TVA sur Loyer.
-                MessageDialogHelper.showYesNoDialog("Le N° Compte TVA sur Loyer '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau N° Compte TVA sur Loyer?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
+                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau Compte TVA sur Loyer.
+                MessageDialogHelper.showYesNoDialog("Le N° Compte TVA sur Loyer '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau Compte TVA sur Loyer?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
             }
             else {
                 MessageDialogHelper.showWarningDialog("Erreur de Saisie", "La Saisie du N° Compte TVA sur Loyer est requise. Veuillez en saisir un.");

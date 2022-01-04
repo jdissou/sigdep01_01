@@ -5,9 +5,7 @@
  */
 package com.progenia.immaria01_01.dialogs;
 
-import com.progenia.immaria01_01.data.business.TypePartenaireBusiness;
 import com.progenia.immaria01_01.data.entity.Partenaire;
-import com.progenia.immaria01_01.data.entity.TypePartenaire;
 import com.progenia.immaria01_01.dialogs.EditerTypePartenaireDialog.TypePartenaireAddEvent;
 import com.progenia.immaria01_01.securities.services.SecurityService;
 import com.progenia.immaria01_01.utilities.MessageDialogHelper;

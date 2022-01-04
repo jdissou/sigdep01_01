@@ -54,6 +54,9 @@ public class Locataire implements Serializable {
     @Column(name="NoMobile")
     private String noMobile;
 
+    @Column(name="Email")
+    private String email;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="CodeCategorieLocataire", nullable=false)
     private CategorieLocataire categorieLocataire;

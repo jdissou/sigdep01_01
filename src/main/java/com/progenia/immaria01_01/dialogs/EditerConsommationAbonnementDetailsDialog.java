@@ -6,7 +6,6 @@
 package com.progenia.immaria01_01.dialogs;
 
 import com.progenia.immaria01_01.data.business.FacturationAbonnementConsommationBusiness;
-import com.progenia.immaria01_01.data.business.PorteurBusiness;
 import com.progenia.immaria01_01.data.business.ServiceFourniBusiness;
 import com.progenia.immaria01_01.data.business.VariableServiceBusiness;
 import com.progenia.immaria01_01.data.entity.CentreIncubateur;
@@ -15,7 +14,6 @@ import com.progenia.immaria01_01.data.entity.FacturationAbonnement;
 import com.progenia.immaria01_01.data.entity.Porteur;
 import com.progenia.immaria01_01.data.entity.ServiceFourni;
 import com.progenia.immaria01_01.data.entity.VariableService;
-import static com.progenia.immaria01_01.dialogs.BaseEditerTransactionDetailDialog.FORM_ITEM_LABEL_WIDTH200;
 import com.progenia.immaria01_01.utilities.MessageDialogHelper;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.Unit;
@@ -450,7 +448,7 @@ public class EditerConsommationAbonnementDetailsDialog extends BaseEditerTransac
     
     private void cboCodeService_NotInList(String strProposedVal, int intMaxFieldLength)
     {
-        //Ajoute un nouveau ServiceFourni en entrant un libellé dans la zone de liste modifiable CodeService.
+        //Ajoute un nouveau Service en entrant un libellé dans la zone de liste modifiable CodeService.
         String strNewVal = strProposedVal;
 
         try 
@@ -482,8 +480,8 @@ public class EditerConsommationAbonnementDetailsDialog extends BaseEditerTransac
                     EditerServiceFourniDialog.getInstance().showDialog("Ajout de ServiceFourni", ModeFormulaireEditerEnum.AJOUTERCIF, new ArrayList<ServiceFourni>(), this.serviceFourniList, finalNewVal, this.uiEventBus);
                 };
 
-                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau ServiceFourni.
-                MessageDialogHelper.showYesNoDialog("Le ServiceFourni '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau ServiceFourni?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
+                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau Service.
+                MessageDialogHelper.showYesNoDialog("Le ServiceFourni '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau Service?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
             }
             else {
                 MessageDialogHelper.showWarningDialog("Erreur de Saisie", "La Saisie du ServiceFourni est requise. Veuillez en saisir un.");
@@ -499,7 +497,7 @@ public class EditerConsommationAbonnementDetailsDialog extends BaseEditerTransac
     
     private void cboCodeVariable_NotInList(String strProposedVal, int intMaxFieldLength)
     {
-        //Ajoute un nouveau VariableService en entrant un libellé dans la zone de liste modifiable CodeVariable.
+        //Ajoute une nouvelle Variable en entrant un libellé dans la zone de liste modifiable CodeVariable.
         String strNewVal = strProposedVal;
 
         try 
@@ -531,8 +529,8 @@ public class EditerConsommationAbonnementDetailsDialog extends BaseEditerTransac
                     EditerVariableServiceDialog.getInstance().showDialog("Ajout de VariableService", ModeFormulaireEditerEnum.AJOUTERCIF, new ArrayList<VariableService>(), this.variableServiceList, finalNewVal, this.uiEventBus);
                 };
 
-                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau VariableService.
-                MessageDialogHelper.showYesNoDialog("Le VariableService '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau VariableService?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
+                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter une nouvelle Variable.
+                MessageDialogHelper.showYesNoDialog("Le VariableService '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter une nouvelle Variable?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
             }
             else {
                 MessageDialogHelper.showWarningDialog("Erreur de Saisie", "La Saisie du VariableService est requise. Veuillez en saisir un.");

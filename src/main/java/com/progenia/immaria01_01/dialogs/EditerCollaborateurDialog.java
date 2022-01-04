@@ -5,16 +5,6 @@
  */
 package com.progenia.immaria01_01.dialogs;
 
-import com.progenia.immaria01_01.data.business.CompetenceBusiness;
-import com.progenia.immaria01_01.data.business.CollaborateurCompetenceBusiness;
-import com.progenia.immaria01_01.data.business.TypeCollaborateurBusiness;
-import com.progenia.immaria01_01.data.entity.Competence;
-import com.progenia.immaria01_01.data.entity.Collaborateur;
-import com.progenia.immaria01_01.data.entity.CollaborateurCompetence;
-import com.progenia.immaria01_01.data.entity.TypeCollaborateur;
-import static com.progenia.immaria01_01.dialogs.BaseEditerReferentielDialog.FORM_ITEM_LABEL_WIDTH250;
-import static com.progenia.immaria01_01.dialogs.BaseEditerReferentielDialog.PANEL_FLEX_BASIS;
-import static com.progenia.immaria01_01.dialogs.BaseEditerReferentielDialog.TEXTFIELD_LEFT_LABEL;
 import com.progenia.immaria01_01.dialogs.EditerCollaborateurCompetenceDialog.CollaborateurCompetenceAddEvent;
 import com.progenia.immaria01_01.dialogs.EditerCollaborateurCompetenceDialog.CollaborateurCompetenceRefreshEvent;
 import com.progenia.immaria01_01.dialogs.EditerCollaborateurCompetenceDialog.CollaborateurCompetenceUpdateEvent;

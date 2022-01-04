@@ -5,10 +5,7 @@
  */
 package com.progenia.immaria01_01.dialogs;
 
-import com.progenia.immaria01_01.data.business.NatureIndicateurBusiness;
 import com.progenia.immaria01_01.data.business.UniteOeuvreBusiness;
-import com.progenia.immaria01_01.data.entity.IndicateurSuivi;
-import com.progenia.immaria01_01.data.entity.NatureIndicateur;
 import com.progenia.immaria01_01.data.entity.UniteOeuvre;
 import com.progenia.immaria01_01.dialogs.EditerNatureIndicateurDialog.NatureIndicateurAddEvent;
 import com.progenia.immaria01_01.dialogs.EditerUniteOeuvreDialog.UniteOeuvreAddEvent;

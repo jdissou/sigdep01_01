@@ -149,6 +149,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
     private SuperTextField tab12VilleFilterTxt = new SuperTextField();
     private SuperTextField tab12NoTelephoneFilterTxt = new SuperTextField();
     private SuperTextField tab12NoMobileFilterTxt = new SuperTextField();
+    private SuperTextField tab12EmailFilterTxt = new SuperTextField();
     private SuperTextField tab12CategorieLocataireFilterTxt = new SuperTextField();
     private SuperTextField tab12TitreCiviliteFilterTxt = new SuperTextField();
     private SuperTextField tab12NationaliteFilterTxt = new SuperTextField();
@@ -156,48 +157,6 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
     private SuperTextField tab12CompteClientFilterTxt = new SuperTextField();
     private ComboBox<String> tab12IsInactifFilterCombo = new ComboBox<>();
 
-    /*
-	[CodeLocataire] [nvarchar](10) NOT NULL,
-	[LibelleLocataire] [nvarchar](50) NULL,
-	[LieuNaissance] [nvarchar](50) NULL,
-	[Adresse] [nvarchar](200) NULL,
-	[Ville] [nvarchar](30) NULL,
-	[NoTelephone] [nvarchar](15) NULL,
-	[NoMobile] [nvarchar](15) NULL,
-
-	[SoldeDebiteur] [decimal](19, 0) NULL,
-
-	[CodeCategorieLocataire] [nvarchar](10) NULL,
-	[CodeTitreCivilite] [nvarchar](2) NULL,
-	[CodeNationalite] [nvarchar](3) NULL,
-	[CodeProfession] [nvarchar](10) NULL,
-	[NoCompteClient] [nvarchar](11) NULL,
-	[Inactif] [bit] NOT NULL,
-
-     */
-
-
-
-
-    /*
-	[CodeProprietaire] [nvarchar](2) NOT NULL,
-	[LibelleProprietaire] [nvarchar](50) NULL,
-	[LibelleCourtProprietaire] [nvarchar](20) NULL,
-
-	[NoCompteTresorerie] [nvarchar](11) NULL,
-	[NoCompteTVALoyer] [nvarchar](11) NULL,
-	[NoCompteTVADepense] [nvarchar](11) NULL,
-	[CodeJournalLoyer] [nvarchar](6) NULL,
-	[CodeJournalDepense] [nvarchar](6) NULL,
-
-	[Adresse] [nvarchar](200) NULL,
-	[Ville] [nvarchar](30) NULL,
-	[NoTelephone] [nvarchar](15) NULL,
-	[NoMobile] [nvarchar](15) NULL,
-	[Email] [nvarchar](100) NULL,
-
-	[Inactif] [bit] NOT NULL,
-     */
     //ATTRIBUTS - tab23 - Proprietaire
     private Tab tab23ProprietaireTab = new Tab();
     private Grid<Proprietaire> tab23ProprietaireGrid = new Grid<>(); //Manually defining columns
@@ -575,6 +534,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
             Grid.Column<Locataire> villeColumn = this.tab12LocataireGrid.addColumn(Locataire::getVille).setKey("Ville").setHeader("Ville").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("200px"); // fixed column
             Grid.Column<Locataire> noTelephoneColumn = this.tab12LocataireGrid.addColumn(Locataire::getNoTelephone).setKey("NoTelephone").setHeader("N° Téléphone").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("200px"); // fixed column
             Grid.Column<Locataire> noMobileColumn = this.tab12LocataireGrid.addColumn(Locataire::getNoMobile).setKey("NoMobile").setHeader("N° Mobile").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("200px"); // fixed column
+            Grid.Column<Locataire> emailColumn = this.tab12LocataireGrid.addColumn(Locataire::getEmail).setKey("Email").setHeader("E-mail").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("200px"); // fixed column
 
             Grid.Column<Locataire> categorieLocataireColumn = this.tab12LocataireGrid.addColumn(new ComponentRenderer<>(
                             locataire -> {
@@ -759,6 +719,16 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
             this.tab12NoMobileFilterTxt.setPlaceholder("Filtrer");
             this.tab12NoMobileFilterTxt.getElement().setAttribute("focus-target", "");
             this.tab12NoMobileFilterTxt.setClearButtonVisible(true); //DJ
+
+            // Fourth filter
+            this.tab12EmailFilterTxt.addValueChangeListener(event -> this.tab12ApplyFilterToTheGrid());
+            this.tab12EmailFilterTxt.setValueChangeMode(ValueChangeMode.EAGER);
+
+            filterRow.getCell(emailColumn).setComponent(this.tab12EmailFilterTxt);
+            this.tab12EmailFilterTxt.setSizeFull();
+            this.tab12EmailFilterTxt.setPlaceholder("Filtrer");
+            this.tab12EmailFilterTxt.getElement().setAttribute("focus-target", "");
+            this.tab12EmailFilterTxt.setClearButtonVisible(true); //DJ
 
             // Fourth filter
             this.tab12CategorieLocataireFilterTxt.addValueChangeListener(event -> this.tab12ApplyFilterToTheGrid());
@@ -1128,7 +1098,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
             Grid.Column<Gestionnaire> codeGestionnaireColumn = this.tab45GestionnaireGrid.addColumn(Gestionnaire::getCodeGestionnaire).setKey("CodeGestionnaire").setHeader("Code Agent").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("175px"); // fixed column
             Grid.Column<Gestionnaire> libelleGestionnaireColumn = this.tab45GestionnaireGrid.addColumn(Gestionnaire::getLibelleGestionnaire).setKey("LibelleGestionnaire").setHeader("Libellé Agent").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("425px"); // fixed column
             Grid.Column<Gestionnaire> initialesGestionnaireColumn = this.tab45GestionnaireGrid.addColumn(Gestionnaire::getInitialesGestionnaire).setKey("InitialesGestionnaire").setHeader("Initiales Agent").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("150px"); // fixed column
-            Grid.Column<Gestionnaire> codeDescriptifGestionnaireColumn = this.tab45GestionnaireGrid.addColumn(Gestionnaire::getCodeDescriptifGestionnaire).setKey("CodeDescriptifGestionnaire").setHeader("Initiales Agent").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("150px"); // fixed column
+            Grid.Column<Gestionnaire> codeDescriptifGestionnaireColumn = this.tab45GestionnaireGrid.addColumn(Gestionnaire::getCodeDescriptifGestionnaire).setKey("CodeDescriptifGestionnaire").setHeader("Code Descriptif Agent").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("150px"); // fixed column
 
             Grid.Column<Gestionnaire> isInactifColumn = this.tab45GestionnaireGrid.addColumn(new ComponentRenderer<>(
                             gestionnaire -> {
@@ -1218,6 +1188,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
                 boolean isVilleFilterMatch = true;
                 boolean isNoTelephoneFilterMatch = true;
                 boolean isNoMobileFilterMatch = true;
+                boolean isEmailFilterMatch = true;
                 boolean isInactifFilterMatch = true;
 
                 if(!this.tab12CodeLocataireFilterTxt.isEmpty()){
@@ -1256,11 +1227,14 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
                 if(!this.tab12NoMobileFilterTxt.isEmpty()){
                     isNoMobileFilterMatch = item.getNoMobile().toLowerCase(Locale.FRENCH).contains(this.tab12NoMobileFilterTxt.getValue().toLowerCase(Locale.FRENCH));
                 }
+                if(!this.tab12EmailFilterTxt.isEmpty()){
+                    isEmailFilterMatch = item.getEmail().toLowerCase(Locale.FRENCH).contains(this.tab12EmailFilterTxt.getValue().toLowerCase(Locale.FRENCH));
+                }
                 if(this.tab12IsInactifFilterCombo.getValue() != null){
                     isInactifFilterMatch = item.isInactif() == (this.tab12IsInactifFilterCombo.getValue().equals("Inactif"));
                 }
 
-                return isCodeLocataireFilterMatch && isLibelleLocataireFilterMatch && isLieuNaissanceFilterMatch && isCategorieLocataireFilterMatch && isTitreCiviliteFilterMatch && isNationaliteFilterMatch && isProfessionFilterMatch && isCompteClientFilterMatch && isAdresseFilterMatch && isVilleFilterMatch && isNoTelephoneFilterMatch && isNoMobileFilterMatch && isInactifFilterMatch;
+                return isCodeLocataireFilterMatch && isLibelleLocataireFilterMatch && isLieuNaissanceFilterMatch && isCategorieLocataireFilterMatch && isTitreCiviliteFilterMatch && isNationaliteFilterMatch && isProfessionFilterMatch && isCompteClientFilterMatch && isAdresseFilterMatch && isVilleFilterMatch && isNoTelephoneFilterMatch && isNoMobileFilterMatch && isEmailFilterMatch && isInactifFilterMatch;
             });
 
             //2 - Activation de la barre d'outils

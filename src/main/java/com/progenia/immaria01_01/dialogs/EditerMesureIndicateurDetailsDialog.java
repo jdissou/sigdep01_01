@@ -6,15 +6,9 @@
 package com.progenia.immaria01_01.dialogs;
 
 import com.progenia.immaria01_01.data.business.MesureIndicateurDetailsBusiness;
-import com.progenia.immaria01_01.data.business.IndicateurSuiviBusiness;
-import com.progenia.immaria01_01.data.entity.CentreIncubateur;
 import com.progenia.immaria01_01.data.entity.MesureIndicateurDetails;
 import com.progenia.immaria01_01.data.entity.MesureIndicateur;
-import com.progenia.immaria01_01.data.entity.IndicateurSuivi;
-import static com.progenia.immaria01_01.dialogs.BaseEditerTransactionDetailDialog.COMBOBOX_LEFT_LABEL;
-import static com.progenia.immaria01_01.dialogs.BaseEditerTransactionDetailDialog.FORM_ITEM_LABEL_WIDTH200;
-import static com.progenia.immaria01_01.dialogs.BaseEditerTransactionDetailDialog.PANEL_FLEX_BASIS;
-import static com.progenia.immaria01_01.dialogs.BaseEditerTransactionDetailDialog.TEXTFIELD_LEFT_LABEL;
+
 import com.progenia.immaria01_01.utilities.MessageDialogHelper;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.Unit;
@@ -301,7 +295,7 @@ public class EditerMesureIndicateurDetailsDialog extends BaseEditerTransactionDe
 
     private void cboCodeIndicateur_NotInList(String strProposedVal, int intMaxFieldLength)
     {
-        //Ajoute un nouveau IndicateurSuivi en entrant un libellé dans la zone de liste modifiable CodeIndicateur.
+        //Ajoute un nouvel Indicateur en entrant un libellé dans la zone de liste modifiable CodeIndicateur.
         String strNewVal = strProposedVal;
 
         try 
@@ -333,8 +327,8 @@ public class EditerMesureIndicateurDetailsDialog extends BaseEditerTransactionDe
                     EditerIndicateurSuiviDialog.getInstance().showDialog("Ajout de IndicateurSuivi", ModeFormulaireEditerEnum.AJOUTERCIF, new ArrayList<IndicateurSuivi>(), this.indicateurSuiviList, finalNewVal, this.uiEventBus);
                 };
 
-                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau IndicateurSuivi.
-                MessageDialogHelper.showYesNoDialog("Le IndicateurSuivi '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau IndicateurSuivi?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
+                // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouvel Indicateur.
+                MessageDialogHelper.showYesNoDialog("Le IndicateurSuivi '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouvel Indicateur?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
             }
             else {
                 MessageDialogHelper.showWarningDialog("Erreur de Saisie", "La Saisie du IndicateurSuivi est requise. Veuillez en saisir un.");

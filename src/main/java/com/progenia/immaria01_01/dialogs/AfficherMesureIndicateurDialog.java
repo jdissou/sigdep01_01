@@ -8,13 +8,10 @@ package com.progenia.immaria01_01.dialogs;
 import com.progenia.immaria01_01.data.business.CentreIncubateurBusiness;
 import com.progenia.immaria01_01.data.business.MesureIndicateurBusiness;
 import com.progenia.immaria01_01.data.business.ExerciceBusiness;
-import com.progenia.immaria01_01.data.business.DomaineActiviteBusiness;
-import com.progenia.immaria01_01.data.business.TableauCollecteBusiness;
 import com.progenia.immaria01_01.data.entity.CentreIncubateur;
 import com.progenia.immaria01_01.data.entity.MesureIndicateur;
 import com.progenia.immaria01_01.data.entity.Exercice;
-import com.progenia.immaria01_01.data.entity.DomaineActivite;
-import com.progenia.immaria01_01.data.entity.TableauCollecte;
+
 import java.util.Arrays;
 import com.progenia.immaria01_01.securities.data.business.UtilisateurBusiness;
 import com.progenia.immaria01_01.securities.data.entity.Utilisateur;

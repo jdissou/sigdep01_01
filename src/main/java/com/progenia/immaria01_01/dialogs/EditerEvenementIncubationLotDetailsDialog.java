@@ -6,7 +6,6 @@
 package com.progenia.immaria01_01.dialogs;
 
 import com.progenia.immaria01_01.data.business.EvenementIncubationLotDetailsBusiness;
-import com.progenia.immaria01_01.data.business.PorteurBusiness;
 import com.progenia.immaria01_01.data.entity.CentreIncubateur;
 import com.progenia.immaria01_01.data.entity.EvenementIncubationLotDetails;
 import com.progenia.immaria01_01.data.entity.EvenementIncubationLot;

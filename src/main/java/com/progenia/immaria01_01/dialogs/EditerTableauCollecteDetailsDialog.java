@@ -5,13 +5,7 @@
  */
 package com.progenia.immaria01_01.dialogs;
 
-import com.progenia.immaria01_01.data.business.IndicateurSuiviBusiness;
-import com.progenia.immaria01_01.data.business.NatureIndicateurBusiness;
 import com.progenia.immaria01_01.data.business.UniteOeuvreBusiness;
-import com.progenia.immaria01_01.data.entity.TableauCollecteDetails;
-import com.progenia.immaria01_01.data.entity.TableauCollecte;
-import com.progenia.immaria01_01.data.entity.TableauCollecteDetailsId;
-import com.progenia.immaria01_01.data.entity.IndicateurSuivi;
 import com.progenia.immaria01_01.securities.services.SecurityService;
 import com.progenia.immaria01_01.utilities.MessageDialogHelper;
 import com.progenia.immaria01_01.utilities.ModeFormulaireEditerEnum;

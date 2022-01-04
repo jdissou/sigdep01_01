@@ -15,11 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+
+import lombok.*;
 
 /**
  *
@@ -37,8 +34,9 @@ well, generate these for all the fields of the class.
 @EqualsAndHashCode: will generate both equals() and hashCode() methods by default considering all relevant fields, 
 and according to very well though semantics.
 */
-@Getter @Setter @AllArgsConstructor @ToString @EqualsAndHashCode
-//@Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString @EqualsAndHashCode
+
+@Getter @Setter @NoArgsConstructor
+@AllArgsConstructor @ToString @EqualsAndHashCode
 public class ServiceFourni implements Serializable {
     @Id
     @Column(name="CodeService")
@@ -54,18 +52,6 @@ public class ServiceFourni implements Serializable {
     @JoinColumn(name="CodeTypeService", nullable=false)
     private SystemeTypeService typeService;
 
-    @Column(name="Incubation")
-    private boolean incubation;
-    
-    @Column(name="PostIncubation")
-    private boolean postIncubation;
-    
     @Column(name="Inactif")
     private boolean isInactif;
-
-    public ServiceFourni() {
-        //Initialisation des valeurs par défaut
-        this.incubation = false;
-        this.postIncubation = false;
-    }
 }

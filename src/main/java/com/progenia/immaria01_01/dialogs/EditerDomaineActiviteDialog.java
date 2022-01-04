@@ -5,9 +5,6 @@
  */
 package com.progenia.immaria01_01.dialogs;
 
-import com.progenia.immaria01_01.data.business.SecteurActiviteBusiness;
-import com.progenia.immaria01_01.data.entity.DomaineActivite;
-import com.progenia.immaria01_01.data.entity.SecteurActivite;
 import com.progenia.immaria01_01.dialogs.EditerSecteurActiviteDialog.SecteurActiviteAddEvent;
 import com.progenia.immaria01_01.securities.services.SecurityService;
 import com.progenia.immaria01_01.utilities.MessageDialogHelper;
@@ -291,7 +288,7 @@ public class EditerDomaineActiviteDialog extends BaseEditerReferentielMaitreForm
 
     private void cboCodeSecteurActivite_NotInList(String strProposedVal, int intMaxFieldLength)
     {
-        //Ajoute une nouvelle Secteur d'Activité en entrant un libellé dans la zone de liste modifiable CodeSecteurActivite.
+        //Ajoute un nouveau Secteur d'Activité en entrant un libellé dans la zone de liste modifiable CodeSecteurActivite.
         String strNewVal = strProposedVal;
 
         try 
@@ -322,7 +319,7 @@ public class EditerDomaineActiviteDialog extends BaseEditerReferentielMaitreForm
                 };
 
                 // Affiche une boîte de confirmation demandant si l'utilisateur désire ajouter un nouveau Type Porteur.
-                MessageDialogHelper.showYesNoDialog("Le Secteur d'Activité '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter une nouvelle Secteur d'Activité?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
+                MessageDialogHelper.showYesNoDialog("Le Secteur d'Activité '" + strNewVal + "' n'est pas dans la liste.", "Désirez-vous ajouter un nouveau Secteur d'Activité?. Cliquez sur Oui pour confirmer l'ajout.", yesClickListener, noClickListener);
             }
             else {
                 MessageDialogHelper.showWarningDialog("Erreur de Saisie", "La Saisie du Secteur d'Activité est requise. Veuillez en saisir un.");

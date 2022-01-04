@@ -487,8 +487,8 @@ public class CorpusFacturationView extends OngletReferentielBase {
             this.tab21SequenceFacturationGrid.setSelectionMode(Grid.SelectionMode.MULTI);
             
             //2 - Add columns to the empty table and set Data Properties to Columns - Width = 200 + 425 + 250 + 100 = 975
-            Grid.Column<SequenceFacturation> codeSequenceFacturationColumn = this.tab21SequenceFacturationGrid.addColumn(SequenceFacturation::getCodeSequenceFacturation).setKey("CodeSequenceFacturation").setHeader("Code SequenceFacturation").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("200px"); // fixed column
-            Grid.Column<SequenceFacturation> libelleSequenceFacturationColumn = this.tab21SequenceFacturationGrid.addColumn(SequenceFacturation::getLibelleSequenceFacturation).setKey("LibelleSequenceFacturation").setHeader("Libellé SequenceFacturation").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("375px"); // fixed column
+            Grid.Column<SequenceFacturation> codeSequenceFacturationColumn = this.tab21SequenceFacturationGrid.addColumn(SequenceFacturation::getCodeSequenceFacturation).setKey("CodeSequenceFacturation").setHeader("Code Séquence Facturation").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("200px"); // fixed column
+            Grid.Column<SequenceFacturation> libelleSequenceFacturationColumn = this.tab21SequenceFacturationGrid.addColumn(SequenceFacturation::getLibelleSequenceFacturation).setKey("LibelleSequenceFacturation").setHeader("Libellé Séquence Facturation").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("375px"); // fixed column
             Grid.Column<SequenceFacturation> libelleCourtSequenceFacturationColumn = this.tab21SequenceFacturationGrid.addColumn(SequenceFacturation::getLibelleCourtSequenceFacturation).setKey("LibelleCourtSequenceFacturation").setHeader("Libellé Abrégé").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("275px"); // fixed column
             Grid.Column<SequenceFacturation> isInactifColumn = this.tab21SequenceFacturationGrid.addColumn(new ComponentRenderer<>(
                         iAndicateurSuivi -> {

@@ -6,7 +6,6 @@
 package com.progenia.immaria01_01.dialogs;
 
 import com.progenia.immaria01_01.data.business.CompteBusiness;
-import com.progenia.immaria01_01.data.entity.TypePorteur;
 import com.progenia.immaria01_01.data.entity.Compte;
 import com.progenia.immaria01_01.dialogs.EditerCompteDialog.CompteAddEvent;
 import com.progenia.immaria01_01.securities.services.SecurityService;

@@ -114,7 +114,6 @@ public class ClassificationPartiePrenanteView extends OngletReferentielBase {
     /* Fields to filter items in tab10Nationalite entity */
     private SuperTextField tab10CodeNationaliteFilterTxt = new SuperTextField();
     private SuperTextField tab10LibelleNationaliteFilterTxt = new SuperTextField();
-    private SuperTextField tab10LibelleCourtNationaliteFilterTxt = new SuperTextField();
     private ComboBox<String> tab10IsInactifFilterCombo = new ComboBox<>();
 
     //ATTRIBUTS - tab21 - CategorieLocataire
@@ -330,7 +329,6 @@ public class ClassificationPartiePrenanteView extends OngletReferentielBase {
             //2 - Add columns to the empty table and set Data Properties to Columns - Width = 200 + 425 + 250 + 100 = 975
             Grid.Column<Nationalite> codeNationaliteColumn = this.tab10NationaliteGrid.addColumn(Nationalite::getCodeNationalite).setKey("CodeNationalite").setHeader("Code Nationalité").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("200px"); // fixed column
             Grid.Column<Nationalite> libelleNationaliteColumn = this.tab10NationaliteGrid.addColumn(Nationalite::getLibelleNationalite).setKey("LibelleNationalite").setHeader("Libellé Nationalité").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("375px"); // fixed column
-            Grid.Column<Nationalite> libelleCourtNationaliteColumn = this.tab10NationaliteGrid.addColumn(Nationalite::getLibelleCourtNationalite).setKey("LibelleCourtNationalite").setHeader("Libellé Abrégé").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("275px"); // fixed column
             Grid.Column<Nationalite> isInactifColumn = this.tab10NationaliteGrid.addColumn(new ComponentRenderer<>(
                         nationalite -> {
                             Checkbox checkbox = new Checkbox();
@@ -365,16 +363,6 @@ public class ClassificationPartiePrenanteView extends OngletReferentielBase {
             this.tab10LibelleNationaliteFilterTxt.getElement().setAttribute("focus-target", "");
             this.tab10LibelleNationaliteFilterTxt.setClearButtonVisible(true); //DJ
 
-            // Third filter
-            this.tab10LibelleCourtNationaliteFilterTxt.addValueChangeListener(event -> this.tab10ApplyFilterToTheGrid());
-            this.tab10LibelleCourtNationaliteFilterTxt.setValueChangeMode(ValueChangeMode.EAGER);
-
-            filterRow.getCell(libelleCourtNationaliteColumn).setComponent(this.tab10LibelleCourtNationaliteFilterTxt);
-            this.tab10LibelleCourtNationaliteFilterTxt.setSizeFull();
-            this.tab10LibelleCourtNationaliteFilterTxt.setPlaceholder("Filtrer");
-            this.tab10LibelleCourtNationaliteFilterTxt.getElement().setAttribute("focus-target", "");
-            this.tab10LibelleCourtNationaliteFilterTxt.setClearButtonVisible(true); //DJ
-
             // isInactif filter
             this.tab10IsInactifFilterCombo.addValueChangeListener(e -> this.tab10ApplyFilterToTheGrid());
             this.tab10IsInactifFilterCombo.setItems("Actif", "Inactif");
@@ -399,7 +387,6 @@ public class ClassificationPartiePrenanteView extends OngletReferentielBase {
             this.tab10NationaliteDataProvider.setFilter(item -> {
                 boolean isCodeNationaliteFilterMatch = true;
                 boolean isLibelleNationaliteFilterMatch = true;
-                boolean isLibelleCourtNationaliteFilterMatch = true;
                 boolean isInactifFilterMatch = true;
 
                 if(!this.tab10CodeNationaliteFilterTxt.isEmpty()){
@@ -408,14 +395,11 @@ public class ClassificationPartiePrenanteView extends OngletReferentielBase {
                 if(!this.tab10LibelleNationaliteFilterTxt.isEmpty()){
                     isLibelleNationaliteFilterMatch = item.getLibelleNationalite().toLowerCase(Locale.FRENCH).contains(this.tab10LibelleNationaliteFilterTxt.getValue().toLowerCase(Locale.FRENCH));
                 }
-                if(!this.tab10LibelleCourtNationaliteFilterTxt.isEmpty()){
-                    isLibelleCourtNationaliteFilterMatch = item.getLibelleCourtNationalite().toLowerCase(Locale.FRENCH).contains(this.tab10LibelleCourtNationaliteFilterTxt.getValue().toLowerCase(Locale.FRENCH));
-                }
                 if(this.tab10IsInactifFilterCombo.getValue() != null){
                     isInactifFilterMatch = item.isInactif() == (this.tab10IsInactifFilterCombo.getValue().equals("Inactif"));
                 }
 
-                return isCodeNationaliteFilterMatch && isLibelleNationaliteFilterMatch && isLibelleCourtNationaliteFilterMatch && isInactifFilterMatch;
+                return isCodeNationaliteFilterMatch && isLibelleNationaliteFilterMatch && isInactifFilterMatch;
             });
 
             //2 - Activation de la barre d'outils
@@ -506,8 +490,8 @@ public class ClassificationPartiePrenanteView extends OngletReferentielBase {
             this.tab21CategorieLocataireGrid.setSelectionMode(Grid.SelectionMode.MULTI);
 
             //2 - Add columns to the empty table and set Data Properties to Columns - Width = 200 + 425 + 250 + 100 = 975
-            Grid.Column<CategorieLocataire> codeCategorieLocataireColumn = this.tab21CategorieLocataireGrid.addColumn(CategorieLocataire::getCodeCategorieLocataire).setKey("CodeCategorieLocataire").setHeader("Code Catégorie").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("100px"); // fixed column
-            Grid.Column<CategorieLocataire> libelleCategorieLocataireColumn = this.tab21CategorieLocataireGrid.addColumn(CategorieLocataire::getLibelleCategorieLocataire).setKey("LibelleCategorieLocataire").setHeader("Libellé Catégorie").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("275px"); // fixed column
+            Grid.Column<CategorieLocataire> codeCategorieLocataireColumn = this.tab21CategorieLocataireGrid.addColumn(CategorieLocataire::getCodeCategorieLocataire).setKey("CodeCategorieLocataire").setHeader("Code Catégorie Locataire").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("100px"); // fixed column
+            Grid.Column<CategorieLocataire> libelleCategorieLocataireColumn = this.tab21CategorieLocataireGrid.addColumn(CategorieLocataire::getLibelleCategorieLocataire).setKey("LibelleCategorieLocataire").setHeader("Libellé Catégorie Locataire").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("275px"); // fixed column
             Grid.Column<CategorieLocataire> libelleCourtCategorieLocataireColumn = this.tab21CategorieLocataireGrid.addColumn(CategorieLocataire::getLibelleCourtCategorieLocataire).setKey("LibelleCourtCategorieLocataire").setHeader("Libellé Abrégé").setTextAlign(ColumnTextAlign.START).setFlexGrow(0).setWidth("175px"); // fixed column
 
             Grid.Column<CategorieLocataire> categorieLocataireColumn = this.tab21CategorieLocataireGrid.addColumn(new ComponentRenderer<>(
