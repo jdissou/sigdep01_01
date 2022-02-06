@@ -265,7 +265,7 @@ public class ClassificationImmobiliereView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab10StandingDataProvider = DataProvider.ofCollection(this.tab10StandingList);
 
-            //4- Make the tab10StandingDataProvider sorted by LibelleStanding in ascending order
+            //4- Make the tab10StandingDataProvider sorted by CodeStanding in ascending order
             this.tab10StandingDataProvider.setSortOrder(ObjetDette::getCodeStanding, SortDirection.ASCENDING);
 
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -292,7 +292,7 @@ public class ClassificationImmobiliereView extends OngletReferentielBase {
             //2 - Set a new data provider.
             this.tab10StandingDataProvider = DataProvider.ofCollection(this.tab10StandingList);
 
-            //3 - Make the detailsDataProvider sorted by LibelleStanding in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeStanding in ascending order
             this.tab10StandingDataProvider.setSortOrder(ObjetDette::getCodeStanding, SortDirection.ASCENDING);
 
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -438,7 +438,7 @@ public class ClassificationImmobiliereView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab21TypeBienImmobilierDataProvider = DataProvider.ofCollection(this.tab21TypeBienImmobilierList);
 
-            //4- Make the tab21TypeBienImmobilierDataProvider sorted by LibelleTypeBienImmobilier in ascending order
+            //4- Make the tab21TypeBienImmobilierDataProvider sorted by CodeTypeBienImmobilier in ascending order
             this.tab21TypeBienImmobilierDataProvider.setSortOrder(TypeBienImmobilier::getCodeTypeBienImmobilier, SortDirection.ASCENDING);
 
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -466,7 +466,7 @@ public class ClassificationImmobiliereView extends OngletReferentielBase {
             //2 - Set a new data provider.
             this.tab21TypeBienImmobilierDataProvider = DataProvider.ofCollection(this.tab21TypeBienImmobilierList);
 
-            //3 - Make the detailsDataProvider sorted by LibelleTypeBienImmobilier in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeTypeBienImmobilier in ascending order
             this.tab21TypeBienImmobilierDataProvider.setSortOrder(TypeBienImmobilier::getCodeTypeBienImmobilier, SortDirection.ASCENDING);
 
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -615,7 +615,7 @@ public class ClassificationImmobiliereView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab32LocalisationDataProvider = DataProvider.ofCollection(this.tab32LocalisationList);
 
-            //4- Make the tab32LocalisationDataProvider sorted by LibelleLocalisation in ascending order
+            //4- Make the tab32LocalisationDataProvider sorted by CodeLocalisation in ascending order
             this.tab32LocalisationDataProvider.setSortOrder(ZZZLocalisation::getCodeLocalisation, SortDirection.ASCENDING);
 
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -642,7 +642,7 @@ public class ClassificationImmobiliereView extends OngletReferentielBase {
             //2 - Set a new data provider.
             this.tab32LocalisationDataProvider = DataProvider.ofCollection(this.tab32LocalisationList);
 
-            //3 - Make the detailsDataProvider sorted by LibelleLocalisation in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeLocalisation in ascending order
             this.tab32LocalisationDataProvider.setSortOrder(ZZZLocalisation::getCodeLocalisation, SortDirection.ASCENDING);
 
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -790,7 +790,7 @@ public class ClassificationImmobiliereView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab43TypeImmeubleDataProvider = DataProvider.ofCollection(this.tab43TypeImmeubleList);
 
-            //4- Make the tab43TypeImmeubleDataProvider sorted by LibelleTypeImmeuble in ascending order
+            //4- Make the tab43TypeImmeubleDataProvider sorted by CodeTypeImmeuble in ascending order
             this.tab43TypeImmeubleDataProvider.setSortOrder(TypeImmeuble::getCodeTypeImmeuble, SortDirection.ASCENDING);
 
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -818,7 +818,7 @@ public class ClassificationImmobiliereView extends OngletReferentielBase {
             //2 - Set a new data provider.
             this.tab43TypeImmeubleDataProvider = DataProvider.ofCollection(this.tab43TypeImmeubleList);
 
-            //3 - Make the detailsDataProvider sorted by LibelleTypeImmeuble in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeTypeImmeuble in ascending order
             this.tab43TypeImmeubleDataProvider.setSortOrder(TypeImmeuble::getCodeTypeImmeuble, SortDirection.ASCENDING);
 
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.

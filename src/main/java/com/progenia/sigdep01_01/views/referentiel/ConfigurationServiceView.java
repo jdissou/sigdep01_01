@@ -393,7 +393,7 @@ public class ConfigurationServiceView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab12ServiceFourniDataProvider = DataProvider.ofCollection(this.tab12ServiceFourniList);
             
-            //4- Make the tab12ServiceFourniDataProvider sorted by LibelleService in ascending order
+            //4- Make the tab12ServiceFourniDataProvider sorted by CodeService in ascending order
             this.tab12ServiceFourniDataProvider.setSortOrder(ServiceFourni::getCodeService, SortDirection.ASCENDING);
             
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -436,7 +436,7 @@ public class ConfigurationServiceView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab23VariableServiceDataProvider = DataProvider.ofCollection(this.tab23VariableServiceList);
 
-            //4- Make the tab23VariableServiceDataProvider sorted by LibelleVariable in ascending order
+            //4- Make the tab23VariableServiceDataProvider sorted by CodeVariable in ascending order
             this.tab23VariableServiceDataProvider.setSortOrder(VariableService::getCodeVariable, SortDirection.ASCENDING);
 
             //5- Set the data provider for this tab23VariableServiceGrid. The data provider is queried for displayed items as needed.
@@ -468,7 +468,7 @@ public class ConfigurationServiceView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab34ConstanteDataProvider = DataProvider.ofCollection(this.tab34ConstanteList);
             
-            //4- Make the tab34ConstanteDataProvider sorted by LibelleConstante in ascending order
+            //4- Make the tab34ConstanteDataProvider sorted by CodeConstante in ascending order
             this.tab34ConstanteDataProvider.setSortOrder(EmploiFonds::getCodeConstante, SortDirection.ASCENDING);
             
             //5- Set the data provider for this tab34ConstanteGrid. The data provider is queried for displayed items as needed.
@@ -513,7 +513,7 @@ public class ConfigurationServiceView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab45RubriqueDataProvider = DataProvider.ofCollection(this.tab45RubriqueList);
             
-            //4- Make the tab45RubriqueDataProvider sorted by LibelleTranche in ascending order
+            //4- Make the tab45RubriqueDataProvider sorted by NoRubrique in ascending order
             this.tab45RubriqueDataProvider.setSortOrder(Rubrique::getNoRubrique, SortDirection.ASCENDING);
             
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -546,7 +546,7 @@ public class ConfigurationServiceView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab56TrancheValeurDataProvider = DataProvider.ofCollection(this.tab56TrancheValeurList);
             
-            //4- Make the tab56TrancheValeurDataProvider sorted by LibelleTranche in ascending order
+            //4- Make the tab56TrancheValeurDataProvider sorted by CodeTranche in ascending order
             this.tab56TrancheValeurDataProvider.setSortOrder(TrancheValeur::getCodeTranche, SortDirection.ASCENDING);
             
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -573,7 +573,7 @@ public class ConfigurationServiceView extends OngletReferentielBase {
             //2 - Set a new data provider. 
             this.tab12ServiceFourniDataProvider = DataProvider.ofCollection(this.tab12ServiceFourniList);
             
-            //3 - Make the detailsDataProvider sorted by LibelleService in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeService in ascending order
             this.tab12ServiceFourniDataProvider.setSortOrder(ServiceFourni::getCodeService, SortDirection.ASCENDING);
             
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -599,7 +599,7 @@ public class ConfigurationServiceView extends OngletReferentielBase {
             //2 - Set a new data provider. 
             this.tab23VariableServiceDataProvider = DataProvider.ofCollection(this.tab23VariableServiceList);
             
-            //3 - Make the detailsDataProvider sorted by LibelleVariable in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeVariable in ascending order
             this.tab23VariableServiceDataProvider.setSortOrder(VariableService::getCodeVariable, SortDirection.ASCENDING);
             
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -625,7 +625,7 @@ public class ConfigurationServiceView extends OngletReferentielBase {
             //2 - Set a new data provider. 
             this.tab34ConstanteDataProvider = DataProvider.ofCollection(this.tab34ConstanteList);
             
-            //3 - Make the detailsDataProvider sorted by LibelleConstante in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeConstante in ascending order
             this.tab34ConstanteDataProvider.setSortOrder(EmploiFonds::getCodeConstante, SortDirection.ASCENDING);
             
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -651,7 +651,7 @@ public class ConfigurationServiceView extends OngletReferentielBase {
             //2 - Set a new data provider. 
             this.tab45RubriqueDataProvider = DataProvider.ofCollection(this.tab45RubriqueList);
             
-            //3 - Make the detailsDataProvider sorted by LibelleTranche in ascending order
+            //3 - Make the detailsDataProvider sorted by NuRubrique in ascending order
             this.tab45RubriqueDataProvider.setSortOrder(Rubrique::getNoRubrique, SortDirection.ASCENDING);
             
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -677,7 +677,7 @@ public class ConfigurationServiceView extends OngletReferentielBase {
             //2 - Set a new data provider. 
             this.tab56TrancheValeurDataProvider = DataProvider.ofCollection(this.tab56TrancheValeurList);
             
-            //3 - Make the detailsDataProvider sorted by LibelleTranche in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeTranche in ascending order
             this.tab56TrancheValeurDataProvider.setSortOrder(TrancheValeur::getCodeTranche, SortDirection.ASCENDING);
             
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.

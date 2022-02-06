@@ -212,7 +212,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab32TypeEvenementDataProvider = DataProvider.ofCollection(this.tab32TypeEvenementList);
             
-            //4- Make the tab32TypeEvenementDataProvider sorted by LibelleTypeEvenement in ascending order
+            //4- Make the tab32TypeEvenementDataProvider sorted by CodeTypeEvenement in ascending order
             this.tab32TypeEvenementDataProvider.setSortOrder(TypeEvenement::getCodeTypeEvenement, SortDirection.ASCENDING);
             
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -239,7 +239,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
             //2 - Set a new data provider. 
             this.tab32TypeEvenementDataProvider = DataProvider.ofCollection(this.tab32TypeEvenementList);
             
-            //3 - Make the detailsDataProvider sorted by LibelleTypeEvenement in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeTypeEvenement in ascending order
             this.tab32TypeEvenementDataProvider.setSortOrder(TypeEvenement::getCodeTypeEvenement, SortDirection.ASCENDING);
             
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -387,7 +387,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab43UniteOeuvreDataProvider = DataProvider.ofCollection(this.tab43UniteOeuvreList);
             
-            //4- Make the tab43UniteOeuvreDataProvider sorted by LibelleUniteOeuvre in ascending order
+            //4- Make the tab43UniteOeuvreDataProvider sorted by CodeUniteOeuvre in ascending order
             this.tab43UniteOeuvreDataProvider.setSortOrder(SecteurEconomique::getCodeUniteOeuvre, SortDirection.ASCENDING);
             
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -415,7 +415,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
             //2 - Set a new data provider. 
             this.tab43UniteOeuvreDataProvider = DataProvider.ofCollection(this.tab43UniteOeuvreList);
             
-            //3 - Make the detailsDataProvider sorted by LibelleUniteOeuvre in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeUniteOeuvre in ascending order
             this.tab43UniteOeuvreDataProvider.setSortOrder(SecteurEconomique::getCodeUniteOeuvre, SortDirection.ASCENDING);
             
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.

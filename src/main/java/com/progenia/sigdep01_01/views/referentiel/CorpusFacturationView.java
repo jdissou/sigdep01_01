@@ -223,7 +223,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab10ModeReglementDataProvider = DataProvider.ofCollection(this.tab10ModeReglementList);
             
-            //4- Make the tab10ModeReglementDataProvider sorted by LibelleModeReglement in ascending order
+            //4- Make the tab10ModeReglementDataProvider sorted by CodeModeReglement in ascending order
             this.tab10ModeReglementDataProvider.setSortOrder(ModeReglement::getCodeModeReglement, SortDirection.ASCENDING);
             
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -250,7 +250,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
             //2 - Set a new data provider. 
             this.tab10ModeReglementDataProvider = DataProvider.ofCollection(this.tab10ModeReglementList);
             
-            //3 - Make the detailsDataProvider sorted by LibelleModeReglement in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeModeReglement in ascending order
             this.tab10ModeReglementDataProvider.setSortOrder(ModeReglement::getCodeModeReglement, SortDirection.ASCENDING);
             
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -429,7 +429,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab21SequenceFacturationDataProvider = DataProvider.ofCollection(this.tab21SequenceFacturationList);
             
-            //4- Make the tab21SequenceFacturationDataProvider sorted by LibelleSequenceFacturation in ascending order
+            //4- Make the tab21SequenceFacturationDataProvider sorted by CodeSequenceFacturation in ascending order
             this.tab21SequenceFacturationDataProvider.setSortOrder(SequenceFacturation::getCodeSequenceFacturation, SortDirection.ASCENDING);
             
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -457,7 +457,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
             //2 - Set a new data provider. 
             this.tab21SequenceFacturationDataProvider = DataProvider.ofCollection(this.tab21SequenceFacturationList);
             
-            //3 - Make the detailsDataProvider sorted by LibelleSequenceFacturation in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeSequenceFacturation in ascending order
             this.tab21SequenceFacturationDataProvider.setSortOrder(SequenceFacturation::getCodeSequenceFacturation, SortDirection.ASCENDING);
             
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.

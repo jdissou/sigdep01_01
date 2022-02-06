@@ -311,7 +311,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab34JournalDataProvider = DataProvider.ofCollection(this.tab34JournalList);
             
-            //4- Make the tab34JournalDataProvider sorted by LibelleJournal in ascending order
+            //4- Make the tab34JournalDataProvider sorted by CodeJournal in ascending order
             this.tab34JournalDataProvider.setSortOrder(ZZZJournal::getCodeJournal, SortDirection.ASCENDING);
             
             //5- Set the data provider for this tab34JournalGrid. The data provider is queried for displayed items as needed.
@@ -376,7 +376,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab56OperationComptableDataProvider = DataProvider.ofCollection(this.tab56OperationComptableList);
             
-            //4- Make the tab56OperationComptableDataProvider sorted by LibelleOperation in ascending order
+            //4- Make the tab56OperationComptableDataProvider sorted by CodeOperation in ascending order
             this.tab56OperationComptableDataProvider.setSortOrder(OperationComptable::getCodeOperation, SortDirection.ASCENDING);
             
             //5- Set the data provider for this tab56OperationComptableGrid. The data provider is queried for displayed items as needed.
@@ -428,7 +428,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
             //2 - Set a new data provider. 
             this.tab34JournalDataProvider = DataProvider.ofCollection(this.tab34JournalList);
             
-            //3 - Make the detailsDataProvider sorted by LibelleJournal in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeJournal in ascending order
             this.tab34JournalDataProvider.setSortOrder(ZZZJournal::getCodeJournal, SortDirection.ASCENDING);
             
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -480,7 +480,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
             //2 - Set a new data provider. 
             this.tab56OperationComptableDataProvider = DataProvider.ofCollection(this.tab56OperationComptableList);
             
-            //3 - Make the detailsDataProvider sorted by LibelleOperation in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeOperation in ascending order
             this.tab56OperationComptableDataProvider.setSortOrder(OperationComptable::getCodeOperation, SortDirection.ASCENDING);
             
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.

@@ -272,7 +272,7 @@ public class ClassificationPartiePrenanteView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab10NationaliteDataProvider = DataProvider.ofCollection(this.tab10NationaliteList);
 
-            //4- Make the tab10NationaliteDataProvider sorted by LibelleNationalite in ascending order
+            //4- Make the tab10NationaliteDataProvider sorted by CodeNationalite in ascending order
             this.tab10NationaliteDataProvider.setSortOrder(Monnaie::getCodeNationalite, SortDirection.ASCENDING);
 
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -299,7 +299,7 @@ public class ClassificationPartiePrenanteView extends OngletReferentielBase {
             //2 - Set a new data provider.
             this.tab10NationaliteDataProvider = DataProvider.ofCollection(this.tab10NationaliteList);
 
-            //3 - Make the detailsDataProvider sorted by LibelleNationalite in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeNationalite in ascending order
             this.tab10NationaliteDataProvider.setSortOrder(Monnaie::getCodeNationalite, SortDirection.ASCENDING);
 
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -433,7 +433,7 @@ public class ClassificationPartiePrenanteView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab21CategorieLocataireDataProvider = DataProvider.ofCollection(this.tab21CategorieLocataireList);
 
-            //4- Make the tab21CategorieLocataireDataProvider sorted by LibelleCategorieLocataire in ascending order
+            //4- Make the tab21CategorieLocataireDataProvider sorted by CodeCategorieLocataire in ascending order
             this.tab21CategorieLocataireDataProvider.setSortOrder(CategorieInstrument::getCodeCategorieLocataire, SortDirection.ASCENDING);
 
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -461,7 +461,7 @@ public class ClassificationPartiePrenanteView extends OngletReferentielBase {
             //2 - Set a new data provider.
             this.tab21CategorieLocataireDataProvider = DataProvider.ofCollection(this.tab21CategorieLocataireList);
 
-            //3 - Make the detailsDataProvider sorted by LibelleCategorieLocataire in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeCategorieLocataire in ascending order
             this.tab21CategorieLocataireDataProvider.setSortOrder(CategorieInstrument::getCodeCategorieLocataire, SortDirection.ASCENDING);
 
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -644,7 +644,7 @@ public class ClassificationPartiePrenanteView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab32ProfessionDataProvider = DataProvider.ofCollection(this.tab32ProfessionList);
 
-            //4- Make the tab32ProfessionDataProvider sorted by LibelleProfession in ascending order
+            //4- Make the tab32ProfessionDataProvider sorted by CodeProfession in ascending order
             this.tab32ProfessionDataProvider.setSortOrder(Profession::getCodeProfession, SortDirection.ASCENDING);
 
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -671,7 +671,7 @@ public class ClassificationPartiePrenanteView extends OngletReferentielBase {
             //2 - Set a new data provider.
             this.tab32ProfessionDataProvider = DataProvider.ofCollection(this.tab32ProfessionList);
 
-            //3 - Make the detailsDataProvider sorted by LibelleProfession in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeProfession in ascending order
             this.tab32ProfessionDataProvider.setSortOrder(Profession::getCodeProfession, SortDirection.ASCENDING);
 
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -819,7 +819,7 @@ public class ClassificationPartiePrenanteView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab43TitreCiviliteDataProvider = DataProvider.ofCollection(this.tab43TitreCiviliteList);
 
-            //4- Make the tab43TitreCiviliteDataProvider sorted by LibelleTitreCivilite in ascending order
+            //4- Make the tab43TitreCiviliteDataProvider sorted by CodeTitreCivilite in ascending order
             this.tab43TitreCiviliteDataProvider.setSortOrder(TitreCivilite::getCodeTitreCivilite, SortDirection.ASCENDING);
 
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -847,7 +847,7 @@ public class ClassificationPartiePrenanteView extends OngletReferentielBase {
             //2 - Set a new data provider.
             this.tab43TitreCiviliteDataProvider = DataProvider.ofCollection(this.tab43TitreCiviliteList);
 
-            //3 - Make the detailsDataProvider sorted by LibelleTitreCivilite in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeTitreCivilite in ascending order
             this.tab43TitreCiviliteDataProvider.setSortOrder(TitreCivilite::getCodeTitreCivilite, SortDirection.ASCENDING);
 
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.

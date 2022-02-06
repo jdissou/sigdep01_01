@@ -302,7 +302,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab56ImmeubleDataProvider = DataProvider.ofCollection(this.tab56ImmeubleList);
             
-            //4- Make the tab56ImmeubleDataProvider sorted by LibelleImmeuble in ascending order
+            //4- Make the tab56ImmeubleDataProvider sorted by CodeImmeuble in ascending order
             this.tab56ImmeubleDataProvider.setSortOrder(ZZZImmeuble::getCodeImmeuble, SortDirection.ASCENDING);
             
             //5- Set the data provider for this grid. The data provider is queried for displayed items as needed.
@@ -355,7 +355,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
             //2 - Set a new data provider. 
             this.tab56ImmeubleDataProvider = DataProvider.ofCollection(this.tab56ImmeubleList);
             
-            //3 - Make the detailsDataProvider sorted by LibelleImmeuble in ascending order
+            //3 - Make the detailsDataProvider sorted by CodeImmeuble in ascending order
             this.tab56ImmeubleDataProvider.setSortOrder(ZZZImmeuble::getCodeImmeuble, SortDirection.ASCENDING);
             
             //4 - Set the data provider for this grid. The data provider is queried for displayed items as needed.

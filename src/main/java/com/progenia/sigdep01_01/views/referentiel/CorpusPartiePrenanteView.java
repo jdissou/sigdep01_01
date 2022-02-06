@@ -383,7 +383,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
             //3- Creates a new data provider backed by a collection
             this.tab23ProprietaireDataProvider = DataProvider.ofCollection(this.tab23ProprietaireList);
 
-            //4- Make the tab23ProprietaireDataProvider sorted by LibelleProprietaire in ascending order
+            //4- Make the tab23ProprietaireDataProvider sorted by CodeProprietaire in ascending order
             this.tab23ProprietaireDataProvider.setSortOrder(Proprietaire::getCodeProprietaire, SortDirection.ASCENDING);
 
             //5- Set the data provider for this tab23ProprietaireGrid. The data provider is queried for displayed items as needed.
