@@ -79,9 +79,9 @@ import org.vaadin.spring.events.annotation.EventBusListenerMethod;
 
 //@RequiresSecurityCheck custom-annotation tells security check is required.
 @RequiresSecurityCheck
-@Route(value = "corpus_comptabilite", layout = MainView.class)
-@PageTitle(CorpusComptabiliteView.PAGE_TITLE)
-public class CorpusComptabiliteView extends OngletReferentielBase {
+@Route(value = "workplace_comptabilite", layout = MainView.class)
+@PageTitle(WorkplaceComptabiliteView.PAGE_TITLE)
+public class WorkplaceComptabiliteView extends OngletReferentielBase {
     /*
     Pour connecter la vue au backend afin de pouvoir récupérer les données à afficher dans la grille. 
     On utilise l'injection de dépendances de Spring pour obtenir le service de backend, 
@@ -94,8 +94,8 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
     private EventBus.UIEventBus uiEventBus;
     
     //Paramètres de Personnalisation ProGenia
-    static final String PAGE_TITLE = "Corpus de Comptabilité";
-    static final String CACHED_SELECTED_TAB_INDEX = "CorpusComptabiliteViewSelectedTab";
+    static final String PAGE_TITLE = "Workplace de Comptabilité";
+    static final String CACHED_SELECTED_TAB_INDEX = "WorkplaceComptabiliteViewSelectedTab";
 
     //ATTRIBUTS - tab12 - Compte
     private Tab tab12CompteTab = new Tab();
@@ -210,20 +210,20 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.onAttach", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.onAttach", e.toString());
             e.printStackTrace();
         }
     } //public void onAttach(AttachEvent event) {
 
     
     /***
-     * We can then create the initialization method, where we instantiate the CorpusComptabiliteView. 
+     * We can then create the initialization method, where we instantiate the WorkplaceComptabiliteView. 
      */
     private void initialize() {
         try 
         {
             //1- Mise à jour des propriétés du formulaire
-            this.strNomFormulaire = "CorpusComptabiliteView";
+            this.strNomFormulaire = "WorkplaceComptabiliteView";
             
             //2 - Setup the top toolbar
             this.customSetupTopToolBar();
@@ -251,7 +251,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.initialize", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.initialize", e.toString());
             e.printStackTrace();
         }
     } //private void initialize() {
@@ -284,7 +284,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab12SetupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab12SetupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void tab12SetupDataprovider()
@@ -319,7 +319,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab34SetupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab34SetupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void tab34SetupDataprovider()
@@ -352,7 +352,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab45SetupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab45SetupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void tab45SetupDataprovider()
@@ -384,7 +384,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab56SetupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab56SetupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void tab56SetupDataprovider()
@@ -410,7 +410,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab12RefreshGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab12RefreshGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab12RefreshGrid()
@@ -436,7 +436,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab34RefreshGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab34RefreshGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab34RefreshGrid()
@@ -462,7 +462,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab45RefreshGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab45RefreshGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab45RefreshGrid()
@@ -488,7 +488,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab56RefreshGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab56RefreshGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab56RefreshGrid()
@@ -576,7 +576,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab12ConfigureGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab12ConfigureGridWithFilters", e.toString());
             e.printStackTrace();
         }
     } //private void tab12ConfigureGridWithFilters() {
@@ -685,7 +685,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab34ConfigureGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab34ConfigureGridWithFilters", e.toString());
             e.printStackTrace();
         }
     } //private void tab34ConfigureGridWithFilters() {
@@ -798,7 +798,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab45ConfigureGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab45ConfigureGridWithFilters", e.toString());
             e.printStackTrace();
         }
     } //private void tab45ConfigureGridWithFilters() {
@@ -877,7 +877,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab56ConfigureGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab56ConfigureGridWithFilters", e.toString());
             e.printStackTrace();
         }
     } //private void tab56ConfigureGridWithFilters() {
@@ -913,7 +913,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab12ApplyFilterToTheGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab12ApplyFilterToTheGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab12ApplyFilterToTheGrid() {
@@ -954,7 +954,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab34ApplyFilterToTheGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab34ApplyFilterToTheGrid", e.toString());
             e.printStackTrace();
         }
     }// private void tab34ApplyFilterToTheGrid() {
@@ -1004,7 +1004,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab45ApplyFilterToTheGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab45ApplyFilterToTheGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab45ApplyFilterToTheGrid() {
@@ -1042,7 +1042,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.tab56ApplyFilterToTheGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.tab56ApplyFilterToTheGrid", e.toString());
             e.printStackTrace();
         }
     }// private void tab56ApplyFilterToTheGrid() {
@@ -1105,7 +1105,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.configureTabs", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.configureTabs", e.toString());
             e.printStackTrace();
         }
     } //private void configureTabs() {
@@ -1135,7 +1135,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.workingHandleAjouterClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.workingHandleAjouterClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleAjouterClick() {
@@ -1221,7 +1221,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.workingHandleModifierClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.workingHandleModifierClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleModifierClick() {
@@ -1307,7 +1307,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.workingHandleAfficherClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.workingHandleAfficherClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleAfficherClick() {
@@ -1325,7 +1325,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleCompteAddEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleCompteAddEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleCompteAddEventFromEditorDialog(CompteAddEvent event) {
@@ -1343,7 +1343,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleJournalAddEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleJournalAddEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleJournalAddEventFromEditorDialog(JournalAddEvent event) {
@@ -1361,7 +1361,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleExerciceAddEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleExerciceAddEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleExerciceAddEventFromEditorDialog(ExerciceAddEvent event) {
@@ -1379,7 +1379,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleOperationComptableAddEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleOperationComptableAddEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleOperationComptableAddEventFromEditorDialog(OperationComptableAddEvent event) {
@@ -1397,7 +1397,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleCompteUpdateEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleCompteUpdateEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //handleCompteUpdateEventFromEditorDialog(CompteUpdateEvent event) {
@@ -1415,7 +1415,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleJournalUpdateEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleJournalUpdateEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //handleJournalUpdateEventFromEditorDialog(JournalUpdateEvent event) {
@@ -1433,7 +1433,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleExerciceUpdateEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleExerciceUpdateEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //handleExerciceUpdateEventFromEditorDialog(ExerciceUpdateEvent event) {
@@ -1451,7 +1451,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleOperationComptableUpdateEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleOperationComptableUpdateEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //handleOperationComptableUpdateEventFromEditorDialog(OperationComptableUpdateEvent event) {
@@ -1469,7 +1469,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleCompteRefreshEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleCompteRefreshEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleCompteRefreshEventFromEditorDialog(RefreshEvent event) {
@@ -1487,7 +1487,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleJournalRefreshEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleJournalRefreshEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleJournalRefreshEventFromEditorDialog(RefreshEvent event) {
@@ -1505,7 +1505,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleExerciceRefreshEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleExerciceRefreshEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleExerciceRefreshEventFromEditorDialog(RefreshEvent event) {
@@ -1523,7 +1523,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleOperationComptableRefreshEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleOperationComptableRefreshEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleOperationComptableRefreshEventFromEditorDialog(RefreshEvent event) {
@@ -1672,7 +1672,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleSupprimerClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleSupprimerClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleSupprimerClick() {
@@ -1797,7 +1797,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleActiverClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleActiverClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleActiverClick(ClickEvent event) {
@@ -1922,7 +1922,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.handleDesactiverClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.handleDesactiverClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleDesactiverClick(ClickEvent event) {
@@ -1950,7 +1950,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.workingHandleImprimerClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.workingHandleImprimerClick", e.toString());
             e.printStackTrace();
         }
     } //protected void workingHandleImprimerClick() {
@@ -2123,7 +2123,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.customActivateMainToolBar", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.customActivateMainToolBar", e.toString());
             e.printStackTrace();
         }
     } //private void customActivateMainToolBar()
@@ -2143,7 +2143,7 @@ public class CorpusComptabiliteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusComptabiliteView.applySelectedTabChanged", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceComptabiliteView.applySelectedTabChanged", e.toString());
             e.printStackTrace();
         }
     } //private void applySelectedTabChanged()

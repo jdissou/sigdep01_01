@@ -624,7 +624,7 @@ public class ReglementInstrumentView extends SaisieTransactionMaitreDetailsBase<
             
             Label lblLibelleReglementValidationStatus = new Label();
             this.binder.forField(this.txtLibelleReglement)
-                .withValidator(text -> text.length() <= 100, "Objet ne peut contenir au plus 100 caractères.")
+                .withValidator(text -> text.length() <= 50, "Objet ne peut contenir au plus 50 caractères.")
                 .withValidationStatusHandler(status -> {lblLibelleReglementValidationStatus.setText(status.getMessage().orElse(""));       
                          lblLibelleReglementValidationStatus.setVisible(status.isError());})
                 .bind(ReglementInstrument::getLibelleReglement, ReglementInstrument::setLibelleReglement); 

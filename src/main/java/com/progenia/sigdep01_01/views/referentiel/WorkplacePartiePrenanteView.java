@@ -71,9 +71,9 @@ import org.vaadin.spring.events.annotation.EventBusListenerMethod;
 
 //@RequiresSecurityCheck custom-annotation tells security check is required.
 @RequiresSecurityCheck
-@Route(value = "corpus_partie_prenante", layout = MainView.class)
-@PageTitle(CorpusPartiePrenanteView.PAGE_TITLE)
-public class CorpusPartiePrenanteView extends OngletReferentielBase {
+@Route(value = "workplace_partie_prenante", layout = MainView.class)
+@PageTitle(WorkplacePartiePrenanteView.PAGE_TITLE)
+public class WorkplacePartiePrenanteView extends OngletReferentielBase {
     /*
     Pour connecter la vue au backend afin de pouvoir récupérer les données à afficher dans la grille.
     On utilise l'injection de dépendances de Spring pour obtenir le tiers de backend,
@@ -86,8 +86,8 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
     private EventBus.UIEventBus uiEventBus;
 
     //Paramètres de Personnalisation ProGenia
-    static final String PAGE_TITLE = "Corpus des Parties Prenantes";
-    static final String CACHED_SELECTED_TAB_INDEX = "CorpusPartiePrenanteViewSelectedTab";
+    static final String PAGE_TITLE = "Workplace des Parties Prenantes";
+    static final String CACHED_SELECTED_TAB_INDEX = "WorkplacePartiePrenanteViewSelectedTab";
 
     //ATTRIBUTS - tab12 - Commission
     private Tab tab12LocataireTab = new Tab();
@@ -241,20 +241,20 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.onAttach", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.onAttach", e.toString());
             e.printStackTrace();
         }
     } //public void onAttach(AttachEvent event) {
 
 
     /***
-     * We can then create the initialization method, where we instantiate the CorpusPartiePrenanteView.
+     * We can then create the initialization method, where we instantiate the WorkplacePartiePrenanteView.
      */
     private void initialize() {
         try
         {
             //1- Mise à jour des propriétés du formulaire
-            this.strNomFormulaire = "CorpusPartiePrenanteView";
+            this.strNomFormulaire = "WorkplacePartiePrenanteView";
 
             //2 - Setup the top toolbar
             this.customSetupTopToolBar();
@@ -280,7 +280,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.initialize", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.initialize", e.toString());
             e.printStackTrace();
         }
     } //private void initialize() {
@@ -335,7 +335,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.tab12SetupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.tab12SetupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void tab12SetupDataprovider()
@@ -391,7 +391,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.tab23SetupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.tab23SetupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void tab23SetupDataprovider()
@@ -423,7 +423,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.tab45SetupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.tab45SetupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void tab45SetupDataprovider()
@@ -449,7 +449,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.tab12RefreshGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.tab12RefreshGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab12RefreshGrid()
@@ -475,7 +475,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.tab23RefreshGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.tab23RefreshGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab23RefreshGrid()
@@ -501,7 +501,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.tab45RefreshGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.tab45RefreshGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab45RefreshGrid()
@@ -798,7 +798,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.tab12ConfigureGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.tab12ConfigureGridWithFilters", e.toString());
             e.printStackTrace();
         }
     } //private void tab12ConfigureGridWithFilters() {
@@ -1094,7 +1094,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.tab23ConfigureGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.tab23ConfigureGridWithFilters", e.toString());
             e.printStackTrace();
         }
     } //private void tab23ConfigureGridWithFilters() {
@@ -1184,7 +1184,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.tab45ConfigureGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.tab45ConfigureGridWithFilters", e.toString());
             e.printStackTrace();
         }
     } //private void tab45ConfigureGridWithFilters() {
@@ -1264,7 +1264,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.tab12ApplyFilterToTheGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.tab12ApplyFilterToTheGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab12ApplyFilterToTheGrid() {
@@ -1343,7 +1343,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.tab23ApplyFilterToTheGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.tab23ApplyFilterToTheGrid", e.toString());
             e.printStackTrace();
         }
     }// private void tab23ApplyFilterToTheGrid() {
@@ -1383,7 +1383,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.tab45ApplyFilterToTheGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.tab45ApplyFilterToTheGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab45ApplyFilterToTheGrid() {
@@ -1440,7 +1440,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.configureTabs", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.configureTabs", e.toString());
             e.printStackTrace();
         }
     } //private void configureTabs() {
@@ -1466,7 +1466,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.workingHandleAjouterClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.workingHandleAjouterClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleAjouterClick() {
@@ -1535,7 +1535,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e)
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.workingHandleModifierClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.workingHandleModifierClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleModifierClick() {
@@ -1602,7 +1602,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.workingHandleAfficherClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.workingHandleAfficherClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleAfficherClick() {
@@ -1620,7 +1620,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.handleLocataireAddEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.handleLocataireAddEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleLocataireAddEventFromEditorDialog(LocataireAddEvent event) {
@@ -1638,7 +1638,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.handleProprietaireAddEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.handleProprietaireAddEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleProprietaireAddEventFromEditorDialog(ProprietaireAddEvent event) {
@@ -1656,7 +1656,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.handleGestionnaireAddEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.handleGestionnaireAddEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleGestionnaireAddEventFromEditorDialog(GestionnaireAddEvent event) {
@@ -1674,7 +1674,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.handleLocataireUpdateEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.handleLocataireUpdateEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //handleLocataireUpdateEventFromEditorDialog(LocataireUpdateEvent event) {
@@ -1692,7 +1692,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.handleProprietaireUpdateEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.handleProprietaireUpdateEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //handleProprietaireUpdateEventFromEditorDialog(ProprietaireUpdateEvent event) {
@@ -1710,7 +1710,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.handleGestionnaireUpdateEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.handleGestionnaireUpdateEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //handleGestionnaireUpdateEventFromEditorDialog(GestionnaireUpdateEvent event) {
@@ -1728,7 +1728,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.handleLocataireRefreshEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.handleLocataireRefreshEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleLocataireRefreshEventFromEditorDialog(RefreshEvent event) {
@@ -1746,7 +1746,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.handleProprietaireRefreshEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.handleProprietaireRefreshEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleProprietaireRefreshEventFromEditorDialog(RefreshEvent event) {
@@ -1764,7 +1764,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.handleGestionnaireRefreshEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.handleGestionnaireRefreshEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleGestionnaireRefreshEventFromEditorDialog(RefreshEvent event) {
@@ -1879,7 +1879,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.handleSupprimerClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.handleSupprimerClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleSupprimerClick() {
@@ -1976,7 +1976,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.handleActiverClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.handleActiverClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleActiverClick(ClickEvent event) {
@@ -2073,7 +2073,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.handleDesactiverClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.handleDesactiverClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleDesactiverClick(ClickEvent event) {
@@ -2097,7 +2097,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.workingHandleImprimerClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.workingHandleImprimerClick", e.toString());
             e.printStackTrace();
         }
     } //protected void workingHandleImprimerClick() {
@@ -2230,7 +2230,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         }
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.customActivateMainToolBar", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.customActivateMainToolBar", e.toString());
             e.printStackTrace();
         }
     } //private void customActivateMainToolBar()
@@ -2250,7 +2250,7 @@ public class CorpusPartiePrenanteView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusPartiePrenanteView.applySelectedTabChanged", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplacePartiePrenanteView.applySelectedTabChanged", e.toString());
             e.printStackTrace();
         }
     } //private void applySelectedTabChanged()

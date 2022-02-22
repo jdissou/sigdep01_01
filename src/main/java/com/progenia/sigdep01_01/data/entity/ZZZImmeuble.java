@@ -41,7 +41,7 @@ public class ZZZImmeuble implements Serializable {
     private String libelleCourtImmeuble;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeTypeImmeuble", nullable=false)
+    @JoinColumn(name="CodeTypeImmeuble")
     private TypeImmeuble typeImmeuble;
 
     @Column(name="Superficie")

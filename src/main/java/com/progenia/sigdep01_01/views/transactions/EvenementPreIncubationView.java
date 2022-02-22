@@ -432,7 +432,7 @@ public class EvenementPreIncubationView extends SaisieTransactionSimpleBase<ZZZE
 
             Label lblLibelleEvenementValidationStatus = new Label();
             this.binder.forField(this.txtLibelleEvenement)
-                .withValidator(text -> text.length() <= 100, "Objet ne peut contenir au plus 100 caractères.")
+                .withValidator(text -> text.length() <= 50, "Objet ne peut contenir au plus 50 caractères.")
                 .withValidationStatusHandler(status -> {lblLibelleEvenementValidationStatus.setText(status.getMessage().orElse(""));       
                          lblLibelleEvenementValidationStatus.setVisible(status.isError());})
                 .bind(ZZZEvenementPreIncubation::getLibelleEvenement, ZZZEvenementPreIncubation::setLibelleEvenement);

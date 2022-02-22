@@ -433,7 +433,7 @@ public class ContratLotView extends SaisieTransactionMaitreDetailsBase<ZZZContra
             
             Label lblLibelleContratValidationStatus = new Label();
             this.binder.forField(this.txtLibelleContrat)
-                .withValidator(text -> text.length() <= 100, "Objet ne peut contenir au plus 100 caractères.")
+                .withValidator(text -> text.length() <= 50, "Objet ne peut contenir au plus 50 caractères.")
                 .withValidationStatusHandler(status -> {lblLibelleContratValidationStatus.setText(status.getMessage().orElse(""));       
                          lblLibelleContratValidationStatus.setVisible(status.isError());})
                 .bind(ZZZContratLot::getLibelleContrat, ZZZContratLot::setLibelleContrat);

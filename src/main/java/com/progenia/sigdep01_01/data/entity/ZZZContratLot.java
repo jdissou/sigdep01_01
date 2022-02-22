@@ -52,15 +52,15 @@ public class ZZZContratLot implements Serializable {
     private Long noContrat;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="NoExercice", nullable=false)
+    @JoinColumn(name="NoExercice")
     private Exercice exercice;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeUtilisateur", nullable=false)
+    @JoinColumn(name="CodeUtilisateur")
     private Utilisateur utilisateur;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeCentreIncubateur", nullable=false)
+    @JoinColumn(name="CodeCentreIncubateur")
     private ZZZCentreIncubateur centreIncubateur;
 
     @Column(name="NoChrono")

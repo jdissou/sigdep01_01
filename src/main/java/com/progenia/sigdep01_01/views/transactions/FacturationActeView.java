@@ -636,7 +636,7 @@ public class FacturationActeView extends SaisieTransactionMaitreDetailsBase<ZZZF
             
             Label lblLibelleFacturationValidationStatus = new Label();
             this.binder.forField(this.txtLibelleFacturation)
-                .withValidator(text -> text.length() <= 100, "Objet ne peut contenir au plus 100 caractères.")
+                .withValidator(text -> text.length() <= 50, "Objet ne peut contenir au plus 50 caractères.")
                 .withValidationStatusHandler(status -> {lblLibelleFacturationValidationStatus.setText(status.getMessage().orElse(""));       
                          lblLibelleFacturationValidationStatus.setVisible(status.isError());})
                 .bind(ZZZFacturationActe::getLibelleFacturation, ZZZFacturationActe::setLibelleFacturation);

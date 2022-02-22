@@ -69,9 +69,9 @@ import org.vaadin.spring.events.annotation.EventBusListenerMethod;
 
 //@RequiresSecurityCheck custom-annotation tells security check is required.
 @RequiresSecurityCheck
-@Route(value = "corpus_divers_referentiel", layout = MainView.class)
-@PageTitle(CorpusDiversReferentielView.PAGE_TITLE)
-public class CorpusDiversReferentielView extends OngletReferentielBase {
+@Route(value = "workplace_divers_referentiel", layout = MainView.class)
+@PageTitle(WorkplaceDiversReferentielView.PAGE_TITLE)
+public class WorkplaceDiversReferentielView extends OngletReferentielBase {
     /*
     Pour connecter la vue au backend afin de pouvoir récupérer les données à afficher dans la grille. 
     On utilise l'injection de dépendances de Spring pour obtenir le service de backend, 
@@ -84,8 +84,8 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
     private EventBus.UIEventBus uiEventBus;
     
     //Paramètres de Personnalisation ProGenia
-    static final String PAGE_TITLE = "Corpus Divers Référentiels";
-    static final String CACHED_SELECTED_TAB_INDEX = "CorpusDiversReferentielViewSelectedTab";
+    static final String PAGE_TITLE = "Workplace Divers Référentiels";
+    static final String CACHED_SELECTED_TAB_INDEX = "WorkplaceDiversReferentielViewSelectedTab";
 
     //ATTRIBUTS - tab32 - TypeEvenement
     private Tab tab32TypeEvenementTab = new Tab();
@@ -151,20 +151,20 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.onAttach", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.onAttach", e.toString());
             e.printStackTrace();
         }
     } //public void onAttach(AttachEvent event) {
 
     
     /***
-     * We can then create the initialization method, where we instantiate the CorpusDiversReferentielView. 
+     * We can then create the initialization method, where we instantiate the WorkplaceDiversReferentielView. 
      */
     private void initialize() {
         try 
         {
             //1- Mise à jour des propriétés du formulaire
-            this.strNomFormulaire = "CorpusDiversReferentielView";
+            this.strNomFormulaire = "WorkplaceDiversReferentielView";
             
             //2 - Setup the top toolbar
             this.customSetupTopToolBar();
@@ -188,7 +188,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.initialize", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.initialize", e.toString());
             e.printStackTrace();
         }
     } //private void initialize() {
@@ -221,7 +221,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.tab32SetupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.tab32SetupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void tab32SetupDataprovider()
@@ -247,7 +247,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.tab32RefreshGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.tab32RefreshGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab32RefreshGrid()
@@ -326,7 +326,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.tab32ConfigureGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.tab32ConfigureGridWithFilters", e.toString());
             e.printStackTrace();
         }
     } //private void tab32ConfigureGridWithFilters() {
@@ -362,7 +362,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.tab32ApplyFilterToTheGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.tab32ApplyFilterToTheGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab32ApplyFilterToTheGrid() {
@@ -396,7 +396,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.tab43SetupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.tab43SetupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void tab43SetupDataprovider()
@@ -423,7 +423,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.tab43RefreshGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.tab43RefreshGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab43RefreshGrid()
@@ -503,7 +503,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.tab43ConfigureGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.tab43ConfigureGridWithFilters", e.toString());
             e.printStackTrace();
         }
     } //private void tab43ConfigureGridWithFilters() {
@@ -539,7 +539,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.tab43ApplyFilterToTheGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.tab43ApplyFilterToTheGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab43ApplyFilterToTheGrid() {
@@ -592,7 +592,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.configureTabs", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.configureTabs", e.toString());
             e.printStackTrace();
         }
     } //private void configureTabs() {
@@ -612,7 +612,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.workingHandleAjouterClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.workingHandleAjouterClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleAjouterClick() {
@@ -662,7 +662,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.workingHandleModifierClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.workingHandleModifierClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleModifierClick() {
@@ -710,7 +710,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.workingHandleAfficherClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.workingHandleAfficherClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleAfficherClick() {
@@ -733,7 +733,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.handleTypeEvenementAddEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.handleTypeEvenementAddEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleTypeEvenementAddEventFromEditorDialog(TypeEvenementAddEvent event) {
@@ -751,7 +751,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.handleTypeEvenementUpdateEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.handleTypeEvenementUpdateEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //handleTypeEvenementUpdateEventFromEditorDialog(TypeEvenementUpdateEvent event) {
@@ -769,7 +769,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.handleTypeEvenementRefreshEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.handleTypeEvenementRefreshEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleTypeEvenementRefreshEventFromEditorDialog(RefreshEvent event) {
@@ -793,7 +793,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.handleUniteOeuvreAddEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.handleUniteOeuvreAddEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleUniteOeuvreAddEventFromEditorDialog(UniteOeuvreAddEvent event) {
@@ -811,7 +811,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.handleUniteOeuvreUpdateEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.handleUniteOeuvreUpdateEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //handleUniteOeuvreUpdateEventFromEditorDialog(UniteOeuvreUpdateEvent event) {
@@ -829,7 +829,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.handleUniteOeuvreRefreshEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.handleUniteOeuvreRefreshEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleUniteOeuvreRefreshEventFromEditorDialog(RefreshEvent event) {
@@ -910,7 +910,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.handleSupprimerClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.handleSupprimerClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleSupprimerClick() {
@@ -979,7 +979,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.handleActiverClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.handleActiverClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleActiverClick(ClickEvent event) {
@@ -1048,7 +1048,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.handleDesactiverClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.handleDesactiverClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleDesactiverClick(ClickEvent event) {
@@ -1068,7 +1068,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.workingHandleImprimerClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.workingHandleImprimerClick", e.toString());
             e.printStackTrace();
         }
     } //protected void workingHandleImprimerClick() {
@@ -1161,7 +1161,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.customActivateMainToolBar", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.customActivateMainToolBar", e.toString());
             e.printStackTrace();
         }
     } //private void customActivateMainToolBar()
@@ -1181,7 +1181,7 @@ public class CorpusDiversReferentielView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusDiversReferentielView.applySelectedTabChanged", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceDiversReferentielView.applySelectedTabChanged", e.toString());
             e.printStackTrace();
         }
     } //private void applySelectedTabChanged()

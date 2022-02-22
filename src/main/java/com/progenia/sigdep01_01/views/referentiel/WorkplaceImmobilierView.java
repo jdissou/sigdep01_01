@@ -67,9 +67,9 @@ import org.vaadin.spring.events.annotation.EventBusListenerMethod;
 
 //@RequiresSecurityCheck custom-annotation tells security check is required.
 @RequiresSecurityCheck
-@Route(value = "corpus_immobilier", layout = MainView.class)
-@PageTitle(CorpusImmobilierView.PAGE_TITLE)
-public class CorpusImmobilierView extends OngletReferentielBase {
+@Route(value = "workplace_immobilier", layout = MainView.class)
+@PageTitle(WorkplaceImmobilierView.PAGE_TITLE)
+public class WorkplaceImmobilierView extends OngletReferentielBase {
     /*
     Pour connecter la vue au backend afin de pouvoir récupérer les données à afficher dans la grille. 
     On utilise l'injection de dépendances de Spring pour obtenir le tiers de backend, 
@@ -82,8 +82,8 @@ public class CorpusImmobilierView extends OngletReferentielBase {
     private EventBus.UIEventBus uiEventBus;
     
     //Paramètres de Personnalisation ProGenia
-    static final String PAGE_TITLE = "Corpus Immobilier";
-    static final String CACHED_SELECTED_TAB_INDEX = "CorpusImmobilierViewSelectedTab";
+    static final String PAGE_TITLE = "Workplace Immobilier";
+    static final String CACHED_SELECTED_TAB_INDEX = "WorkplaceImmobilierViewSelectedTab";
     static final String DATE_VALIDATION_PATTERN = "(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)";
 
     //ATTRIBUTS - tab23 - ZZZBienImmobilier
@@ -192,20 +192,20 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.onAttach", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.onAttach", e.toString());
             e.printStackTrace();
         }
     } //public void onAttach(AttachEvent event) {
 
     
     /***
-     * We can then create the initialization method, where we instantiate the CorpusImmobilierView.
+     * We can then create the initialization method, where we instantiate the WorkplaceImmobilierView.
      */
     private void initialize() {
         try 
         {
             //1- Mise à jour des propriétés du formulaire
-            this.strNomFormulaire = "CorpusImmobilierView";
+            this.strNomFormulaire = "WorkplaceImmobilierView";
             
             //2 - Setup the top toolbar
             this.customSetupTopToolBar();
@@ -229,7 +229,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.initialize", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.initialize", e.toString());
             e.printStackTrace();
         }
     } //private void initialize() {
@@ -270,7 +270,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.tab23SetupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.tab23SetupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void tab23SetupDataprovider()
@@ -311,7 +311,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.tab56SetupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.tab56SetupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void tab56SetupDataprovider()
@@ -337,7 +337,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.tab23RefreshGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.tab23RefreshGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab23RefreshGrid()
@@ -363,7 +363,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.tab56RefreshGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.tab56RefreshGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab56RefreshGrid()
@@ -576,7 +576,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.tab23ConfigureGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.tab23ConfigureGridWithFilters", e.toString());
             e.printStackTrace();
         }
     } //private void tab23ConfigureGridWithFilters() {
@@ -750,7 +750,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.tab56ConfigureGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.tab56ConfigureGridWithFilters", e.toString());
             e.printStackTrace();
         }
     } //private void tab56ConfigureGridWithFilters() {
@@ -821,7 +821,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.tab23ApplyFilterToTheGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.tab23ApplyFilterToTheGrid", e.toString());
             e.printStackTrace();
         }
     }// private void tab23ApplyFilterToTheGrid() {
@@ -878,7 +878,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.tab56ApplyFilterToTheGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.tab56ApplyFilterToTheGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab56ApplyFilterToTheGrid() {
@@ -931,7 +931,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.configureTabs", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.configureTabs", e.toString());
             e.printStackTrace();
         }
     } //private void configureTabs() {
@@ -952,7 +952,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.workingHandleAjouterClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.workingHandleAjouterClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleAjouterClick() {
@@ -1001,7 +1001,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.workingHandleModifierClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.workingHandleModifierClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleModifierClick() {
@@ -1050,7 +1050,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.workingHandleAfficherClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.workingHandleAfficherClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleAfficherClick() {
@@ -1068,7 +1068,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.handleBienImmobilierAddEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.handleBienImmobilierAddEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleBienImmobilierAddEventFromEditorDialog(BienImmobilierAddEvent event) {
@@ -1086,7 +1086,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.handleImmeubleAddEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.handleImmeubleAddEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleImmeubleAddEventFromEditorDialog(ImmeubleAddEvent event) {
@@ -1104,7 +1104,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.handleBienImmobilierUpdateEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.handleBienImmobilierUpdateEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //handleBienImmobilierUpdateEventFromEditorDialog(BienImmobilierUpdateEvent event) {
@@ -1122,7 +1122,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.handleImmeubleUpdateEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.handleImmeubleUpdateEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //handleImmeubleUpdateEventFromEditorDialog(ImmeubleUpdateEvent event) {
@@ -1140,7 +1140,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.handleBienImmobilierRefreshEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.handleBienImmobilierRefreshEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleBienImmobilierRefreshEventFromEditorDialog(RefreshEvent event) {
@@ -1158,7 +1158,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.handleImmeubleRefreshEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.handleImmeubleRefreshEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleImmeubleRefreshEventFromEditorDialog(RefreshEvent event) {
@@ -1239,7 +1239,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.handleSupprimerClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.handleSupprimerClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleSupprimerClick() {
@@ -1308,7 +1308,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.handleActiverClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.handleActiverClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleActiverClick(ClickEvent event) {
@@ -1377,7 +1377,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.handleDesactiverClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.handleDesactiverClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleDesactiverClick(ClickEvent event) {
@@ -1397,7 +1397,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.workingHandleImprimerClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.workingHandleImprimerClick", e.toString());
             e.printStackTrace();
         }
     } //protected void workingHandleImprimerClick() {
@@ -1490,7 +1490,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.customActivateMainToolBar", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.customActivateMainToolBar", e.toString());
             e.printStackTrace();
         }
     } //private void customActivateMainToolBar()
@@ -1510,7 +1510,7 @@ public class CorpusImmobilierView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusImmobilierView.applySelectedTabChanged", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceImmobilierView.applySelectedTabChanged", e.toString());
             e.printStackTrace();
         }
     } //private void applySelectedTabChanged()

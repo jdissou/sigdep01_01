@@ -49,7 +49,7 @@ public class ServiceFourni implements Serializable {
     private String libelleCourtService;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeTypeService", nullable=false)
+    @JoinColumn(name="CodeTypeService")
     private SystemeTypeCreancier typeService;
 
     @Column(name="Inactif")

@@ -62,7 +62,7 @@ public class ZZZFacturationActeDetails implements Serializable {
     private LocalDate datePrestation;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CodeService", nullable=false)
+    @JoinColumn(name = "CodeService")
     private ServiceFourni serviceFourni;
     
     @Column(name="MontantFactureService")

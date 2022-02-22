@@ -42,7 +42,7 @@ public class Emprunteur implements Serializable {
     private String libelleCourtEmprunteur;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeCategorieEmprunteur", nullable=false)
+    @JoinColumn(name="CodeCategorieEmprunteur")
     private SystemeCategorieEmprunteur categorieEmprunteur;
 
     @Column(name="Adresse")

@@ -52,18 +52,18 @@ public class Remboursement implements Serializable {
     private Long noRemboursement;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="NoExercice", nullable=false)
+    @JoinColumn(name="NoExercice")
     private Exercice exercice;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeUtilisateur", nullable=false)
+    @JoinColumn(name="CodeUtilisateur")
     private Utilisateur utilisateur;
 
     @Column(name="NoChrono")
     private String noChrono;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "NoInstrument", nullable=false)
+    @JoinColumn(name = "NoInstrument")
     private Instrument Instrument;
 
     @Column(name="DateRemboursement")
@@ -79,7 +79,7 @@ public class Remboursement implements Serializable {
     private Double montantDevise;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeMonnaie", nullable=false)
+    @JoinColumn(name="CodeMonnaie")
     private Monnaie monnaie;
 
 

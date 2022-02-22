@@ -60,15 +60,15 @@ public class Rubrique implements Serializable {
     private boolean editionFacture;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeValorisationRubrique", nullable=false)
+    @JoinColumn(name="CodeModeValorisationRubrique")
     private SystemeModeValorisationCommission modeValorisationRubrique;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeValorisationBase", nullable=false)
+    @JoinColumn(name="CodeModeValorisationBase")
     private SystemeModeValorisationBaseCommission modeValorisationBase;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeValorisationTaux", nullable=false)
+    @JoinColumn(name="CodeModeValorisationTaux")
     private SystemeModeValorisationTauxCommission modeValorisationTaux;
 
     @Column(name="CoefficientMultiplicateur")
@@ -84,39 +84,39 @@ public class Rubrique implements Serializable {
     private Double tauxFixe;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeTranche", nullable=false)
+    @JoinColumn(name="CodeTranche")
     private TrancheValeur tranche;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeVariableRubrique", nullable=false)
+    @JoinColumn(name="CodeVariableRubrique")
     private VariableService variableRubrique;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeVariableBase", nullable=false)
+    @JoinColumn(name="CodeVariableBase")
     private VariableService variableBase;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeVariableTaux", nullable=false)
+    @JoinColumn(name="CodeVariableTaux")
     private VariableService variableTaux;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeConstanteRubrique", nullable=false)
+    @JoinColumn(name="CodeConstanteRubrique")
     private EmploiFonds constanteRubrique;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeConstanteBase", nullable=false)
+    @JoinColumn(name="CodeConstanteBase")
     private EmploiFonds constanteBase;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeConstanteTaux", nullable=false)
+    @JoinColumn(name="CodeConstanteTaux")
     private EmploiFonds constanteTaux;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeValeurMinimum", nullable=false)
+    @JoinColumn(name="CodeValeurMinimum")
     private SystemeValeurMinMax valeurMinimum;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeValeurMaximum", nullable=false)
+    @JoinColumn(name="CodeValeurMaximum")
     private SystemeValeurMinMax valeurMaximum;
 
     @Column(name="ValeurMinimumFixe")
@@ -126,137 +126,137 @@ public class Rubrique implements Serializable {
     private Double valeurMaximumFixe;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeConstanteValeurMinimum", nullable=false)
+    @JoinColumn(name="CodeConstanteValeurMinimum")
     private EmploiFonds constanteValeurMinimum;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeConstanteValeurMaximum", nullable=false)
+    @JoinColumn(name="CodeConstanteValeurMaximum")
     private EmploiFonds constanteValeurMaximum;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeAbattement", nullable=false)
+    @JoinColumn(name="CodeModeAbattement")
     private SystemeModeAbattement modeAbattement;
 
     @Column(name="AbattementFixe")
     private Double abattementFixe;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeArrondissement", nullable=false)
+    @JoinColumn(name="CodeModeArrondissement")
     private SystemeModeArrondissement modeArrondissement;
 
     @Column(name="NombreChiffreArrondissement")
     private Integer nombreChiffreArrondissement;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurBase01", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurBase01")
     private SystemeModeStockageBaseMontant modeStockageCompteurBase01;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurBase02", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurBase02")
     private SystemeModeStockageBaseMontant modeStockageCompteurBase02;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurBase03", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurBase03")
     private SystemeModeStockageBaseMontant modeStockageCompteurBase03;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurBase04", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurBase04")
     private SystemeModeStockageBaseMontant modeStockageCompteurBase04;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurMontant01", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurMontant01")
     private SystemeModeStockageBaseMontant modeStockageCompteurMontant01;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurMontant02", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurMontant02")
     private SystemeModeStockageBaseMontant modeStockageCompteurMontant02;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurMontant03", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurMontant03")
     private SystemeModeStockageBaseMontant modeStockageCompteurMontant03;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurMontant04", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurMontant04")
     private SystemeModeStockageBaseMontant modeStockageCompteurMontant04;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurInterne01", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurInterne01")
     private SystemeModeStockageInterneExterne modeStockageCompteurInterne01;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurInterne02", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurInterne02")
     private SystemeModeStockageInterneExterne modeStockageCompteurInterne02;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurInterne03", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurInterne03")
     private SystemeModeStockageInterneExterne modeStockageCompteurInterne03;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurInterne04", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurInterne04")
     private SystemeModeStockageInterneExterne modeStockageCompteurInterne04;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurInterne05", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurInterne05")
     private SystemeModeStockageInterneExterne modeStockageCompteurInterne05;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurInterne06", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurInterne06")
     private SystemeModeStockageInterneExterne modeStockageCompteurInterne06;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurInterne07", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurInterne07")
     private SystemeModeStockageInterneExterne modeStockageCompteurInterne07;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurInterne08", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurInterne08")
     private SystemeModeStockageInterneExterne modeStockageCompteurInterne08;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurInterne09", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurInterne09")
     private SystemeModeStockageInterneExterne modeStockageCompteurInterne09;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurInterne10", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurInterne10")
     private SystemeModeStockageInterneExterne modeStockageCompteurInterne10;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurExterne01", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurExterne01")
     private SystemeModeStockageInterneExterne modeStockageCompteurExterne01;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurExterne02", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurExterne02")
     private SystemeModeStockageInterneExterne modeStockageCompteurExterne02;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurExterne03", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurExterne03")
     private SystemeModeStockageInterneExterne modeStockageCompteurExterne03;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurExterne04", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurExterne04")
     private SystemeModeStockageInterneExterne modeStockageCompteurExterne04;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurExterne05", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurExterne05")
     private SystemeModeStockageInterneExterne modeStockageCompteurExterne05;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurExterne06", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurExterne06")
     private SystemeModeStockageInterneExterne modeStockageCompteurExterne06;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurExterne07", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurExterne07")
     private SystemeModeStockageInterneExterne modeStockageCompteurExterne07;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurExterne08", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurExterne08")
     private SystemeModeStockageInterneExterne modeStockageCompteurExterne08;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurExterne09", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurExterne09")
     private SystemeModeStockageInterneExterne modeStockageCompteurExterne09;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeStockageCompteurExterne10", nullable=false)
+    @JoinColumn(name="CodeModeStockageCompteurExterne10")
     private SystemeModeStockageInterneExterne modeStockageCompteurExterne10;
 
     @Column(name="Inactif")

@@ -435,7 +435,7 @@ public class ModifierMouvementComptaDialog extends BaseModifierTransactionMaitre
 
             Label lblLibelleMouvementValidationStatus = new Label();
             this.binder.forField(this.txtLibelleMouvement)
-                .withValidator(text -> text.length() <= 100, "Objet ne peut contenir au plus 100 caractères.")
+                .withValidator(text -> text.length() <= 50, "Objet ne peut contenir au plus 50 caractères.")
                 .withValidationStatusHandler(status -> {lblLibelleMouvementValidationStatus.setText(status.getMessage().orElse(""));       
                          lblLibelleMouvementValidationStatus.setVisible(status.isError());})
                 .bind(MouvementCompta::getLibelleMouvement, MouvementCompta::setLibelleMouvement); 

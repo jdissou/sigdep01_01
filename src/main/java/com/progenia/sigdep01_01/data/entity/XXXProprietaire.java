@@ -55,23 +55,23 @@ public class Proprietaire implements Serializable {
     private String email;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="NoCompteTresorerie", nullable=false)
+    @JoinColumn(name="NoCompteTresorerie")
     private Compte compteTresorerie;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="NoCompteTVALoyer", nullable=false)
+    @JoinColumn(name="NoCompteTVALoyer")
     private Compte compteTVALoyer;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="NoCompteTVADepense", nullable=false)
+    @JoinColumn(name="NoCompteTVADepense")
     private Compte compteTVADepense;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeJournalLoyer", nullable=false)
+    @JoinColumn(name="CodeJournalLoyer")
     private ZZZJournal journalLoyer;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeJournalDepense", nullable=false)
+    @JoinColumn(name="CodeJournalDepense")
     private ZZZJournal journalDepense;
 
     @Column(name="NoIFU")

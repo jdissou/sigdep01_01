@@ -51,15 +51,15 @@ public class ZZZEvenementPreIncubation implements Serializable {
     private Long noEvenement;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="NoExercice", nullable=false)
+    @JoinColumn(name="NoExercice")
     private Exercice exercice;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeUtilisateur", nullable=false)
+    @JoinColumn(name="CodeUtilisateur")
     private Utilisateur utilisateur;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeCentreIncubateur", nullable=false)
+    @JoinColumn(name="CodeCentreIncubateur")
     private ZZZCentreIncubateur centreIncubateur;
 
     @Column(name="NoChrono")
@@ -70,7 +70,7 @@ public class ZZZEvenementPreIncubation implements Serializable {
     private Programme programme;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeTypeEvenement", nullable=false)
+    @JoinColumn(name="CodeTypeEvenement")
     private TypeEvenement typeEvenement;
     
     @Column(name="DateEvenement")

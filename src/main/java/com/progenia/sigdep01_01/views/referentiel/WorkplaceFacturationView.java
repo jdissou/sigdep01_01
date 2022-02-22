@@ -69,9 +69,9 @@ import org.vaadin.spring.events.annotation.EventBusListenerMethod;
 
 //@RequiresSecurityCheck custom-annotation tells security check is required.
 @RequiresSecurityCheck
-@Route(value = "corpus_element_facturation", layout = MainView.class)
-@PageTitle(CorpusFacturationView.PAGE_TITLE)
-public class CorpusFacturationView extends OngletReferentielBase {
+@Route(value = "workplace_element_facturation", layout = MainView.class)
+@PageTitle(WorkplaceFacturationView.PAGE_TITLE)
+public class WorkplaceFacturationView extends OngletReferentielBase {
     /*
     Pour connecter la vue au backend afin de pouvoir récupérer les données à afficher dans la grille. 
     On utilise l'injection de dépendances de Spring pour obtenir le service de backend, 
@@ -84,8 +84,8 @@ public class CorpusFacturationView extends OngletReferentielBase {
     private EventBus.UIEventBus uiEventBus;
     
     //Paramètres de Personnalisation ProGenia
-    static final String PAGE_TITLE = "Corpus des Eléments de Facturation";
-    static final String CACHED_SELECTED_TAB_INDEX = "CorpusFacturationViewSelectedTab";
+    static final String PAGE_TITLE = "Workplace des Eléments de Facturation";
+    static final String CACHED_SELECTED_TAB_INDEX = "WorkplaceFacturationViewSelectedTab";
 
     //ATTRIBUTS - tab10 - ModeReglement
     private Tab tab10ModeReglementTab = new Tab();
@@ -159,20 +159,20 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.onAttach", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.onAttach", e.toString());
             e.printStackTrace();
         }
     } //public void onAttach(AttachEvent event) {
 
     
     /***
-     * We can then create the initialization method, where we instantiate the CorpusFacturationView. 
+     * We can then create the initialization method, where we instantiate the WorkplaceFacturationView. 
      */
     private void initialize() {
         try 
         {
             //1- Mise à jour des propriétés du formulaire
-            this.strNomFormulaire = "CorpusFacturationView";
+            this.strNomFormulaire = "WorkplaceFacturationView";
             
             //2 - Setup the top toolbar
             this.customSetupTopToolBar();
@@ -196,7 +196,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.initialize", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.initialize", e.toString());
             e.printStackTrace();
         }
     } //private void initialize() {
@@ -232,7 +232,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.tab10SetupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.tab10SetupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void tab10SetupDataprovider()
@@ -258,7 +258,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.tab10RefreshGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.tab10RefreshGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab10RefreshGrid()
@@ -365,7 +365,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.tab10ConfigureGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.tab10ConfigureGridWithFilters", e.toString());
             e.printStackTrace();
         }
     } //private void tab10ConfigureGridWithFilters() {
@@ -405,7 +405,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.tab10ApplyFilterToTheGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.tab10ApplyFilterToTheGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab10ApplyFilterToTheGrid() {
@@ -438,7 +438,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.tab21SetupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.tab21SetupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void tab21SetupDataprovider()
@@ -465,7 +465,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.tab21RefreshGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.tab21RefreshGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab21RefreshGrid()
@@ -544,7 +544,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.tab21ConfigureGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.tab21ConfigureGridWithFilters", e.toString());
             e.printStackTrace();
         }
     } //private void tab21ConfigureGridWithFilters() {
@@ -580,7 +580,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.tab21ApplyFilterToTheGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.tab21ApplyFilterToTheGrid", e.toString());
             e.printStackTrace();
         }
     } //private void tab21ApplyFilterToTheGrid() {
@@ -633,7 +633,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.configureTabs", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.configureTabs", e.toString());
             e.printStackTrace();
         }
     } //private void configureTabs() {
@@ -653,7 +653,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         }
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.workingHandleAjouterClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.workingHandleAjouterClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleAjouterClick() {
@@ -703,7 +703,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         }
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.workingHandleModifierClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.workingHandleModifierClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleModifierClick() {
@@ -751,7 +751,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         }
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.workingHandleAfficherClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.workingHandleAfficherClick", e.toString());
             e.printStackTrace();
         }
     } //private void workingHandleAfficherClick() {
@@ -774,7 +774,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.handleModeReglementAddEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.handleModeReglementAddEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleModeReglementAddEventFromEditorDialog(ModeReglementAddEvent event) {
@@ -792,7 +792,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.handleModeReglementUpdateEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.handleModeReglementUpdateEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //handleModeReglementUpdateEventFromEditorDialog(ModeReglementUpdateEvent event) {
@@ -810,7 +810,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.handleModeReglementRefreshEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.handleModeReglementRefreshEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleModeReglementRefreshEventFromEditorDialog(RefreshEvent event) {
@@ -834,7 +834,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.handleSequenceFacturationAddEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.handleSequenceFacturationAddEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleSequenceFacturationAddEventFromEditorDialog(SequenceFacturationAddEvent event) {
@@ -852,7 +852,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.handleSequenceFacturationUpdateEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.handleSequenceFacturationUpdateEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //handleSequenceFacturationUpdateEventFromEditorDialog(SequenceFacturationUpdateEvent event) {
@@ -870,7 +870,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.handleSequenceFacturationRefreshEventFromEditorDialog", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.handleSequenceFacturationRefreshEventFromEditorDialog", e.toString());
             e.printStackTrace();
         }
     } //private void handleSequenceFacturationRefreshEventFromEditorDialog(RefreshEvent event) {
@@ -952,7 +952,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         }
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.handleSupprimerClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.handleSupprimerClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleSupprimerClick() {
@@ -1021,7 +1021,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         }
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.handleActiverClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.handleActiverClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleActiverClick(ClickEvent event) {
@@ -1090,7 +1090,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         }
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.handleDesactiverClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.handleDesactiverClick", e.toString());
             e.printStackTrace();
         }
     } //private void handleDesactiverClick(ClickEvent event) {
@@ -1110,7 +1110,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         }
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.workingHandleImprimerClick", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.workingHandleImprimerClick", e.toString());
             e.printStackTrace();
         }
     } //protected void workingHandleImprimerClick() {
@@ -1203,7 +1203,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         }
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.customActivateMainToolBar", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.customActivateMainToolBar", e.toString());
             e.printStackTrace();
         }
     } //private void customActivateMainToolBar()
@@ -1223,7 +1223,7 @@ public class CorpusFacturationView extends OngletReferentielBase {
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("CorpusFacturationView.applySelectedTabChanged", e.toString());
+            MessageDialogHelper.showAlertDialog("WorkplaceFacturationView.applySelectedTabChanged", e.toString());
             e.printStackTrace();
         }
     } //private void applySelectedTabChanged()

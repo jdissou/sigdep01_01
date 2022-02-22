@@ -53,15 +53,15 @@ public class Creancier implements Serializable {
     private String libelleCourtCreancier;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeTypeCreancier", nullable=false)
+    @JoinColumn(name="CodeTypeCreancier")
     private SystemeTypeCreancier typeCreancier;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeGroupeCreancier", nullable=false)
+    @JoinColumn(name="CodeGroupeCreancier")
     private GroupeCreancier groupeCreancier;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeResidence", nullable=false)
+    @JoinColumn(name="CodeResidence")
     private SystemeResidence residence;
 
     @Column(name="Adresse")

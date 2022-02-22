@@ -501,7 +501,7 @@ public class PrestationDemandeView extends SaisieTransactionMaitreDetailsBase<Pr
             
             Label lblLibellePrestationValidationStatus = new Label();
             this.binder.forField(this.txtLibellePrestation)
-                .withValidator(text -> text.length() <= 100, "Objet ne peut contenir au plus 100 caractères.")
+                .withValidator(text -> text.length() <= 50, "Objet ne peut contenir au plus 50 caractères.")
                 .withValidationStatusHandler(status -> {lblLibellePrestationValidationStatus.setText(status.getMessage().orElse(""));       
                          lblLibellePrestationValidationStatus.setVisible(status.isError());})
                 .bind(PrestationDemande::getLibellePrestation, PrestationDemande::setLibellePrestation); 

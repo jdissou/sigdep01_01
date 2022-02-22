@@ -572,7 +572,7 @@ public class LotEcritureView extends SaisieTransactionMaitreDetailsBase<ZZZLotEc
             //Binding Read-only Data - To bind a component to read-only data, you can use a null value for the setter.
             Label lblNoCompteSupportValidationStatus = new Label();
             this.binder.forField(this.txtNoCompteSupport)
-                .withValidator(text -> text.length() <= 100, "Objet ne peut contenir au plus 100 caractères.")
+                .withValidator(text -> text.length() <= 50, "Objet ne peut contenir au plus 50 caractères.")
                 .withValidationStatusHandler(status -> {lblNoCompteSupportValidationStatus.setText(status.getMessage().orElse(""));       
                          lblNoCompteSupportValidationStatus.setVisible(status.isError());})
                 .bind(null, null); 
@@ -580,7 +580,7 @@ public class LotEcritureView extends SaisieTransactionMaitreDetailsBase<ZZZLotEc
             //Binding Read-only Data - To bind a component to read-only data, you can use a null value for the setter.
             Label lblLibelleCompteSupportValidationStatus = new Label();
             this.binder.forField(this.txtLibelleCompteSupport)
-                .withValidator(text -> text.length() <= 100, "Objet ne peut contenir au plus 100 caractères.")
+                .withValidator(text -> text.length() <= 50, "Objet ne peut contenir au plus 50 caractères.")
                 .withValidationStatusHandler(status -> {lblLibelleCompteSupportValidationStatus.setText(status.getMessage().orElse(""));       
                          lblLibelleCompteSupportValidationStatus.setVisible(status.isError());})
                 .bind(null, null); 

@@ -508,7 +508,7 @@ public class MesureIndicateurView extends SaisieTransactionMaitreDetailsBase<Mes
             
             Label lblLibelleMesureValidationStatus = new Label();
             this.binder.forField(this.txtLibelleMesure)
-                .withValidator(text -> text.length() <= 100, "Objet ne peut contenir au plus 100 caractères.")
+                .withValidator(text -> text.length() <= 50, "Objet ne peut contenir au plus 50 caractères.")
                 .withValidationStatusHandler(status -> {lblLibelleMesureValidationStatus.setText(status.getMessage().orElse(""));       
                          lblLibelleMesureValidationStatus.setVisible(status.isError());})
                 .bind(MesureIndicateur::getLibelleMesure, MesureIndicateur::setLibelleMesure); 

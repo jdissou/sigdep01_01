@@ -56,7 +56,7 @@ public class Utilisateur implements Serializable {
     private String libelleUtilisateur;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeCategorieUtilisateur", nullable=false)
+    @JoinColumn(name="CodeCategorieUtilisateur")
     private CategorieUtilisateur categorieUtilisateur;
 
     @Column(name="InitialesUtilisateur")

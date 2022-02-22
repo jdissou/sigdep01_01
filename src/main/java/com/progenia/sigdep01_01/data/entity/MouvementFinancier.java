@@ -45,7 +45,7 @@ public class MouvementFinancier implements Serializable {
     private String noChrono;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "NoInstrument", nullable=false)
+    @JoinColumn(name = "NoInstrument")
     private Instrument Instrument;
 
     @Column(name="NoEcheance")
@@ -91,11 +91,11 @@ public class MouvementFinancier implements Serializable {
     private Double interetRetardPaye;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeStatutEcheance", nullable=false)
+    @JoinColumn(name="CodeStatutEcheance")
     private SystemeStatutEcheance statutEcheance;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeTypeMouvement", nullable=false)
+    @JoinColumn(name="CodeTypeMouvement")
     private SystemeTypeMouvementFinancier typeMouvement;
 
     @Column(name="DateSaisie")

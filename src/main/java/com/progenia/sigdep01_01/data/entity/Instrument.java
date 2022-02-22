@@ -72,7 +72,7 @@ public class Instrument implements Serializable {
     private Double montantAnnule;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeMonnaiePretOuEmissionTitre", nullable=false)
+    @JoinColumn(name="CodeMonnaiePretOuEmissionTitre")
     private Monnaie monnaiePretOuEmissionTitre;
 
     @Column(name="PretSindique")
@@ -82,47 +82,47 @@ public class Instrument implements Serializable {
     private LocalDate dateAutorisationPret;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeObjetDette", nullable=false)
+    @JoinColumn(name="CodeObjetDette")
     private ObjetDette objetDette;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeSecteurEconomique", nullable=false)
+    @JoinColumn(name="CodeSecteurEconomique")
     private SecteurEconomique secteurEconomique;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeEcheanceInitiale", nullable=false)
+    @JoinColumn(name="CodeEcheanceInitiale")
     private SystemeEcheanceInitiale echeanceInitiale;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeMethodeDecaissement", nullable=false)
+    @JoinColumn(name="CodeMethodeDecaissement")
     private SystemeMethodeDecaissement methodeDecaissement;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeDecaissement", nullable=false)
+    @JoinColumn(name="CodeModeDecaissement")
     private SystemeModeDecaissement modeDecaissement;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeStructureRemboursement", nullable=false)
+    @JoinColumn(name="CodeStructureRemboursement")
     private SystemeStructureRemboursement structureRemboursement;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeProfilFinancement", nullable=false)
+    @JoinColumn(name="CodeProfilFinancement")
     private ProfilFinancement profilFinancement;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeCategorieInstrument", nullable=false)
+    @JoinColumn(name="CodeCategorieInstrument")
     private CategorieInstrument categorieInstrument;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeTypeInstrument", nullable=false)
+    @JoinColumn(name="CodeTypeInstrument")
     private SystemeTypeInstrument typeInstrument;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeEmprunteur", nullable=false)
+    @JoinColumn(name="CodeEmprunteur")
     private Emprunteur emprunteur;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeCreancier", nullable=false)
+    @JoinColumn(name="CodeCreancier")
     private Creancier creancier;
 
     @Column(name="DiffereAmortissementNombreAnnee")
@@ -153,7 +153,7 @@ public class Instrument implements Serializable {
     private Integer periodeMaturiteNombreJour;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodePeriodiciteRemboursement", nullable=false)
+    @JoinColumn(name="CodePeriodiciteRemboursement")
     private SystemePeriodiciteRemboursement periodiciteRemboursement;
 
     @Column(name="DateLimitePremierDecaissement")
@@ -175,11 +175,11 @@ public class Instrument implements Serializable {
     private LocalDate dateDernierPaiementInteret;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModaliteRemboursement", nullable=false)
+    @JoinColumn(name="CodeModaliteRemboursement")
     private SystemeModaliteRemboursement modaliteRemboursement;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeTypeTauxInteret", nullable=false)
+    @JoinColumn(name="CodeTypeTauxInteret")
     private SystemeTypeTauxInteret typeTauxInteret;
 
     @Column(name="TauxInteretFixe")
@@ -189,15 +189,15 @@ public class Instrument implements Serializable {
     private Float tauxInteretMarge;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeIndiceReferenceTauxInteret", nullable=false)
+    @JoinColumn(name="CodeIndiceReferenceTauxInteret")
     private IndiceReference indiceReferenceTauxInteret;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodePeriodeFixationTaux", nullable=false)
+    @JoinColumn(name="CodePeriodeFixationTaux")
     private SystemePeriodeFixationTaux periodeFixationTaux;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeBaseAnnuelleCalculTaux", nullable=false)
+    @JoinColumn(name="CodeBaseAnnuelleCalculTaux")
     private SystemeBaseAnnuelleCalculTaux baseAnnuelleCalculTaux;
 
     @Column(name="NombreJourBaseAnnuelleTauxInteret")
@@ -216,18 +216,18 @@ public class Instrument implements Serializable {
     private Integer delaiGraceRetardPaiementNombreJour;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeValorisationTauxInteretRetard", nullable=false)
+    @JoinColumn(name="CodeModeValorisationTauxInteretRetard")
     private SystemeModeValorisationTauxInteretRetard modeValorisationTauxInteretRetard;
 
     @Column(name="TauxInteretRetardFixe")
     private Float tauxInteretRetardFixe;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeIndiceReferenceTauxInteretRetard", nullable=false)
+    @JoinColumn(name="CodeIndiceReferenceTauxInteretRetard")
     private IndiceReference indiceReferenceTauxInteretRetard;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeProfilDecaissement", nullable=false)
+    @JoinColumn(name="CodeProfilDecaissement")
     private SystemeProfilDecaissement profilDecaissement;
 
     @Column(name="Cloture")

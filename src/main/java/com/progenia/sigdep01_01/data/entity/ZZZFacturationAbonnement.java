@@ -53,26 +53,26 @@ public class ZZZFacturationAbonnement implements Serializable {
     private Long noFacturation;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="NoExercice", nullable=false)
+    @JoinColumn(name="NoExercice")
     private Exercice exercice;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeUtilisateur", nullable=false)
+    @JoinColumn(name="CodeUtilisateur")
     private Utilisateur utilisateur;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeCentreIncubateur", nullable=false)
+    @JoinColumn(name="CodeCentreIncubateur")
     private ZZZCentreIncubateur centreIncubateur;
 
     @Column(name="NoChrono")
     private String noChrono;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeSequenceFacturation", nullable=false)
+    @JoinColumn(name="CodeSequenceFacturation")
     private SequenceFacturation sequenceFacturation;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="NoPeriode", nullable=false)
+    @JoinColumn(name="NoPeriode")
     private IndiceReference periodeFacturation;
     
     @Column(name="DateFacturation")
@@ -94,7 +94,7 @@ public class ZZZFacturationAbonnement implements Serializable {
     private String observations;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeClassementInstrumentService", nullable=false)
+    @JoinColumn(name="CodeClassementInstrumentService")
     private SystemeClassementInstrumentService classementInstrumentService;
 
     @Column(name="NoMouvementCompta")

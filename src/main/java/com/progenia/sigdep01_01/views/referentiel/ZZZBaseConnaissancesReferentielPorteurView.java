@@ -62,9 +62,9 @@ import org.vaadin.spring.events.annotation.EventBusListenerMethod;
 
 //@RequiresSecurityCheck custom-annotation tells security check is required.
 @RequiresSecurityCheck
-@Route(value = "infocentre_Instrument", layout = MainView.class)
-@PageTitle(ZZZBaseConnaissancesInfocentreInstrumentView.PAGE_TITLE)
-public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<Instrument> {
+@Route(value = "referentiel-porteur", layout = MainView.class)
+@PageTitle(ZZZBaseConnaissancesReferentielPorteurView.PAGE_TITLE)
+public class ZZZBaseConnaissancesReferentielPorteurView extends FichierBase<Instrument> {
     /*
     Pour connecter la vue au backend afin de pouvoir récupérer les données à afficher dans la grille. 
     On utilise l'injection de dépendances de Spring pour obtenir le service de backend, 
@@ -187,14 +187,14 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.onAttach", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.onAttach", e.toString());
             e.printStackTrace();
         }
     }
 
     
     /***
-     * We can then create the initialization method, where we instantiate the ZZZBaseConnaissancesInfocentreInstrumentView. 
+     * We can then create the initialization method, where we instantiate the ZZZBaseConnaissancesReferentielPorteurView.
      */
     private void initialize() {
         try 
@@ -228,7 +228,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.initialize", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.initialize", e.toString());
             e.printStackTrace();
         }
     }
@@ -291,7 +291,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.setupDataprovider", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.setupDataprovider", e.toString());
             e.printStackTrace();
         }
     } //private void setupDataprovider()
@@ -305,7 +305,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.workingFetchItems", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.workingFetchItems", e.toString());
             e.printStackTrace();
             return (null);
         }
@@ -319,7 +319,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.workingGetReportData", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.workingGetReportData", e.toString());
             e.printStackTrace();
             return (null);
         }
@@ -333,7 +333,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.workingSaveItem", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.workingSaveItem", e.toString());
             e.printStackTrace();
         }
     } //protected void workingSaveItem(Instrument InstrumentItem) {
@@ -347,7 +347,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.workingDeleteItem", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.workingDeleteItem", e.toString());
             e.printStackTrace();
         }
     } //protected void workingDeleteItem(Instrument InstrumentItem) {
@@ -360,7 +360,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.workingSetInactif", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.workingSetInactif", e.toString());
             e.printStackTrace();
         }
     } //protected void workingDeleteItem(Instrument InstrumentItem) {
@@ -713,7 +713,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.configureGridWithFilters", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.configureGridWithFilters", e.toString());
             e.printStackTrace();
         }
     }    
@@ -797,7 +797,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.applyFilterToTheGrid", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.applyFilterToTheGrid", e.toString());
             e.printStackTrace();
         }
     }
@@ -811,7 +811,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.workingHandleAjouterClick", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.workingHandleAjouterClick", e.toString());
             e.printStackTrace();
         }
     } //protected void workingHandleAjouterClick() {
@@ -839,7 +839,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.workingHandleModifierClick", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.workingHandleModifierClick", e.toString());
             e.printStackTrace();
         }
     } //protected void workingHandleModifierClick() {
@@ -867,7 +867,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.workingHandleAfficherClick", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.workingHandleAfficherClick", e.toString());
             e.printStackTrace();
         }
     } //protected void workingHandleAfficherClick() {
@@ -885,7 +885,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.handleAddEventFromEditorView", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.handleAddEventFromEditorView", e.toString());
             e.printStackTrace();
         }
     }
@@ -903,7 +903,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.handleUpdateEventFromEditorView", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.handleUpdateEventFromEditorView", e.toString());
             e.printStackTrace();
         }
     }
@@ -921,7 +921,7 @@ public class ZZZBaseConnaissancesInfocentreInstrumentView extends FichierBase<In
         } 
         catch (Exception e) 
         {
-            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesInfocentreInstrumentView.handleRefreshEventFromEditorView", e.toString());
+            MessageDialogHelper.showAlertDialog("ZZZBaseConnaissancesReferentielPorteurView.handleRefreshEventFromEditorView", e.toString());
             e.printStackTrace();
         }
     }

@@ -63,7 +63,7 @@ public class Instrument implements Serializable {
     private String responsableInstrument;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeCentreIncubateur", nullable=false)
+    @JoinColumn(name="CodeCentreIncubateur")
     private ZZZCentreIncubateur centreIncubateur;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -71,11 +71,11 @@ public class Instrument implements Serializable {
     private SequenceFacturation sequenceFacturation;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeTypeInstrument", nullable=false)
+    @JoinColumn(name="CodeTypeInstrument")
     private TypeInstrument typeInstrument;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeCategorieInstrument", nullable=false)
+    @JoinColumn(name="CodeCategorieInstrument")
     private SystemeCategorieEmprunteur categorieInstrument;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -87,7 +87,7 @@ public class Instrument implements Serializable {
     private Cohorte cohorte;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeMentor", nullable=false)
+    @JoinColumn(name="CodeMentor")
     private Mentor mentor;
 
     @Column(name="NoMobile")

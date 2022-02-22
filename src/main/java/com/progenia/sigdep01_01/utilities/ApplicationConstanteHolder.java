@@ -27,8 +27,8 @@ public class ApplicationConstanteHolder {
     private static final String PARAMETRE_SYSTEME_CODE_MODE_AFFICHAGE_IMAGE = "ParametreSystemeCodeModeAffichageImage";
     private static final String PARAMETRE_SYSTEME_CODE_PAYS = "ParametreSystemeCodePays";
     private static final String PARAMETRE_SYSTEME_PRELEVEMENT_ZAKAT = "ParametreSystemePrelevementZakat";
-    private static final String PARAMETRE_SYSTEME_DATE_DEBUT_PAGE = "ParametreSystemeDateDebutPlage";
-    private static final String PARAMETRE_SYSTEME_DATE_FIN_PAGE = "ParametreSystemeDateFinPlage";
+    private static final String PARAMETRE_SYSTEME_DATE_DEBUT_PLAGE = "ParametreSystemeDateDebutPlage";
+    private static final String PARAMETRE_SYSTEME_DATE_FIN_PLAGE = "ParametreSystemeDateFinPlage";
 
     //CONSTANTES DIVERS
     static final String REPORT_RELATIVE_PATH = "./src/main/resources/reports/";
@@ -243,12 +243,12 @@ public class ApplicationConstanteHolder {
         return PARAMETRE_SYSTEME_PRELEVEMENT_ZAKAT;
     }
 
-    public static String getPARAMETRE_SYSTEME_DATE_DEBUT_PAGE() {
-        return PARAMETRE_SYSTEME_DATE_DEBUT_PAGE;
+    public static String getPARAMETRE_SYSTEME_DATE_DEBUT_PLAGE() {
+        return PARAMETRE_SYSTEME_DATE_DEBUT_PLAGE;
     }
 
-    public static String getPARAMETRE_SYSTEME_DATE_FIN_PAGE() {
-        return PARAMETRE_SYSTEME_DATE_FIN_PAGE;
+    public static String getPARAMETRE_SYSTEME_DATE_FIN_PLAGE() {
+        return PARAMETRE_SYSTEME_DATE_FIN_PLAGE;
     }
 
     public static String getCODE_UTILISATEUR_ATTRIBUTE() {

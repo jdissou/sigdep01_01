@@ -41,23 +41,23 @@ public class ProfilFinancement implements Serializable {
     private String libelleCourtProfilFinancement;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeTypeInstrument", nullable=false)
+    @JoinColumn(name="CodeTypeInstrument")
     private SystemeTypeInstrument typeInstrument;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModaliteRemboursement", nullable=false)
+    @JoinColumn(name="CodeModaliteRemboursement")
     private SystemeModaliteRemboursement modaliteRemboursement;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodePeriodeFixationTaux", nullable=false)
+    @JoinColumn(name="CodePeriodeFixationTaux")
     private SystemePeriodeFixationTaux periodeFixationTaux;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeBaseAnnuelleCalculTaux", nullable=false)
+    @JoinColumn(name="CodeBaseAnnuelleCalculTaux")
     private SystemeBaseAnnuelleCalculTaux baseAnnuelleCalculTaux;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeTypeTauxInteret", nullable=false)
+    @JoinColumn(name="CodeTypeTauxInteret")
     private SystemeTypeTauxInteret typeTauxInteret;
 
     @Column(name="TauxInteretFixe")
@@ -67,26 +67,26 @@ public class ProfilFinancement implements Serializable {
     private Float tauxInteretMarge;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeIndiceReferenceTauxInteret", nullable=false)
+    @JoinColumn(name="CodeIndiceReferenceTauxInteret")
     private IndiceReference indiceReferenceTauxInteret;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodePeriodiciteRemboursement", nullable=false)
+    @JoinColumn(name="CodePeriodiciteRemboursement")
     private SystemePeriodiciteRemboursement periodiciteRemboursement;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeValorisationTauxInteretRetard", nullable=false)
+    @JoinColumn(name="CodeModeValorisationTauxInteretRetard")
     private SystemeModeValorisationTauxInteretRetard modeValorisationTauxInteretRetard;
 
     @Column(name="TauxInteretRetardFixe")
     private Float tauxInteretRetardFixe;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeIndiceReferenceTauxInteretRetard", nullable=false)
+    @JoinColumn(name="CodeIndiceReferenceTauxInteretRetard")
     private IndiceReference indiceReferenceTauxInteretRetard;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeProfilDecaissement", nullable=false)
+    @JoinColumn(name="CodeProfilDecaissement")
     private SystemeProfilDecaissement profilDecaissement;
 
     @Column(name="Inactif")

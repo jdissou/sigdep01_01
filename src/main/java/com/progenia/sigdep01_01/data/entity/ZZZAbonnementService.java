@@ -51,22 +51,22 @@ public class ZZZAbonnementService implements Serializable {
     private Long noAbonnement;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="NoExercice", nullable=false)
+    @JoinColumn(name="NoExercice")
     private Exercice exercice;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeUtilisateur", nullable=false)
+    @JoinColumn(name="CodeUtilisateur")
     private Utilisateur utilisateur;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeCentreIncubateur", nullable=false)
+    @JoinColumn(name="CodeCentreIncubateur")
     private ZZZCentreIncubateur centreIncubateur;
     
     @Column(name="NoChrono")
     private String noChrono;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="NoInstrument", nullable=false)
+    @JoinColumn(name="NoInstrument")
     private Instrument Instrument;
 
     @ManyToOne(fetch = FetchType.LAZY)

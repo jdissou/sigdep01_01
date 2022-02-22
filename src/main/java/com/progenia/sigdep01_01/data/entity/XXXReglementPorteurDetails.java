@@ -64,7 +64,7 @@ public class ReglementInstrumentDetails implements Serializable {
     private LocalDate dateFacture;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CodeTypeFacture", nullable=false)
+    @JoinColumn(name = "CodeTypeFacture")
     private SystemeTypePaiement typeFacture;
 
     @Column(name="MontantFactureAttendu")

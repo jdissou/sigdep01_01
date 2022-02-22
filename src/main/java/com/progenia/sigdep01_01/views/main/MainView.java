@@ -16,7 +16,7 @@ import com.progenia.sigdep01_01.views.parametre.ParametreSystemeView;
 import com.progenia.sigdep01_01.views.parametre.PreferenceUtilisateurView;
 import com.progenia.sigdep01_01.views.empty.EmptyView;
 import com.progenia.sigdep01_01.views.parametre.ParametreCentreIncubateurView;
-import com.progenia.sigdep01_01.views.referentiel.CorpusImmobilierView;
+import com.progenia.sigdep01_01.views.referentiel.WorkplaceImmobilierView;
 import com.progenia.sigdep01_01.views.traitements.ClotureExerciceView;
 import com.progenia.sigdep01_01.views.transactions.EvenementInstrumentView;
 import com.progenia.sigdep01_01.views.traitements.ContrepassationView;
@@ -221,8 +221,8 @@ public class MainView extends com.vaadin.flow.component.applayout.AppLayout {
                 VaadinServlet.getCurrent().getServletContext().setAttribute(ApplicationConstanteHolder.getPARAMETRE_SYSTEME_CODE_ADMINISTRATEUR(), parametreSystemeOptional.get().getAdministrateur().getCodeUtilisateur());
                 VaadinServlet.getCurrent().getServletContext().setAttribute(ApplicationConstanteHolder.getPARAMETRE_SYSTEME_CODE_OPERATION_COMPTABLE(), parametreSystemeOptional.get().getOperationComptable().getCodeOperation());
                 VaadinServlet.getCurrent().getServletContext().setAttribute(ApplicationConstanteHolder.getPARAMETRE_SYSTEME_CODE_VALIDATION_COMPTA(), parametreSystemeOptional.get().getValidationCompta().getCodeValidation());
-                VaadinServlet.getCurrent().getServletContext().setAttribute(ApplicationConstanteHolder.getPARAMETRE_SYSTEME_DATE_DEBUT_PAGE(), parametreSystemeOptional.get().getDateDebutPlage());
-                VaadinServlet.getCurrent().getServletContext().setAttribute(ApplicationConstanteHolder.getPARAMETRE_SYSTEME_DATE_FIN_PAGE(), parametreSystemeOptional.get().getDateFinPlage());
+                VaadinServlet.getCurrent().getServletContext().setAttribute(ApplicationConstanteHolder.getPARAMETRE_SYSTEME_DATE_DEBUT_PLAGE(), parametreSystemeOptional.get().getDateDebutPlage());
+                VaadinServlet.getCurrent().getServletContext().setAttribute(ApplicationConstanteHolder.getPARAMETRE_SYSTEME_DATE_FIN_PLAGE(), parametreSystemeOptional.get().getDateFinPlage());
             }
         } 
         catch (Exception e) 
@@ -421,16 +421,16 @@ public class MainView extends com.vaadin.flow.component.applayout.AppLayout {
             
             accordion.add(createAccordionPanel("Référentiels",
                 new com.vaadin.flow.component.Component[]{
-                    createDivAccordionItem("Corpus des  Parties Prenantes", CorpusPartiePrenanteView.class),
-                    createDivAccordionItem("Corpus Immobilier", CorpusImmobilierView.class),
+                    createDivAccordionItem("Workplace des  Parties Prenantes", WorkplacePartiePrenanteView.class),
+                    createDivAccordionItem("Workplace Immobilier", WorkplaceImmobilierView.class),
                     createDivAccordionItem("Classification des Parties Prenantes", ClassificationPartiePrenanteView.class),
                     createDivAccordionItem("Classification Immobilière", ClassificationImmobiliereView.class),
                     createSeparatorItem(),
                     createDivAccordionItem("Configuration des Services", ConfigurationServiceView.class),
-                    createDivAccordionItem("Corpus de Facturation", CorpusFacturationView.class),
+                    createDivAccordionItem("Workplace de Facturation", WorkplaceFacturationView.class),
                     createSeparatorItem(),
-                    createDivAccordionItem("Corpus de la Comptabilité", CorpusComptabiliteView.class),
-                    createDivAccordionItem("Divers Référentiels", CorpusDiversReferentielView.class)
+                    createDivAccordionItem("Workplace de la Comptabilité", WorkplaceComptabiliteView.class),
+                    createDivAccordionItem("Divers Référentiels", WorkplaceDiversReferentielView.class)
                 })
             );
             

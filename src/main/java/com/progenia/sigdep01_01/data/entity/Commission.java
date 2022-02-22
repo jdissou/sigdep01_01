@@ -41,15 +41,15 @@ public class Commission implements Serializable {
     private String libelleCourtCommission;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeValorisationCommission", nullable=false)
+    @JoinColumn(name="CodeModeValorisationCommission")
     private SystemeModeValorisationCommission modeValorisationCommission;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeValorisationBaseCommission", nullable=false)
+    @JoinColumn(name="CodeModeValorisationBaseCommission")
     private SystemeModeValorisationBaseCommission modeValorisationBaseCommission;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeModeValorisationTauxCommission", nullable=false)
+    @JoinColumn(name="CodeModeValorisationTauxCommission")
     private SystemeModeValorisationTauxCommission modeValorisationTauxCommission;
 
     @Column(name="ValeurFixe")
@@ -62,23 +62,23 @@ public class Commission implements Serializable {
     private Float tauxFixe;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeTranche", nullable=false)
+    @JoinColumn(name="CodeTranche")
     private TrancheValeur tranche;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeIndiceReference", nullable=false)
+    @JoinColumn(name="CodeIndiceReference")
     private IndiceReference indiceReference;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodePeriodeFixationTaux", nullable=false)
+    @JoinColumn(name="CodePeriodeFixationTaux")
     private SystemePeriodeFixationTaux periodeFixationTaux;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodeBaseAnnuelleCalculTaux", nullable=false)
+    @JoinColumn(name="CodeBaseAnnuelleCalculTaux")
     private SystemeBaseAnnuelleCalculTaux baseAnnuelleCalculTaux;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="CodePeriodicite", nullable=false)
+    @JoinColumn(name="CodePeriodicite")
     private SystemePeriodiciteCommission periodicite;
 
     @Column(name="Inactif")
